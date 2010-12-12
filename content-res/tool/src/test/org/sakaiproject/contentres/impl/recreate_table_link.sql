@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS LINK;
+CREATE TABLE LINK (
+	id bigint(20) NOT NULL, 
+	name varchar(150) NOT NULL, 
+	url varchar(2000) NOT NULL, 
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

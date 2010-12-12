@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+<import resource="classpath:components.xml"/>
+
+	<!-- The id of this bean needs to match the param 'applicationBean' under your web.xml -->
+	<bean id="contentresApplication" class="org.sakaiproject.contentres.tool.HelloWorldApplication">
+		<property name="userDirectoryService" ref="org.sakaiproject.user.api.UserDirectoryService" />
+		<property name="linkService" ref="org.sakaiproject.contentres.api.LinkService" />
+	</bean>
+	
+	<!--  NOTE: this is a very simple example so we inject the dependency directly into our Application. 
+	Normally, we would wrap this in our own API and instead inject that. See the CRUD example, ExternalLogic. -->	
+	   
+       
+</beans>
