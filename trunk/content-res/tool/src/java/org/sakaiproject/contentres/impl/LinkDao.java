@@ -16,7 +16,7 @@ public class LinkDao extends JdbcDaoSupport {
 	}
 
 	public void delete(long id) {
-		this.getJdbcTemplate().update("delete from LINK where id=",
+		this.getJdbcTemplate().update("delete from LINK where id=?",
 				new Object[] { id });
 	}
 

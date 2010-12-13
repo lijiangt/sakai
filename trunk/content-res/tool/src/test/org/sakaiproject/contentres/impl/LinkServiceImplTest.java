@@ -45,19 +45,20 @@ AbstractDependencyInjectionSpringContextTests {
 		try {
 			linkService.justForTest();
 			fail("No exception throws");
-		} catch (Throwable e) {
-
+		} catch (RuntimeException e) {
+			logger.debug("RuntimeException: "+e.getLocalizedMessage());
 		}
 		assertEquals(0, linkService.getAll().size());
 	}
 
-//	public void testJustForTest2() {
-//		try {
-//			linkService.justForTest2();
-//			fail("No exception throws");
-//		} catch (Throwable e) {
-//
-//		}
-//		assertEquals(0, linkService.getAll().size());
-//	}
+	public void testJustForTest2() {
+		try {
+			linkService.justForTest2();
+		} catch (Throwable e) {
+			e.printStackTrace();
+			logger.error("RuntimeException: "+e.getLocalizedMessage());
+			fail("Exception throws");
+		}
+		assertEquals(0, linkService.getAll().size());
+	}
 }
