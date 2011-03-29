@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="txTemplate"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager">
+			<ref bean="org.sakaiproject.springframework.orm.hibernate.GlobalTransactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<!-- <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop> -->
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+				<!--. not needed for this version of create . -->
+				<!--<prop key="create*">PROPAGATION_REQUIRED</prop> -->
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="linkDao"
+    class="org.sakaiproject.res.impl.LinkDao">
+             <property name="dataSource">
+                     <ref bean="javax.sql.LazyDataSource" />
+             </property>
+    </bean>
+    
+   <bean id="linkServiceImpl"
+    class="org.sakaiproject.res.impl.LinkServiceImpl">
+             <property name="linkDao">
+                     <ref local="linkDao" />
+             </property>
+    </bean>
+
+	<bean id="linkService" parent="txTemplate">
+		<property name="target">
+			<ref bean="linkServiceImpl" />
+		</property>
+	</bean>
+</beans>
