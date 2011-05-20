@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -112,23 +113,24 @@ public class MergeProp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		if (args.length != 2) {
-//			System.err.println("使用方法： 在命令行运行 java MergeProp 资源文件 主要参考资源文件");
-//			return;
-//		} else {
-//			File f = new File(args[0]);
-//			if (!f.exists() || f.isDirectory()) {
-//				System.err.println("资源文件不存在");
-//				return;
-//			}
-//			f = new File(args[1]);
-//			if (!f.exists() || f.isDirectory()) {
-//				System.err.println("主要参考资源文件不存在");
-//				return;
-//			}
-//		}
-//		merge(args[0], args[1]);
-		merge("/home/lijt/workspace/sakai/sakai-utils/test/1.properties",  "/home/lijt/workspace/sakai/sakai-utils/test/2.properties");
+		if (args.length != 2) {
+			System.err.println("使用方法： 在命令行运行 java MergeProp 资源文件 主要参考资源文件");
+			return;
+		} else {
+			File f = new File(args[0]);
+			if (!f.exists() || f.isDirectory()) {
+				System.err.println("资源文件不存在");
+				return;
+			}
+			f = new File(args[1]);
+			if (!f.exists() || f.isDirectory()) {
+				System.err.println("主要参考资源文件不存在");
+				return;
+			}
+		}
+		merge(args[0], args[1]);
+		// for test
+//		merge("/home/lijt/workspace/sakai/sakai-utils/test/1.properties",  "/home/lijt/workspace/sakai/sakai-utils/test/2.properties");
 	}
 
 }
