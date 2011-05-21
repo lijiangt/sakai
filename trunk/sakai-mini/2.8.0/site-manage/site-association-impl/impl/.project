@@ -1,0 +1,16 @@
+<projectDescription>
+  <name>sakai-siteassociation-impl</name>
+  <comment/>
+  <projects>
+    <project>sakai-siteassociation-api</project>
+    <project>sakai-siteassociation-hbm</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

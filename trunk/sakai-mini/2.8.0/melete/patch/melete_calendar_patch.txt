@@ -1,0 +1,876 @@
+Index: components/src/webapp/WEB-INF/components.xml
+===================================================================
+--- components/src/webapp/WEB-INF/components.xml	(revision 65191)
++++ components/src/webapp/WEB-INF/components.xml	(working copy)
+@@ -83,6 +83,9 @@
+         </property>	
+         <property name="sectionService">
+             <ref local="org.etudes.api.app.melete.SectionService" />
++        </property> 
++         <property name="meleteCalendarService">
++            <ref local="org.etudes.api.app.melete.MeleteCalendarService" />
+         </property>                
+ 	</bean>	
+ 	
+@@ -105,7 +108,9 @@
+         <property name="sectionDB">
+             <ref local="org.etudes.component.app.melete.SectionDB" />
+         </property>
+-              
++         <property name="meleteCalendarService">
++            <ref local="org.etudes.api.app.melete.MeleteCalendarService" />
++        </property>      
+          <property name="meleteCHService">
+             <ref local="org.etudes.api.app.melete.MeleteCHService" />
+         </property>
+@@ -230,8 +235,11 @@
+         <property name="meleteUserPrefDB">
+             <ref local="org.etudes.component.app.melete.MeleteUserPreferenceDB" />
+         </property>
+-        
++        <property name="meleteCalendarService">
++            <ref local="org.etudes.api.app.melete.MeleteCalendarService" />
++        </property> 
+ 	</bean>
++	
+ 	<bean id="org.etudes.api.app.melete.MeleteCHService"
+ 				class="org.etudes.component.app.melete.MeleteCHServiceImpl"
+ 				singleton="true">	
+@@ -260,6 +268,14 @@
+ 		<property name="userPrefdb">
+ 			<ref local="org.etudes.component.app.melete.MeleteUserPreferenceDB"/>
+         </property>
++	</bean>  
++	
++	<bean id="org.etudes.api.app.melete.MeleteCalendarService"
++				class="org.etudes.component.app.melete.MeleteCalendarServiceImpl"
++				singleton="true">	
++		<property name="moduleDB">
++			<ref local="org.etudes.component.app.melete.ModuleDB"/>
++        </property>
+ 	</bean>    
+    
+ </beans>
+Index: melete-api/src/java/org/etudes/api/app/melete/MeleteCalendarService.java
+===================================================================
+--- melete-api/src/java/org/etudes/api/app/melete/MeleteCalendarService.java	(revision 0)
++++ melete-api/src/java/org/etudes/api/app/melete/MeleteCalendarService.java	(revision 0)
+@@ -0,0 +1,38 @@
++/**********************************************************************************
++ *
++ * $URL: https://source.sakaiproject.org/contrib/etudes/melete/trunk/melete-api/src/java/org/etudes/api/app/melete/MeleteCalendarService.java $
++ * $Id: MeleteCalendarService.java 64965 2009-12-01 00:27:56Z mallika@etudes.org $
++ ***********************************************************************************
++ *
++ * Copyright (c) 2008, 2009 Etudes, Inc.
++ *
++ * Portions completed before September 1, 2008 Copyright (c) 2004, 2005, 2006, 2007, 2008 Foothill College, ETUDES Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you
++ * may not use this file except in compliance with the License. You may
++ * obtain a copy of the License at
++ *
++ * http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++ * implied. See the License for the specific language governing
++ * permissions and limitations under the License.
++ *
++ **********************************************************************************/
++
++package org.etudes.api.app.melete;
++
++import java.util.*;
++
++import org.etudes.api.app.melete.exception.MeleteException;
++
++
++public interface MeleteCalendarService{
++
++  public boolean checkCalendar();
++  public void updateCalendar(ModuleObjService modServ, ModuleShdatesService moduleshdatesServ, String courseId) throws Exception;
++  public void deleteCalendar(List delModules, String courseId);
++	
++}
+\ No newline at end of file
+Index: melete-api/src/java/org/etudes/api/app/melete/ModuleService.java
+===================================================================
+--- melete-api/src/java/org/etudes/api/app/melete/ModuleService.java	(revision 65191)
++++ melete-api/src/java/org/etudes/api/app/melete/ModuleService.java	(working copy)
+@@ -73,7 +73,7 @@
+ 	public CourseModuleService getCourseModule(int moduleId,  String courseId) throws Exception;
+ 
+ 	public void deleteModules(List delModules, String courseId, String userId) throws Exception;
+-	public boolean checkCalendar();
++
+ 	public int getNextSeqNo(String courseId, int currSeqNo, boolean instRole);
+ 	public int getPrevSeqNo(String courseId, int currSeqNo, boolean instRole);
+ 
+Index: melete-app/src/java/org/etudes/tool/melete/ModulePage.java
+===================================================================
+--- melete-app/src/java/org/etudes/tool/melete/ModulePage.java	(revision 65191)
++++ melete-app/src/java/org/etudes/tool/melete/ModulePage.java	(working copy)
+@@ -56,6 +56,7 @@
+     /** Dependency:  The logging service. */
+     protected Log logger = LogFactory.getLog(ModulePage.class);
+ 	protected ModuleService moduleService;
++	protected MeleteCalendarService meleteCalendarService;
+ 
+     // license form rendering
+     private boolean saveFlag;
+@@ -387,7 +388,7 @@
+   
+   public boolean getCalendarFlag()
+   {
+-	  return moduleService.checkCalendar();
++	  return meleteCalendarService.checkCalendar();
+   }
+   
+  /*
+@@ -466,6 +467,19 @@
+ 	public void setModuleService(ModuleService moduleService) {
+ 		this.moduleService = moduleService;
+ 	}
++	
++	/**
++	 * @return Returns the meleteCalendarService.
++	 */
++	public MeleteCalendarService getMeleteCalendarService() {
++		return meleteCalendarService;
++	}
++	/**
++	 * @param MeleteCalendarService The MeleteCalendarService to set.
++	 */
++	public void setMeleteCalendarService(MeleteCalendarService meleteCalendarService) {
++		this.meleteCalendarService = meleteCalendarService;
++	}
+ 
+ 
+  }
+Index: melete-app/src/webapp/WEB-INF/faces-config.xml
+===================================================================
+--- melete-app/src/webapp/WEB-INF/faces-config.xml	(revision 65191)
++++ melete-app/src/webapp/WEB-INF/faces-config.xml	(working copy)
+@@ -78,6 +78,11 @@
+             <property-name>moduleService</property-name>
+             <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+         </managed-property>
++        <managed-property>
++            <description>Service Dependency: Melete Calendar service</description>
++            <property-name>meleteCalendarService</property-name>
++            <value>#{Components["org.etudes.api.app.melete.MeleteCalendarService"]}</value>
++        </managed-property>
+ 	   </managed-bean>  
+ 	
+  <managed-bean>
+@@ -116,6 +121,11 @@
+             <property-name>moduleService</property-name>
+             <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+         </managed-property>
++         <managed-property>
++            <description>Service Dependency: Melete Calendar service</description>
++            <property-name>meleteCalendarService</property-name>
++            <value>#{Components["org.etudes.api.app.melete.MeleteCalendarService"]}</value>
++        </managed-property>
+      </managed-bean>  
+ 	
+ 	 <managed-bean>
+Index: melete-impl/src/java/org/etudes/component/app/melete/MeleteCalendarServiceImpl.java
+===================================================================
+--- melete-impl/src/java/org/etudes/component/app/melete/MeleteCalendarServiceImpl.java	(revision 0)
++++ melete-impl/src/java/org/etudes/component/app/melete/MeleteCalendarServiceImpl.java	(revision 0)
+@@ -0,0 +1,298 @@
++/**********************************************************************************
++ *
++ * $URL: https://source.sakaiproject.org/contrib/etudes/melete/trunk/melete-impl/src/java/org/etudes/component/app/melete/MeleteCalendarServiceImpl.java $
++ * $Id: MeleteCalendarServiceImpl.java 64978 2009-12-01 22:28:31Z mallika@etudes.org $
++ ***********************************************************************************
++ *
++ * Copyright (c) 2008, 2009 Etudes, Inc.
++ *
++ * Portions completed before September 1, 2008 Copyright (c) 2004, 2005, 2006, 2007, 2008 Foothill College, ETUDES Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ * http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++ * implied. See the License for the specific language governing
++ * permissions and limitations under the License.
++ *
++ **********************************************************************************/
++
++package org.etudes.component.app.melete;
++
++import org.sakaiproject.site.cover.SiteService;
++import org.sakaiproject.calendar.api.CalendarService;
++import org.sakaiproject.site.api.Site;
++import org.sakaiproject.tool.cover.ToolManager;
++import java.io.Serializable;
++import org.apache.commons.logging.Log;
++import org.apache.commons.logging.LogFactory;
++import java.util.Date;
++import org.sakaiproject.calendar.api.CalendarEvent;
++import org.sakaiproject.calendar.api.CalendarEventEdit;
++import org.sakaiproject.calendar.api.CalendarService;
++import org.sakaiproject.time.cover.TimeService;
++import org.sakaiproject.entity.cover.EntityManager;
++import org.sakaiproject.exception.PermissionException;
++import java.util.List;
++import java.util.ListIterator;
++import org.etudes.api.app.melete.MeleteCalendarService;
++import org.etudes.api.app.melete.ModuleObjService;
++import org.etudes.api.app.melete.ModuleShdatesService;
++
++/* This is the default implementation(when the calendar tool is deployed)
++ */
++
++public class MeleteCalendarServiceImpl implements MeleteCalendarService,Serializable {
++
++   private ModuleDB moduleDB;
++	
++	/** Dependency:  The logging service. */
++	private Log logger = LogFactory.getLog(MeleteCalendarServiceImpl.class);
++
++	/**
++	 *
++	 */
++	public MeleteCalendarServiceImpl()
++	{
++		
++	}
++
++	/**
++	 * @return Returns the moduledb.
++	 */
++	public ModuleDB getModuleDB() {
++		return moduleDB;
++	}
++	/**
++	 * @param moduledb The moduledb to set.
++	 */
++	public void setModuleDB(ModuleDB moduleDB) {
++		this.moduleDB = moduleDB;
++	}
++
++	
++	public boolean checkCalendar()
++	{
++		Site site = null;
++		  try
++		  {
++		    site = SiteService.getSite(ToolManager.getCurrentPlacement().getContext());
++	      }
++		  catch (Exception e) {
++			logger.debug("Exception thrown while getting site"+e.toString());
++		  }
++		  if (site.getToolForCommonId("sakai.schedule") != null)
++	      {
++	    	  return true;
++	      }    
++	      else
++	      {
++	    	  return false;
++	      }
++	}
++	
++	
++	public void updateCalendar(ModuleObjService modServ, ModuleShdatesService moduleshdatesServ, String courseId) throws Exception
++	{
++		Module module1 = (Module)modServ;
++		ModuleShdates moduleshdates1 = (ModuleShdates)moduleshdatesServ;
++		if (checkCalendar() == true)
++		{	
++		//The code below adds the start and stop dates to the Calendar
++		boolean addtoSchedule = moduleshdates1.getAddtoSchedule().booleanValue();
++		Date startDate = moduleshdates1.getStartDate();
++		Date endDate = moduleshdates1.getEndDate();
++		String startEventId = moduleshdates1.getStartEventId();
++		String endEventId = moduleshdates1.getEndEventId();
++			
++	    CalendarService cService = org.sakaiproject.calendar.cover.CalendarService.getInstance();
++		String calendarId = cService.calendarReference(courseId, SiteService.MAIN_CONTAINER);
++		try
++		{
++		  org.sakaiproject.calendar.api.Calendar c = cService.getCalendar(calendarId);
++		  try
++		  {
++			if (addtoSchedule == true)
++			{
++				if (startDate == null)
++				{
++					if (startEventId != null)
++					{
++						logger.debug("REMOVING start event for null start date");
++						deleteCalendarEvent(c, startEventId);
++						moduleshdates1.setStartEventId(null);
++					}
++				}
++				else
++				{
++				  if (startEventId == null)
++				  {	  
++				    logger.debug("ADDING start event for non-null start date");
++				    String desc = endDate != null ? "This module opens today and closes "+endDate.toString():"This module opens today";
++				    startEventId = createCalendarEvent(c, startDate, "Opens: "+module1.getTitle(), desc);
++				  }
++				  else
++				  {
++					  logger.debug("UPDATING start event for non-nul start date");
++					  String desc = endDate != null ? "This module opens today and closes "+endDate.toString():"This module opens today";
++					  updateCalendarEvent(c, startEventId, startDate, desc);
++				  }
++				  moduleshdates1.setStartEventId(startEventId);
++				}
++				if (endDate == null)
++				{
++					if (endEventId != null)
++					{
++						logger.debug("REMOVING end event for null end date");
++						deleteCalendarEvent(c, endEventId);
++						moduleshdates1.setEndEventId(null);
++					}
++				}
++				if (endDate != null)
++				{
++				  if (endEventId == null)
++				  {		
++					logger.debug("ADDING end event for non-null end date");
++					String desc = "This module closes today";
++					endEventId = createCalendarEvent(c, endDate, "Closes: "+module1.getTitle(), desc);			   
++				  } 
++				  else
++				  {
++					  logger.debug("UPDATING end event for non-null end date");
++					  String desc = "This module closes today";
++					  updateCalendarEvent(c, endEventId, endDate, desc);
++				  }
++				  moduleshdates1.setEndEventId(endEventId);
++				}
++			  }
++			  else
++			  {
++			    if (startEventId != null)
++				{
++				  logger.debug("REMOVING start event for false flag");
++				  deleteCalendarEvent(c, startEventId);
++				  moduleshdates1.setStartEventId(null);
++				} 
++				if (endEventId != null)
++				{
++				  logger.debug("REMOVING end event for false flag");
++				  deleteCalendarEvent(c, endEventId);
++				  moduleshdates1.setEndEventId(null);
++				}
++			  }
++			}
++			catch (PermissionException ee)
++			{
++				logger.warn("PermissionException while adding to calendar");
++			}
++			catch (Exception ee)
++			{
++				logger.error("Some other exception while adding to calendar "+ee.getMessage());
++			}
++			// try-catch
++		  }
++		  catch (Exception ex)
++		  {
++		  logger.error("Exception thrown while getting Calendar");
++		  }
++		moduleDB.updateModuleShdates((ModuleShdates)moduleshdates1);
++		}
++	}
++	
++	private String createCalendarEvent(org.sakaiproject.calendar.api.Calendar c, Date eventDate, String title, String description) throws Exception
++	{
++		String eventId = null;
++		CalendarEvent eEvent = c.addEvent(/* TimeRange */TimeService.newTimeRange(eventDate.getTime(), 0),
++				/* title */title,
++				/* description */description,
++				/* type */"Deadline",
++				/* location */"",
++				/* attachments */EntityManager.newReferenceList());
++		       if (eEvent != null)
++			   {
++				 eventId = eEvent.getId();
++			   }      
++		return eventId;       
++	}
++	
++	
++	private void updateCalendarEvent(org.sakaiproject.calendar.api.Calendar c,String eventId, Date eventDate, String description) throws Exception
++	{
++		 CalendarEventEdit evEdit = c.getEditEvent(eventId, "Deadline");
++		  if (evEdit != null)
++		  {
++			  evEdit.setRange(TimeService.newTimeRange(eventDate.getTime(),0));
++			  evEdit.setDescription(description);
++			  c.commitEvent(evEdit);
++		  }
++	}
++	
++	private void deleteCalendarEvent(org.sakaiproject.calendar.api.Calendar c,String eventId) throws Exception
++	{
++		CalendarEventEdit evEdit = c.getEditEvent(eventId, "Deadline");
++		if (evEdit != null)
++		{
++		    c.removeEvent(evEdit);
++		}
++	}
++
++	public void deleteCalendar(List delModules, String courseId)
++	 {
++		if (checkCalendar() == true)
++		{	
++		 //Delete all calendar associated events
++		 CalendarService cService = org.sakaiproject.calendar.cover.CalendarService.getInstance();
++		  String calendarId = cService.calendarReference(courseId, SiteService.MAIN_CONTAINER);
++		  try
++		  {
++			  org.sakaiproject.calendar.api.Calendar c = cService.getCalendar(calendarId);
++			  for (ListIterator i = delModules.listIterator(); i.hasNext(); )
++		 	  {
++		        Module mod = (Module) i.next();
++		        String startEventId = mod.getModuleshdate().getStartEventId();
++		        String endEventId = mod.getModuleshdate().getEndEventId();
++		        try
++		        {
++		        	if ( startEventId != null)
++					{
++						logger.debug("REMOVING start event for null start date");
++						deleteCalendarEvent(c, startEventId);
++						mod.getModuleshdate().setStartEventId(null);
++					}	
++		        	if (endEventId != null)
++		        	{
++						logger.debug("REMOVING end event for null start date");
++						deleteCalendarEvent(c, endEventId);
++						mod.getModuleshdate().setEndEventId(null);
++					}
++		        	if ((startEventId != null)||(endEventId != null))
++		        	{
++		        		moduleDB.updateModuleShdates((ModuleShdates)mod.getModuleshdate()); 
++		        	}
++		        }	
++		        catch (PermissionException ee)
++				{
++					logger.warn("PermissionException while adding to calendar");
++				}
++				catch (Exception ee)
++				{
++					logger.error("Some other exception while adding to calendar "+ee.getMessage());
++				}
++		 	  }	
++			// try-catch
++		  }
++		  catch (Exception ex)
++		  {
++			  logger.error("Exception thrown while getting Calendar");
++		  }
++		}  
++	 }
++
++	
++}
++
+Index: melete-impl/src/java/org/etudes/component/app/melete/MeleteImportfromSiteServiceImpl.java
+===================================================================
+--- melete-impl/src/java/org/etudes/component/app/melete/MeleteImportfromSiteServiceImpl.java	(revision 65191)
++++ melete-impl/src/java/org/etudes/component/app/melete/MeleteImportfromSiteServiceImpl.java	(working copy)
+@@ -41,7 +41,10 @@
+ import org.etudes.component.app.melete.MeleteUtil;
+ import org.etudes.api.app.melete.MeleteCHService;
+ import org.etudes.api.app.melete.MeleteImportfromSiteService;
++import org.etudes.api.app.melete.MeleteCalendarService;
+ import org.etudes.api.app.melete.exception.MeleteException;
++import org.etudes.api.app.melete.ModuleObjService;
++import org.etudes.api.app.melete.ModuleShdatesService;
+ 
+ import org.sakaiproject.component.cover.ServerConfigurationService;
+ import org.sakaiproject.content.cover.ContentTypeImageService;
+@@ -66,6 +69,8 @@
+  * @author Murthy @ Foothill college
+  */
+ public class MeleteImportfromSiteServiceImpl extends MeleteImportBaseImpl implements MeleteImportfromSiteService{
++	
++	private MeleteCalendarService meleteCalendarService;
+ 	/*******************************************************************************
+ 	 * Dependencies
+ 	 *******************************************************************************/
+@@ -456,7 +461,7 @@
+ 					moduleDB.addModule(toMod, toModshdate, fromMod.getUserId(), toContext);
+ 					if ((toModshdate.getAddtoSchedule().booleanValue() == true)&&((toModshdate.getStartDate()!= null)||(toModshdate.getEndDate() != null)))
+ 					{
+-					  moduleDB.updateCalendar(toMod, toModshdate, toContext);
++					 meleteCalendarService.updateCalendar((ModuleObjService)toMod, (ModuleShdatesService)toModshdate, toContext);
+ 					}  
+ 				}catch(Exception ex3){
+ 					// logger.debug("error importing module");
+@@ -632,5 +637,12 @@
+ 		logger.debug("TRANSFER took "+(totalend-totalstart)+" millisecs");
+ 
+ 	}
+-
++	
++	/**
++	 * @param meleteCalendarService the meleteCalendarService to set
++	 */
++	public void setMeleteCalendarService(MeleteCalendarService meleteCalendarService)
++	{
++		this.meleteCalendarService = meleteCalendarService;
++	}
+ }
+Index: melete-impl/src/java/org/etudes/component/app/melete/ModuleDB.java
+===================================================================
+--- melete-impl/src/java/org/etudes/component/app/melete/ModuleDB.java	(revision 65267)
++++ melete-impl/src/java/org/etudes/component/app/melete/ModuleDB.java	(working copy)
+@@ -79,12 +79,10 @@
+ import org.sakaiproject.db.cover.SqlService;
+ 
+ import org.etudes.api.app.melete.MeleteAuthorPrefService;
++import org.etudes.api.app.melete.MeleteCalendarService;
+ 
+ import org.sakaiproject.site.cover.SiteService;
+ 
+-import org.sakaiproject.calendar.api.CalendarEvent;
+-import org.sakaiproject.calendar.api.CalendarEventEdit;
+-import org.sakaiproject.calendar.api.CalendarService;
+ import org.sakaiproject.time.cover.TimeService;
+ import org.sakaiproject.entity.cover.EntityManager;
+ import org.sakaiproject.exception.PermissionException;
+@@ -108,6 +106,7 @@
+ 	private MeleteSecurityService meleteSecurityService;
+ 
+ 	private MeleteUserPreferenceDB userPrefdb;
++	private MeleteCalendarService meleteCalendarService;
+ 	private int MAX_IN_CLAUSES = 500;
+ 
+ 	/** Dependency:  The logging service. */
+@@ -356,221 +355,8 @@
+ 
+   }
+ 	
+-	boolean checkCalendar()
+-	{
+-		Site site = null;
+-		  try
+-		  {
+-		    site = SiteService.getSite(ToolManager.getCurrentPlacement().getContext());
+-	      }
+-		  catch (Exception e) {
+-			logger.debug("Exception thrown while getting site"+e.toString());
+-		  }
+-		  if (site.getToolForCommonId("sakai.schedule") != null)
+-	      {
+-	    	  return true;
+-	      }    
+-	      else
+-	      {
+-	    	  return false;
+-	      }
+-	}
+ 	
+ 	
+-	void updateCalendar(Module module1, ModuleShdates moduleshdates1, String courseId) throws Exception
+-	{
+-		if (checkCalendar() == true)
+-		{	
+-		//The code below adds the start and stop dates to the Calendar
+-		boolean addtoSchedule = moduleshdates1.getAddtoSchedule().booleanValue();
+-		Date startDate = moduleshdates1.getStartDate();
+-		Date endDate = moduleshdates1.getEndDate();
+-		String startEventId = moduleshdates1.getStartEventId();
+-		String endEventId = moduleshdates1.getEndEventId();
+-			
+-	    CalendarService cService = org.sakaiproject.calendar.cover.CalendarService.getInstance();
+-		String calendarId = cService.calendarReference(courseId, SiteService.MAIN_CONTAINER);
+-		try
+-		{
+-		  org.sakaiproject.calendar.api.Calendar c = cService.getCalendar(calendarId);
+-		  try
+-		  {
+-			if (addtoSchedule == true)
+-			{
+-				if (startDate == null)
+-				{
+-					if (startEventId != null)
+-					{
+-						logger.debug("REMOVING start event for null start date");
+-						deleteCalendarEvent(c, startEventId);
+-						moduleshdates1.setStartEventId(null);
+-					}
+-				}
+-				else
+-				{
+-				  if (startEventId == null)
+-				  {	  
+-				    logger.debug("ADDING start event for non-null start date");
+-				    String desc = endDate != null ? "This module opens today and closes "+endDate.toString():"This module opens today";
+-				    startEventId = createCalendarEvent(c, startDate, "Opens: "+module1.getTitle(), desc);
+-				  }
+-				  else
+-				  {
+-					  logger.debug("UPDATING start event for non-nul start date");
+-					  String desc = endDate != null ? "This module opens today and closes "+endDate.toString():"This module opens today";
+-					  updateCalendarEvent(c, startEventId, startDate, desc);
+-				  }
+-				  moduleshdates1.setStartEventId(startEventId);
+-				}
+-				if (endDate == null)
+-				{
+-					if (endEventId != null)
+-					{
+-						logger.debug("REMOVING end event for null end date");
+-						deleteCalendarEvent(c, endEventId);
+-						moduleshdates1.setEndEventId(null);
+-					}
+-				}
+-				if (endDate != null)
+-				{
+-				  if (endEventId == null)
+-				  {		
+-					logger.debug("ADDING end event for non-null end date");
+-					String desc = "This module closes today";
+-					endEventId = createCalendarEvent(c, endDate, "Closes: "+module1.getTitle(), desc);			   
+-				  } 
+-				  else
+-				  {
+-					  logger.debug("UPDATING end event for non-null end date");
+-					  String desc = "This module closes today";
+-					  updateCalendarEvent(c, endEventId, endDate, desc);
+-				  }
+-				  moduleshdates1.setEndEventId(endEventId);
+-				}
+-			  }
+-			  else
+-			  {
+-			    if (startEventId != null)
+-				{
+-				  logger.debug("REMOVING start event for false flag");
+-				  deleteCalendarEvent(c, startEventId);
+-				  moduleshdates1.setStartEventId(null);
+-				} 
+-				if (endEventId != null)
+-				{
+-				  logger.debug("REMOVING end event for false flag");
+-				  deleteCalendarEvent(c, endEventId);
+-				  moduleshdates1.setEndEventId(null);
+-				}
+-			  }
+-			}
+-			catch (PermissionException ee)
+-			{
+-				logger.warn("PermissionException while adding to calendar");
+-			}
+-			catch (Exception ee)
+-			{
+-				logger.error("Some other exception while adding to calendar "+ee.getMessage());
+-			}
+-			// try-catch
+-		  }
+-		  catch (Exception ex)
+-		  {
+-		  logger.error("Exception thrown while getting Calendar");
+-		  }
+-		updateModuleShdates((ModuleShdates)moduleshdates1);
+-		}
+-	}
+-	
+-	private String createCalendarEvent(org.sakaiproject.calendar.api.Calendar c, Date eventDate, String title, String description) throws Exception
+-	{
+-		String eventId = null;
+-		CalendarEvent eEvent = c.addEvent(/* TimeRange */TimeService.newTimeRange(eventDate.getTime(), 0),
+-				/* title */title,
+-				/* description */description,
+-				/* type */"Deadline",
+-				/* location */"",
+-				/* attachments */EntityManager.newReferenceList());
+-		       if (eEvent != null)
+-			   {
+-				 eventId = eEvent.getId();
+-			   }      
+-		return eventId;       
+-	}
+-	
+-	
+-	private void updateCalendarEvent(org.sakaiproject.calendar.api.Calendar c,String eventId, Date eventDate, String description) throws Exception
+-	{
+-		 CalendarEventEdit evEdit = c.getEditEvent(eventId, "Deadline");
+-		  if (evEdit != null)
+-		  {
+-			  evEdit.setRange(TimeService.newTimeRange(eventDate.getTime(),0));
+-			  evEdit.setDescription(description);
+-			  c.commitEvent(evEdit);
+-		  }
+-	}
+-	
+-	private void deleteCalendarEvent(org.sakaiproject.calendar.api.Calendar c,String eventId) throws Exception
+-	{
+-		CalendarEventEdit evEdit = c.getEditEvent(eventId, "Deadline");
+-		if (evEdit != null)
+-		{
+-		    c.removeEvent(evEdit);
+-		}
+-	}
+-
+-	void deleteCalendar(List delModules, String courseId)
+-	 {
+-		if (checkCalendar() == true)
+-		{	
+-		 //Delete all calendar associated events
+-		 CalendarService cService = org.sakaiproject.calendar.cover.CalendarService.getInstance();
+-		  String calendarId = cService.calendarReference(courseId, SiteService.MAIN_CONTAINER);
+-		  try
+-		  {
+-			  org.sakaiproject.calendar.api.Calendar c = cService.getCalendar(calendarId);
+-			  for (ListIterator i = delModules.listIterator(); i.hasNext(); )
+-		 	  {
+-		        Module mod = (Module) i.next();
+-		        String startEventId = mod.getModuleshdate().getStartEventId();
+-		        String endEventId = mod.getModuleshdate().getEndEventId();
+-		        try
+-		        {
+-		        	if ( startEventId != null)
+-					{
+-						logger.debug("REMOVING start event for null start date");
+-						deleteCalendarEvent(c, startEventId);
+-						mod.getModuleshdate().setStartEventId(null);
+-					}	
+-		        	if (endEventId != null)
+-		        	{
+-						logger.debug("REMOVING end event for null start date");
+-						deleteCalendarEvent(c, endEventId);
+-						mod.getModuleshdate().setEndEventId(null);
+-					}
+-		        	if ((startEventId != null)||(endEventId != null))
+-		        	{
+-		        		updateModuleShdates((ModuleShdates)mod.getModuleshdate()); 
+-		        	}
+-		        }	
+-		        catch (PermissionException ee)
+-				{
+-					logger.warn("PermissionException while adding to calendar");
+-				}
+-				catch (Exception ee)
+-				{
+-					logger.error("Some other exception while adding to calendar "+ee.getMessage());
+-				}
+-		 	  }	
+-			// try-catch
+-		  }
+-		  catch (Exception ex)
+-		  {
+-			  logger.error("Exception thrown while getting Calendar");
+-		  }
+-		}  
+-	 }
+-
+ 	void addArchivedModule(Module module, ModuleShdates moduleshowdates, String userId, String courseId, CourseModule coursemodule) throws Exception
+ 	{
+ 
+@@ -1994,7 +1780,7 @@
+ 		for (ListIterator i = modList.listIterator(); i.hasNext();)
+ 		{
+ 			Module mod = (Module) i.next();
+-		    updateCalendar(mod,(ModuleShdates)mod.getModuleshdate(),courseId);
++		    meleteCalendarService.updateCalendar(mod,(ModuleShdates)mod.getModuleshdate(),courseId);
+ 		}    
+         logger.debug("Calendar updated");			
+ /*	 	try
+@@ -3136,6 +2922,14 @@
+ 	{
+ 		this.sectionDB = sectionDB;
+ 	}
++	
++	/**
++	 * @param meleteCalendarService the meleteCalendarService to set
++	 */
++	public void setMeleteCalendarService(MeleteCalendarService meleteCalendarService)
++	{
++		this.meleteCalendarService = meleteCalendarService;
++	}
+ 
+ 	/**
+ 	 * @param meleteCHService the meleteCHService to set
+Index: melete-impl/src/java/org/etudes/component/app/melete/ModuleServiceImpl.java
+===================================================================
+--- melete-impl/src/java/org/etudes/component/app/melete/ModuleServiceImpl.java	(revision 65191)
++++ melete-impl/src/java/org/etudes/component/app/melete/ModuleServiceImpl.java	(working copy)
+@@ -65,6 +65,7 @@
+ import org.etudes.api.app.melete.SectionObjService;
+ import org.etudes.api.app.melete.SectionService;
+ import org.etudes.api.app.melete.MeleteExportService;
++import org.etudes.api.app.melete.MeleteCalendarService;
+ import org.sakaiproject.component.cover.ServerConfigurationService;
+ import org.apache.commons.logging.Log;
+ import org.apache.commons.logging.LogFactory;
+@@ -97,6 +98,7 @@
+ 	private Log logger = LogFactory.getLog(ModuleServiceImpl.class);
+ 
+ 	private ModuleDB moduledb;
++	private MeleteCalendarService meleteCalendarService;
+ 	private List moduleDateBeans = null;
+ 	private List viewModuleBeans = null;
+ 	private List modules = null;
+@@ -151,7 +153,7 @@
+ 		{
+ 		  if (moduleshdates1.getAddtoSchedule().booleanValue() == true)
+ 		  {
+-		    moduledb.updateCalendar(module1, moduleshdates1, courseId);
++		    meleteCalendarService.updateCalendar(module, moduleshdates, courseId);
+ 		  }
+ 	    }
+ 
+@@ -309,7 +311,7 @@
+         {
+           if (((ModuleShdates)mdbean.getModuleShdate()).getAddtoSchedule() != null)
+           {	  
+-            moduledb.updateCalendar((Module)mdbean.getModule(),(ModuleShdates)mdbean.getModuleShdate(), courseId);
++            meleteCalendarService.updateCalendar(mdbean.getModule(),mdbean.getModuleShdate(), courseId);
+           }  
+         }
+         catch (Exception ex)
+@@ -326,7 +328,7 @@
+ 	 List cmodList = null;
+ 	 List<Module> allModules = new ArrayList<Module>(0);
+ 
+-	 moduledb.deleteCalendar(delModules, courseId);
++	 meleteCalendarService.deleteCalendar(delModules, courseId);
+ 	 try{
+ 		 allModules = moduledb.getActivenArchiveModules(courseId);
+ 		 moduledb.deleteModules(delModules, allModules, courseId, userId);
+@@ -339,11 +341,8 @@
+ 
+  }
+ 
+-public boolean checkCalendar()
+-{
+-	return moduledb.checkCalendar();
+-}
+ 
++
+  /*public void deleteModules(List moduleDateBeans, String courseId, String userId)
+   {
+ 	  List cmodList = null;
+@@ -557,6 +556,14 @@
+ 	public void setModuledb(ModuleDB moduledb) {
+ 		this.moduledb = moduledb;
+ 	}
++	
++	/**
++	 * @param meleteice the meleteCalendarService to set
++	 */
++	public void setMeleteCalendarService(MeleteCalendarService meleteCalendarService)
++	{
++		this.meleteCalendarService = meleteCalendarService;
++	}
+ 
+ 	public MeleteCHService getMeleteCHService() {
+ 		return meleteCHService;

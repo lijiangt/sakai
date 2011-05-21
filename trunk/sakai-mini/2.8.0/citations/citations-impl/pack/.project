@@ -1,0 +1,18 @@
+<projectDescription>
+  <name>sakai-citations-pack</name>
+  <comment/>
+  <projects>
+    <project>sakai-citations-impl</project>
+    <project>sakai-citations-util</project>
+    <project>sakai-citations-web2bridge</project>
+    <project>sakai-citations-xserver</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

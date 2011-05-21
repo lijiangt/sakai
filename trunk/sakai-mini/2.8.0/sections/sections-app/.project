@@ -1,0 +1,15 @@
+<projectDescription>
+  <name>sakai-sections-tool</name>
+  <comment/>
+  <projects>
+    <project>sakai-sections-app-util</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

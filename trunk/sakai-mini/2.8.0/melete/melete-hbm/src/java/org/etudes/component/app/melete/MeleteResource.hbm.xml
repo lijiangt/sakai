@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+ ***********************************************************************************
+ * $URL$
+ * $Id$  
+ ***********************************************************************************
+ *
+ * Copyright (c) 2008,2009,2010 Etudes, Inc.
+ *
+ * Portions completed before September 1, 2008 Copyright (c) 2004, 2005, 2006, 2007, 2008 Foothill College, ETUDES Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ *
+ **********************************************************************************
+-->
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="org.etudes.component.app.melete.MeleteResource" table="melete_resource">
+    <id name="resourceId" column="RESOURCE_ID" type="string"  length="255" unsaved-value="null" >
+		<generator class="assigned"/>        
+    </id>      
+    <version name="version" column="VERSION" />
+   <property name="licenseCode" column="LICENSE_CODE" type="int"   length="2" />				
+	<property name="ccLicenseUrl" column="CC_LICENSE_URL"  type="string"  length="275" />				
+	<property name="reqAttr" column="REQ_ATTR" type="boolean" />	
+	<property name="allowCmrcl" column="ALLOW_CMRCL" type="boolean" />					
+	<property name="allowMod" column="ALLOW_MOD" type="int"       length="1" />			
+	<property name="copyrightOwner" column="COPYRIGHT_OWNER"  type="string"  length="255" />			
+	<property name="copyrightYear" column="COPYRIGHT_YEAR"  type="string"  length="255" />	
+	 </class>
+ </hibernate-mapping>
+	 

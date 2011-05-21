@@ -1,0 +1,17 @@
+<projectDescription>
+  <name>sakai-presence-util</name>
+  <comment/>
+  <projects>
+    <project>sakai-courier-api</project>
+    <project>sakai-courier-util</project>
+    <project>sakai-presence-api</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
