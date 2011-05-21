@@ -1,0 +1,43 @@
+/***********************************************************************************
+ *
+ * Copyright (c) 2008 Etudes, Inc.
+ *
+ * Portions completed before September 1, 2008 Copyright (c) 2004, 2005, 2006, 2007, 2008 Foothill College, ETUDES Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ *
+ **********************************************************************************/
+
+Sakai 2.3.x Patch Instructions for Melete 2.4 and higher versions
+------------------------------------------------
+
+1. Go to the sakai-src directory and run the script present in the Melete source code(/patch/meletepatchsak23.sh). 
+This script merges the relevant, required changes of dav, content, util, jsf folders.
+2. Under the sakai-src directory, replace the Textarea folder with the one in /svn/sakai/textarea/trunk 
+using revision 31556.
+	rm -rf textarea
+	svn checkout -r31556 https://source.sakaiproject.org/svn/textarea/trunk textarea
+3. Make sure sakai builds properly after running the above script and commands as sometimes svn merge command fails.
+
+	If the script fails or build fails, then the revision numbers are:
+	
+	* dav/src/java/org/sakaiproject/dav/DavServlet.java with r20516
+	* content-impl/impl/src/java/org/sakaiproject/content/impl/BaseContentService.java with r20517
+	* content-impl/impl/src/sql/mysql/sakai_content.sql with r22837
+	* content-impl/impl/src/sql/oracle/sakai_content.sql with r22837
+   	* content-impl/impl/src/sql/hsqldb/sakai_content.sql with r22837
+   	* widgets/src/META-INF/sakai-jsf.tld with r22210
+   	* widgets/src/java/org/sakaiproject/jsf/renderer/InputRichTextRenderer.java r30727
+   	* widgets/src/java/org/sakaiproject/jsf/tag/InputRichTextTag.java r30727   
+   	* util-util/util/src/java/org/sakaiproject/util/FormattedText.java r31404
+

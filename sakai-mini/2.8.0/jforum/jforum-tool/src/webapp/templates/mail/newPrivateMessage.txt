@@ -1,0 +1,22 @@
+<#setting number_format = "#"/>
+Hi ${user.username},
+<br /><br />
+You have a new Private Message in your site: ${path}
+<br /><br />
+<a href="${serverurl}"><b>${path}</b></a>
+<br /><br />
+Log on and go to the above site to reply to the message. 
+<br /><br />
+-----------------------------
+<br />
+From: ${pmfrom} 
+<br />
+Subject: ${pmsubject} 
+<br /><br />
+${pmtext}
+<br /><br />
+-----------------------------
+<br />
+Regards,
+<br />
+System Administrator

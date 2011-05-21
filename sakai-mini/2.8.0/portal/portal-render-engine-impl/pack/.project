@@ -1,0 +1,18 @@
+<projectDescription>
+  <name>portal-render</name>
+  <comment/>
+  <projects>
+    <project>sakai-portal-api</project>
+    <project>sakai-portal-render-api</project>
+    <project>sakai-portal-render-engine-impl</project>
+    <project>sakai-portal-util</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

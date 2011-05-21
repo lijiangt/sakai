@@ -1,0 +1,19 @@
+<projectDescription>
+  <name>configuration-bundles</name>
+  <comment>The Config project is home to Sakai configuration and localization files.  Config includes 
+	several versions of sakai.properties, a text file containing a series of key/value pairs 
+	that provide a convenient mechanism for defining a variety of configuration options for 
+	Sakai tools, services, supporting database and UI-related text such as copyright statement, 
+	institutional name, server name, etc.  Settings in sakai.properties are read on startup; thus 
+	changes to sakai.properties only take effect after you restart Sakai&apos;s servlet 
+	container (typically Apache Tomcat).</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

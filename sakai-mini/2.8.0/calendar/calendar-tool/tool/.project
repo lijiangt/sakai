@@ -1,0 +1,21 @@
+<projectDescription>
+  <name>sakai-calendar-tool</name>
+  <comment/>
+  <projects>
+    <project>sakai-assignment-api</project>
+    <project>sakai-calendar-api</project>
+    <project>sakai-calendar-util</project>
+    <project>sakai-mergedlist-util</project>
+    <project>sakai-taggable-api</project>
+    <project>sakai-velocity-tool</project>
+    <project>sakai-velocity-tool-api</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

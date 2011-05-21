@@ -1,0 +1,15 @@
+<projectDescription>
+  <name>sitestats-impl-hib</name>
+  <comment>SiteStats is a tool for Sakai for showing site usage statistics.</comment>
+  <projects>
+    <project>sitestats-api</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

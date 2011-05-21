@@ -1,0 +1,15 @@
+<projectDescription>
+  <name>content-copyright-impl</name>
+  <comment/>
+  <projects>
+    <project>content-copyright-api</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

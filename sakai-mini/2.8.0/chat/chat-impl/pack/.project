@@ -1,0 +1,17 @@
+<projectDescription>
+  <name>sakai-chat-pack</name>
+  <comment/>
+  <projects>
+    <project>sakai-chat-impl</project>
+    <project>sakai-courier-util</project>
+    <project>sakai-message-impl</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

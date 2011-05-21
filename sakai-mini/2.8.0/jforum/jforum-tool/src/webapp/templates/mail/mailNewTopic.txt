@@ -1,0 +1,24 @@
+<#setting number_format = "#"/>
+Hi,
+<br />
+You received this email because a new topic "${topic.title}" has been posted in the Discussion and Private Messages area of site ${path}. 
+<br /><br />
+You may review the topic below. To reply to the topic, log on to the site:
+<br /><br />
+<a href="${serverurl}"><b>${path}</b></a>
+<br /><br />
+-----------------------------
+<br />
+From: ${topicfrom} 
+<br />
+Subject: ${post.subject}
+<br /><br />
+${post.text}
+<br /><br />
+-----------------------------
+<br /><br />
+If you no longer want to receive notifications for new topics, go to your course Discussion & Private Messages and uncheck the "Send e-mail notification when new topics are posted" under My Profile.
+<br /><br />
+Regards,
+<br /> 
+System Administrator 

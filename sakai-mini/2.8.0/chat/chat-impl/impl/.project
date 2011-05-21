@@ -1,0 +1,19 @@
+<projectDescription>
+  <name>sakai-chat-impl</name>
+  <comment/>
+  <projects>
+    <project>sakai-chat-api</project>
+    <project>sakai-courier-api</project>
+    <project>sakai-courier-util</project>
+    <project>sakai-message-api</project>
+    <project>sakai-message-impl</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

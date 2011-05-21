@@ -1,0 +1,15 @@
+<projectDescription>
+  <name>sakai-usermembership-tool</name>
+  <comment>This project creates a WAR containing the usermembership Tool for Sakai.</comment>
+  <projects>
+    <project>sakai-usermembership-api</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

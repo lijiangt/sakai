@@ -1,0 +1,1804 @@
+<?xml version="1.0"?>
+<!--
+ ***********************************************************************************
+ * $URL: https://source.sakaiproject.org/contrib/etudes/melete/tags/2.8.2/melete-app/src/webapp/WEB-INF/faces-config.xml $
+ * $Id: faces-config.xml 71096 2010-11-01 23:41:15Z mallika@etudes.org $  
+ ***********************************************************************************
+ *
+ * Copyright (c) 2008,2009,2010 Etudes, Inc.
+ *
+ * Portions completed before September 1, 2008 Copyright (c) 2004, 2005, 2006, 2007, 2008 Foothill College, ETUDES Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ *
+ **********************************************************************************
+-->
+
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+
+<faces-config>
+	
+		  <application>
+        <message-bundle>org.etudes.tool.melete.bundle.Messages</message-bundle>
+        <locale-config>
+            <default-locale>en</default-locale>
+        </locale-config>
+    </application>  
+  
+	<!-- =================== MeleteSiteAndUserInfo ============== -->
+	<managed-bean>
+		<description>Melete Site And UserInfo</description>
+		<managed-bean-name>meleteSiteAndUserInfo</managed-bean-name>
+		<managed-bean-class> 
+			org.etudes.tool.melete.MeleteSiteAndUserInfo</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<!-- a service dependency property - for the MeleteSecurityService -->
+		<managed-property>
+			<description>Service Dependency: MeleteSecurityService</description>
+			<property-name>meleteSecurityService</property-name>
+			<value> 
+				#{Components["org.etudes.api.app.melete.MeleteSecurityService"]}</value>
+		</managed-property>
+		<!--<managed-property>
+			<description>Service Dependency: 
+				ServerConfigurationService</description>
+			<property-name>serverConfigurationService</property-name>
+			<value> 
+				#{Components["org.sakaiproject.component.api.ServerConfigurationService"]}</value>
+		</managed-property> -->
+		<managed-property>
+			<description>Service Dependency: Module service</description>
+			<property-name>moduleService</property-name>
+			<value>
+				#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+		</managed-property>
+	</managed-bean>
+	
+	
+ <managed-bean>
+      <description>Manages the AddModule page</description>
+      <managed-bean-name>addModulePage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.AddModulePage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+	   <!-- a service dependency property - for the MeleteService -->
+        <managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+	   </managed-bean>  
+	
+ <managed-bean>
+        <description>Melete List AuthModules Tool</description>
+        <managed-bean-name>listAuthModulesPage</managed-bean-name>
+        <managed-bean-class>org.etudes.tool.melete.ListAuthModulesPage</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <!-- a service dependency property - for the MeleteService -->
+        <managed-property>
+            <description>Service Dependency: Modules service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>       
+    </managed-bean>
+     <managed-bean>
+            <description>Melete List Modules Tool</description>
+            <managed-bean-name>listModulesPage</managed-bean-name>
+            <managed-bean-class>org.etudes.tool.melete.ListModulesPage</managed-bean-class>
+            <managed-bean-scope>session</managed-bean-scope>
+            <!-- a service dependency property - for the MeleteService -->
+            <managed-property>
+                <description>Service Dependency: Modules service</description>
+                <property-name>moduleService</property-name>
+                <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+            </managed-property>    
+            <managed-property>
+			<description>Service Dependency: Bookmark service</description>
+			<property-name>bookmarkService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.BookmarkService"]}</value>
+		</managed-property>   
+		<!-- a service dependency property - for the MeleteSecurityService -->
+		<managed-property>
+			<description>Service Dependency: MeleteSecurityService</description>
+			<property-name>meleteSecurityService</property-name>
+			<value> 
+				#{Components["org.etudes.api.app.melete.MeleteSecurityService"]}</value>
+		</managed-property>                        
+        </managed-bean>
+
+ <managed-bean>
+      <description>Manages the Edit Module page</description>
+      <managed-bean-name>editModulePage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.EditModulePage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+	   <!-- a service dependency property - for the MeleteService -->
+        <managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+     </managed-bean>  
+	
+	 <managed-bean>
+      <description>Manages the DeleteModule page</description>
+      <managed-bean-name>deleteModulePage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.DeleteModulePage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+	   <!-- a service dependency property - for the MeleteService -->
+        <managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+  <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>        
+      </managed-bean>  	
+          
+      <managed-bean>
+      <description>Manages the editSection page</description>
+      <managed-bean-name>editSectionPage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.EditSectionPage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+	   <!-- a service dependency property - for the MeleteService -->
+    <managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>	   	   
+        <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>
+       
+      <managed-property>
+          <description>Service Dependency: ServerConfigurationService</description>
+          <property-name>serverConfigurationService</property-name>
+          <value>#{Components["org.sakaiproject.component.api.ServerConfigurationService"]}</value>
+    </managed-property>  
+     <managed-property>
+          <description>Service Dependency: content hosting service</description>
+          <property-name>contentservice</property-name>
+          <value>#{Components["org.sakaiproject.content.api.ContentHostingService"]}</value>
+    </managed-property>  
+     <managed-property>
+	            <description>Service Dependency: Melete CH service</description>
+	            <property-name>meleteCHService</property-name>
+	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+    </managed-property>                  
+      </managed-bean>  
+
+   	 <managed-bean>
+          <description>View Module page</description>
+          <managed-bean-name>viewModulesPage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.ViewModulesPage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+           <managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+    </managed-bean>  
+
+ <managed-bean>
+             <description>View Section page</description>
+             <managed-bean-name>viewSectionsPage</managed-bean-name>
+             <managed-bean-class>org.etudes.tool.melete.ViewSectionsPage</managed-bean-class>
+             <managed-bean-scope>session</managed-bean-scope>
+             <managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+          <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>    
+       <managed-property>
+	            <description>Service Dependency: Melete CH service</description>
+	            <property-name>meleteCHService</property-name>
+	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+    </managed-property>                
+       </managed-bean>
+                
+     <managed-bean>
+		<description>Manages the Module page</description>
+		<managed-bean-name>manageModulesPage</managed-bean-name>
+		<managed-bean-class>org.etudes.tool.melete.ManageModulesPage</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<!-- a service dependency property - for the MeleteService -->
+		<managed-property>
+			<description>Service Dependency: Module service</description>
+			<property-name>moduleService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+		</managed-property>
+		  <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>
+  </managed-bean>   
+  
+  <managed-bean>
+		<description>Manages the Module page</description>
+		<managed-bean-name>sortModuleSectionPage</managed-bean-name>
+		<managed-bean-class>org.etudes.tool.melete.SortModuleSectionPage</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<!-- a service dependency property - for the MeleteService -->
+		<managed-property>
+			<description>Service Dependency: Module service</description>
+			<property-name>moduleService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+		</managed-property>
+		  <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>
+  </managed-bean> 
+  
+   <managed-bean>
+		<description>View next steps page</description>
+		<managed-bean-name>viewNextStepsPage</managed-bean-name>
+		<managed-bean-class>org.etudes.tool.melete.ViewNextStepsPage</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		 <managed-property>
+            <description>Service Dependency: Modules service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>        
+  </managed-bean>                 
+  <managed-bean>
+          <description>date comparator</description>
+          <managed-bean-name>meleteDateComparator</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.MeleteDateComparator</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>  
+  
+
+ <managed-bean>
+		  <description>lists files at the remote site</description>
+		  <managed-bean-name>remoteBrowserFile</managed-bean-name>
+		  <managed-bean-class>org.etudes.tool.melete.RemoteBrowserFile</managed-bean-class>
+		  <managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+                  <description>Service Dependency: ServerConfigurationService</description>
+                  <property-name>serverConfigurationService</property-name>
+                  <value>#{Components["org.sakaiproject.component.api.ServerConfigurationService"]}</value>
+            </managed-property>
+        	  <managed-property>
+	            <description>Service Dependency: Melete CH service</description>
+	            <property-name>meleteCHService</property-name>
+	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+        </managed-property>
+		</managed-bean> 
+          
+         
+<managed-bean>
+          <description>Nav page</description>
+          <managed-bean-name>navPage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.NavPage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+          <!-- a service dependency property - for the MeleteSecurityService -->
+		  <managed-property>
+			<description>Service Dependency: MeleteSecurityService</description>
+			<property-name>meleteSecurityService</property-name>
+			<value> 
+				#{Components["org.etudes.api.app.melete.MeleteSecurityService"]}</value>
+		  </managed-property>          
+    </managed-bean> 
+
+ <managed-bean>
+          <description>Module next steps page</description>
+          <managed-bean-name>moduleNextStepsPage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.ModuleNextStepsPage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+          <managed-property>
+            <description>Service Dependency: Modules service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+    </managed-bean> 
+  	
+	<managed-bean>
+          <description>Export Modules</description>
+          <managed-bean-name>exportMeleteModules</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.ExportMeleteModules</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+          <managed-property>
+            <description>Service Dependency: Modules service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+          </managed-property>
+		  <managed-property>
+            <description>Service Dependency: Melete Import Service</description>
+            <property-name>meleteImportService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.MeleteImportService"]}</value>
+          </managed-property>
+           <managed-property>
+            <description>Service Dependency: Melete Export Service</description>
+            <property-name>meleteExportService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.MeleteExportService"]}</value>
+          </managed-property>
+          <managed-property>
+			<description>Service Dependency: Melete Export Scorm Service</description>
+			<property-name>meleteExportScormService</property-name>
+			<value>#{Components["MeleteExportScormService"]}</value>
+		</managed-property>
+    </managed-bean>              
+
+ <managed-bean>
+          <description>author preferences</description>
+          <managed-bean-name>authorPreferences</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.AuthorPreferencePage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+           <managed-property>
+	    	            <description>Service Dependency: Melete Author Pref service</description>
+	    	            <property-name>authorPref</property-name>
+	    	            <value>#{Components["org.etudes.api.app.melete.MeleteAuthorPrefService"]}</value>
+            </managed-property>
+            <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>
+</managed-bean>  
+
+<managed-bean>
+          <description>student preferences</description>
+          <managed-bean-name>studentPreferences</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.StudentPreferencePage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+           <managed-property>
+	    	            <description>Service Dependency: Melete Author Pref service</description>
+	    	            <property-name>authorPref</property-name>
+	    	            <value>#{Components["org.etudes.api.app.melete.MeleteAuthorPrefService"]}</value>
+            </managed-property>
+</managed-bean> 
+
+<managed-bean>
+          <description>license page</description>
+          <managed-bean-name>licensePage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.LicensePage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>
+          <managed-property>
+              <description>Service Dependency: Section service</description>
+              <property-name>sectionService</property-name>
+              <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>
+</managed-bean> 
+
+<managed-bean>
+          <description>move sections</description>
+          <managed-bean-name>moveSectionsPage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.MoveSectionsPage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>    
+          	<managed-property>
+			<description>Service Dependency: Module service</description>
+			<property-name>moduleService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+		</managed-property>     
+</managed-bean>  
+
+<managed-bean>
+          <description>print module</description>
+          <managed-bean-name>printModulePage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.PrintModulePage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>    
+          	<managed-property>
+			<description>Service Dependency: Module service</description>
+			<property-name>moduleService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+		</managed-property>     
+</managed-bean> 
+
+<managed-bean>
+          <description>bookmark section</description>
+          <managed-bean-name>bookmarkPage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.BookmarkPage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>    
+          	<managed-property>
+			<description>Service Dependency: Bookmark service</description>
+			<property-name>bookmarkService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.BookmarkService"]}</value>
+		</managed-property>     
+		<managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>
+</managed-bean>   
+
+<managed-bean>
+          <description>special access</description>
+          <managed-bean-name>specialAccessPage</managed-bean-name>
+          <managed-bean-class>org.etudes.tool.melete.SpecialAccessPage</managed-bean-class>
+          <managed-bean-scope>session</managed-bean-scope>    
+          <managed-property>
+			<description>Service Dependency: Special Access service</description>
+			<property-name>specialAccessService</property-name>
+			<value>#{Components["org.etudes.api.app.melete.SpecialAccessService"]}</value>
+		</managed-property>   
+		<managed-property>
+			<description>Service Dependency: MeleteSecurityService</description>
+			<property-name>meleteSecurityService</property-name>
+			<value> 
+				#{Components["org.etudes.api.app.melete.MeleteSecurityService"]}</value>
+		</managed-property>  
+		<managed-property>
+            <description>Service Dependency: Module service</description>
+            <property-name>moduleService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.ModuleService"]}</value>
+        </managed-property>
+        <managed-property>
+            <description>Service Dependency: User Directory service</description>
+            <property-name>userDirectoryService</property-name>
+            <value>#{Components["org.sakaiproject.user.api.UserDirectoryService"]}</value>
+        </managed-property>        
+</managed-bean>  
+
+ <managed-bean>
+      <description>Manages the DeleteResource page</description>
+      <managed-bean-name>deleteResourcePage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.DeleteResourcePage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+	  <managed-property>
+            <description>Service Dependency: Section service</description>
+            <property-name>sectionService</property-name>
+            <value>#{Components["org.etudes.api.app.melete.SectionService"]}</value>
+        </managed-property>   
+        <managed-property>
+	    	            <description>Service Dependency: Melete CH service</description>
+	    	            <property-name>meleteCHService</property-name>
+	    	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+            </managed-property>   
+      </managed-bean>  	
+ 
+ <managed-bean>
+      <description>Manages the Manage Content page</description>
+      <managed-bean-name>manageResourcesPage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.ManageResourcesPage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope> 
+      <managed-property>
+	    	            <description>Service Dependency: Melete CH service</description>
+	    	            <property-name>meleteCHService</property-name>
+	    	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+            </managed-property>  
+ </managed-bean>  	
+ 
+ <managed-bean>
+      <description>Add resources page</description>
+      <managed-bean-name>addResourcesPage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.AddResourcesPage</managed-bean-class>
+      <managed-bean-scope>application</managed-bean-scope> 
+       <managed-property>
+	    	            <description>Service Dependency: Melete CH service</description>
+	    	            <property-name>meleteCHService</property-name>
+	    	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+            </managed-property>
+ </managed-bean>  
+ 
+<managed-bean>
+      <description>Manages the list resources page</description>
+      <managed-bean-name>listResourcesPage</managed-bean-name>
+      <managed-bean-class>org.etudes.tool.melete.ListResourcesPage</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope> 
+      <managed-property>
+	    	            <description>Service Dependency: Melete CH service</description>
+	    	            <property-name>meleteCHService</property-name>
+	    	            <value>#{Components["org.etudes.api.app.melete.MeleteCHService"]}</value>
+            </managed-property>  
+ </managed-bean>   	     
+    <!-- i18n -->
+
+<managed-bean>
+      <description>
+         Dynamic Resource Bundle Loader
+      </description>
+      <managed-bean-name>msgs</managed-bean-name>
+      <managed-bean-class>org.sakaiproject.util.ResourceLoader</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+      <managed-property>
+         <description>Bundle baseName</description>
+         <property-name>baseName</property-name>
+         <value>org.etudes.tool.melete.bundle.Messages</value>
+      </managed-property>
+</managed-bean>
+
+    <!-- rules for add module page -->
+     <navigation-rule>
+    <from-view-id>/melete/add_module.jsp</from-view-id>
+     <navigation-case>
+      <from-outcome>add_module</from-outcome>
+      <to-view-id>/melete/add_module.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>confirm_addmodule</from-outcome>
+      <to-view-id>/melete/confirm_addmodule.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>list_auth_modules</from-outcome>
+      <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+         <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+       <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>     
+  </navigation-rule>    
+  
+<!-- rules for confirm add module -->
+    <navigation-rule>
+    <from-view-id>/melete/confirm_addmodule.jsp</from-view-id>
+     <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+    </navigation-case>
+     <navigation-case>
+      <from-outcome>list_auth_modules</from-outcome>
+      <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+         <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>  
+  </navigation-rule>    
+  
+  <!-- rules for add section page removed -->
+     
+<!--edit section -->
+   <navigation-rule>
+    <from-view-id>/melete/editmodulesections.jsp</from-view-id>
+     <navigation-case>
+      <from-outcome>editpreview</from-outcome>
+      <to-view-id>/melete/editpreview.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>editContentUploadServerView</from-outcome>
+      <to-view-id>/melete/editContentUploadServerView.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>editContentLinkServerView</from-outcome>
+      <to-view-id>/melete/editContentLinkServerView.jsp</to-view-id>      
+    </navigation-case>     
+    <navigation-case>
+      <from-outcome>editContentLTIServerView</from-outcome>
+      <to-view-id>/melete/editContentLTIServerView.jsp</to-view-id>      
+    </navigation-case>     
+    <navigation-case>
+      <from-outcome>editpreview</from-outcome>
+      <to-view-id>/melete/editpreview.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>addmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+      <from-outcome>list_auth_modules</from-outcome>
+      <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+         <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+    <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>     
+     <navigation-case>
+		   <from-outcome>add_bookmark</from-outcome>
+        <to-view-id>/melete/add_bookmark.jsp</to-view-id>
+      </navigation-case>                                                           
+      <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>  
+  </navigation-rule>    
+
+
+  <navigation-rule>
+    <from-view-id>/melete/editContentUploadServerView.jsp</from-view-id>
+     <navigation-case>
+      <from-outcome>delete_resource</from-outcome>
+      <to-view-id>/melete/delete_resource.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>   
+     <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>editContentUploadServerView</from-outcome>
+      <to-view-id>/melete/editContentUploadServerView.jsp</to-view-id>
+    </navigation-case>  
+      <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>   
+    </navigation-rule>    
+    
+  <navigation-rule>
+    <from-view-id>/melete/editContentLinkServerView.jsp</from-view-id>
+      <navigation-case>
+      <from-outcome>delete_resource</from-outcome>
+      <to-view-id>/melete/delete_resource.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>    
+     <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>editContentLinkServerView</from-outcome>
+      <to-view-id>/melete/editContentLinkServerView.jsp</to-view-id>
+    </navigation-case>  
+      <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>   
+    </navigation-rule>     
+
+  <navigation-rule>
+    <from-view-id>/melete/editContentLTIServerView.jsp</from-view-id>
+      <navigation-case>
+      <from-outcome>delete_resource</from-outcome>
+      <to-view-id>/melete/delete_resource.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+     <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>editContentLTIServerView</from-outcome>
+      <to-view-id>/melete/editContentLTIServerView.jsp</to-view-id>
+    </navigation-case>
+      <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+    </navigation-rule>
+
+    
+    <navigation-rule>
+    <from-view-id>/melete/delete_resource.jsp</from-view-id>         
+     <navigation-case>
+      <from-outcome>editContentUploadServerView</from-outcome>
+      <to-view-id>/melete/editContentUploadServerView.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>editContentLinkServerView</from-outcome>
+      <to-view-id>/melete/editContentLinkServerView.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>editContentLTIServerView</from-outcome>
+      <to-view-id>/melete/editContentLTIServerView.jsp</to-view-id>
+      <redirect/>
+    </navigation-case>
+     <navigation-case>
+      <from-outcome>ContentUploadServerView</from-outcome>
+      <to-view-id>/melete/ContentUploadServerView.jsp</to-view-id>
+    </navigation-case>   
+    <navigation-case>
+      <from-outcome>ContentLinkServerView</from-outcome>
+      <to-view-id>/melete/ContentLinkServerView.jsp</to-view-id>
+    </navigation-case>   
+    <navigation-case>
+      <from-outcome>ContentLTIServerView</from-outcome>
+      <to-view-id>/melete/ContentLTIServerView.jsp</to-view-id>
+    </navigation-case>   
+    <navigation-case>
+      <from-outcome>manage_content</from-outcome>
+      <to-view-id>/melete/manage_content.jsp</to-view-id>      
+    </navigation-case>   
+    </navigation-rule>
+    
+    
+  <!-- preview section -->
+   <navigation-rule>
+    <from-view-id>/melete/editpreview.jsp</from-view-id>
+      <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      <redirect/>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>addmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      <redirect/>
+      </navigation-case>
+           <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>list_auth_modules</from-outcome>
+      <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+       </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+      <navigation-case>
+      <from-outcome>failure</from-outcome>
+      <to-view-id>/melete/editpreview.jsp</to-view-id>
+     </navigation-case> 
+    </navigation-rule>    
+ 
+  
+  
+<!-- manage -page -->  
+    
+      <navigation-rule>
+    <from-view-id>/melete/modules_author_manage.jsp</from-view-id>
+     <navigation-case>
+		  <from-outcome>restore_modules</from-outcome>
+		  <to-view-id>/melete/restore_modules.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+		  <from-outcome>modules_sort</from-outcome>
+		  <to-view-id>/melete/modules_sort.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+		  <from-outcome>importexportmodules</from-outcome>
+		  <to-view-id>/melete/importexportmodules.jsp</to-view-id>
+     </navigation-case>
+            <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>list_auth_modules</from-outcome>
+      <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+       </navigation-case>
+    <navigation-case>
+      <from-outcome>modules_author_manage</from-outcome>
+      <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+		  <from-outcome>manage_content</from-outcome>
+		  <to-view-id>/melete/manage_content.jsp</to-view-id>
+     </navigation-case>
+   </navigation-rule>    
+   
+   <!--manage_content-->
+   <navigation-rule>
+   	<from-view-id>/melete/manage_content.jsp</from-view-id>
+   	<navigation-case>
+   		<from-outcome>manage_content</from-outcome>
+   		<to-view-id>/melete/manage_content.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>delete_resource</from-outcome>
+   		<to-view-id>/melete/delete_resource.jsp</to-view-id>
+   		<redirect />
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>list_modules_inst</from-outcome>
+   		<to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>list_auth_modules</from-outcome>
+   		<to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>modules_author_manage</from-outcome>
+   		<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>author_preference</from-outcome>
+   		<to-view-id>/melete/author_preference.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+		  <from-outcome>file_upload_view</from-outcome>
+		  <to-view-id>/melete/FileUploadView.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+		  <from-outcome>link_upload_view</from-outcome>
+		  <to-view-id>/melete/LinkUploadView.jsp</to-view-id>
+     </navigation-case>
+   </navigation-rule>
+
+   <!--FileUploadView-->
+    <navigation-rule>
+    <from-view-id>/melete/FileUploadView.jsp</from-view-id>
+     <navigation-case>
+		  <from-outcome>manage_content</from-outcome>
+		  <to-view-id>/melete/manage_content.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+		  <from-outcome>file_upload_view</from-outcome>
+		  <to-view-id>/melete/FileUploadView.jsp</to-view-id>
+     </navigation-case>
+	<navigation-case>
+   		<from-outcome>list_modules_inst</from-outcome>
+   		<to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>list_auth_modules</from-outcome>
+   		<to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>modules_author_manage</from-outcome>
+   		<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>author_preference</from-outcome>
+   		<to-view-id>/melete/author_preference.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+		  <from-outcome>file_upload_view</from-outcome>
+		  <to-view-id>/melete/FileUploadView.jsp</to-view-id>
+     </navigation-case>     
+   </navigation-rule>  
+   
+  <!--LinkUploadView-->
+    <navigation-rule>
+    <from-view-id>/melete/LinkUploadView.jsp</from-view-id>
+     <navigation-case>
+		  <from-outcome>manage_content</from-outcome>
+		  <to-view-id>/melete/manage_content.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+		  <from-outcome>link_upload_view</from-outcome>
+		  <to-view-id>/melete/LinkUploadView.jsp</to-view-id>
+     </navigation-case>
+	<navigation-case>
+   		<from-outcome>list_modules_inst</from-outcome>
+   		<to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>list_auth_modules</from-outcome>
+   		<to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>modules_author_manage</from-outcome>
+   		<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+   		<from-outcome>author_preference</from-outcome>
+   		<to-view-id>/melete/author_preference.jsp</to-view-id>
+   	</navigation-case>
+   	<navigation-case>
+		  <from-outcome>link_upload_view</from-outcome>
+		  <to-view-id>/melete/LinkUploadView.jsp</to-view-id>
+     </navigation-case>     
+   </navigation-rule>  
+      
+   
+   <!--restore modules -->
+   <navigation-rule>
+    <from-view-id>/melete/restore_modules.jsp</from-view-id>
+     <navigation-case>
+		  <from-outcome>restore_modules</from-outcome>
+		  <to-view-id>/melete/restore_modules.jsp</to-view-id>
+     </navigation-case>
+     <navigation-case>
+      <from-outcome>list_modules_inst</from-outcome>
+      <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+      <from-outcome>list_modules_student</from-outcome>
+      <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+      <from-outcome>list_auth_modules</from-outcome>
+      <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+       </navigation-case>
+      <navigation-case>
+		  <from-outcome>modules_author_manage</from-outcome>
+		  <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+       <navigation-case>
+      <from-outcome>delete_module</from-outcome>
+      <to-view-id>/melete/delete_module.jsp</to-view-id>
+     </navigation-case> 
+  </navigation-rule>   
+     	   
+      
+   <!-- sort modules -->
+    <navigation-rule>
+    <from-view-id>/melete/modules_sort.jsp</from-view-id>
+      <navigation-case>
+		  <from-outcome>modules_sort</from-outcome>
+		  <to-view-id>/melete/modules_sort.jsp</to-view-id>
+	</navigation-case>
+     <navigation-case>
+		  <from-outcome>sections_sort</from-outcome>
+		  <to-view-id>/melete/sections_sort.jsp</to-view-id>
+		  <redirect/>
+     </navigation-case>
+    <navigation-case>
+		  <from-outcome>list_modules_inst</from-outcome>
+		  <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+		  <from-outcome>list_modules_student</from-outcome>
+		  <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+		  <from-outcome>list_auth_modules</from-outcome>
+		  <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+       </navigation-case>
+      <navigation-case>
+		  <from-outcome>modules_author_manage</from-outcome>
+		  <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+  </navigation-rule>   
+  
+   <!-- sort sections -->
+    <navigation-rule>
+    <from-view-id>/melete/sections_sort.jsp</from-view-id>
+      <navigation-case>
+		  <from-outcome>modules_sort</from-outcome>
+		  <to-view-id>/melete/modules_sort.jsp</to-view-id>
+		  <redirect/>
+	</navigation-case>
+     <navigation-case>
+		  <from-outcome>sections_sort</from-outcome>
+		  <to-view-id>/melete/sections_sort.jsp</to-view-id>
+	 </navigation-case>
+    <navigation-case>
+		  <from-outcome>list_modules_inst</from-outcome>
+		  <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+		  <from-outcome>list_modules_student</from-outcome>
+		  <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+		  <from-outcome>list_auth_modules</from-outcome>
+		  <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+       </navigation-case>
+      <navigation-case>
+		  <from-outcome>modules_author_manage</from-outcome>
+		  <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+  </navigation-rule>   
+  
+  <!-- module next steps -->
+  
+  <navigation-rule>
+    <from-view-id>/melete/module_post_steps.jsp</from-view-id>
+     <navigation-case>
+		  <from-outcome>module_post_steps</from-outcome>
+		  <to-view-id>/melete/module_post_steps.jsp</to-view-id>
+	 </navigation-case>
+    <navigation-case>
+		  <from-outcome>list_modules_inst</from-outcome>
+		  <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>
+        <navigation-case>
+		  <from-outcome>list_modules_student</from-outcome>
+		  <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>
+    <navigation-case>
+		  <from-outcome>list_auth_modules</from-outcome>
+		  <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+       </navigation-case>
+      <navigation-case>
+		  <from-outcome>modules_author_manage</from-outcome>
+		  <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+  </navigation-rule>   
+
+
+<!--Rule for list_auth_modules -->
+  <navigation-rule>
+    <from-view-id>/melete/list_auth_modules.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>edit_module</from-outcome>
+        <to-view-id>/melete/edit_module.jsp</to-view-id>
+      </navigation-case>
+     <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>      
+    <navigation-case>
+		   <from-outcome>editmodulesections</from-outcome>
+        <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      </navigation-case>        
+     <navigation-case>
+		   <from-outcome>add_module</from-outcome>
+        <to-view-id>/melete/add_module.jsp</to-view-id>
+      </navigation-case>          
+      <navigation-case>
+		   <from-outcome>delete_module</from-outcome>
+        <to-view-id>/melete/delete_module.jsp</to-view-id>
+      </navigation-case>        
+     <navigation-case>
+		   <from-outcome>view_module</from-outcome>
+        <to-view-id>/melete/view_module.jsp</to-view-id>
+      </navigation-case>     
+     <navigation-case>
+		   <from-outcome>view_section</from-outcome>
+        <to-view-id>/melete/view_section.jsp</to-view-id>
+      </navigation-case>        
+      <navigation-case>
+		   <from-outcome>module_post_steps</from-outcome>
+        <to-view-id>/melete/module_post_steps.jsp</to-view-id>
+      </navigation-case>    
+     <navigation-case>
+      <from-outcome>list_special_access</from-outcome>
+      <to-view-id>/melete/list_special_access.jsp</to-view-id>
+     </navigation-case>   
+     <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>     
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>     
+     <navigation-case>
+		   <from-outcome>addmodulesections</from-outcome>
+        <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      </navigation-case> 
+        <navigation-case>
+      <from-outcome>move_section</from-outcome>
+      <to-view-id>/melete/move_section.jsp</to-view-id>
+     </navigation-case>     
+        <navigation-case>
+      <from-outcome>print_module</from-outcome>
+      <to-view-id>/melete/print_module.jsp</to-view-id>
+     </navigation-case>  
+       <navigation-case>
+      <from-outcome>modules_sort</from-outcome>
+      <to-view-id>/melete/modules_sort.jsp</to-view-id>
+     </navigation-case>   
+     <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>                                                                      
+   </navigation-rule>
+   
+<!--Rule for delete_module -->   
+<navigation-rule>
+    <from-view-id>/melete/delete_module.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>delete_module</from-outcome>
+        <to-view-id>/melete/delete_module.jsp</to-view-id>
+      </navigation-case>  
+    <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case> 
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+		   <from-outcome>restore_modules</from-outcome>
+        <to-view-id>/melete/restore_modules.jsp</to-view-id>
+      </navigation-case>                                                                   
+   </navigation-rule>   
+
+
+<!--Rule for edit_module -->
+<navigation-rule>
+    <from-view-id>/melete/edit_module.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>edit_module</from-outcome>
+        <to-view-id>/melete/edit_module.jsp</to-view-id>
+      </navigation-case>
+     <navigation-case>
+		   <from-outcome>addmodulesections</from-outcome>
+        <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      </navigation-case>      
+    <navigation-case>
+		   <from-outcome>editmodulesections</from-outcome>
+        <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      </navigation-case>            
+    <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case> 
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>                                                                
+   </navigation-rule>          
+  
+<!--Rule for list_modules_inst -->  
+<navigation-rule>
+    <from-view-id>/melete/list_modules_inst.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>edit_module</from-outcome>
+        <to-view-id>/melete/edit_module.jsp</to-view-id>
+      </navigation-case>
+     <navigation-case>
+		   <from-outcome>addmodulesections</from-outcome>
+        <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+      </navigation-case>      
+    <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>         
+ <navigation-case>
+		   <from-outcome>view_module</from-outcome>
+        <to-view-id>/melete/view_module.jsp</to-view-id>
+      </navigation-case>     
+   <navigation-case>
+		   <from-outcome>view_section</from-outcome>
+        <to-view-id>/melete/view_section.jsp</to-view-id>
+      </navigation-case>              
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>                                  
+     <navigation-case>
+      <from-outcome>view_whats_next</from-outcome>
+      <to-view-id>/melete/view_whats_next.jsp</to-view-id>
+     </navigation-case>      
+     <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>   
+   </navigation-rule>       
+     
+ <!--Rule for view_module -->    
+ <navigation-rule>
+    <from-view-id>/melete/view_module.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>view_module</from-outcome>
+        <to-view-id>/melete/view_module.jsp</to-view-id>
+      </navigation-case>
+   <navigation-case>
+		   <from-outcome>view_section</from-outcome>
+        <to-view-id>/melete/view_section.jsp</to-view-id>
+      </navigation-case>   
+        <navigation-case>
+		   <from-outcome>view_whats_next</from-outcome>
+        <to-view-id>/melete/view_whats_next.jsp</to-view-id>
+      </navigation-case>              
+    <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>  
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>
+      <navigation-case>
+  	 	  <from-outcome>student_preference</from-outcome>
+    	  <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case>                                                                    
+     <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>                                                           
+
+   </navigation-rule>        
+   
+ <!--Rule for view_section -->  
+ <navigation-rule>
+    <from-view-id>/melete/view_section.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>view_module</from-outcome>
+        <to-view-id>/melete/view_module.jsp</to-view-id>
+      </navigation-case>
+   <navigation-case>
+		   <from-outcome>view_section</from-outcome>
+        <to-view-id>/melete/view_section.jsp</to-view-id>
+      </navigation-case>   
+       <navigation-case>
+		   <from-outcome>view_whats_next</from-outcome>
+        <to-view-id>/melete/view_whats_next.jsp</to-view-id>
+      </navigation-case>             
+    <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>  
+     <navigation-case>
+		   <from-outcome>add_bookmark</from-outcome>
+        <to-view-id>/melete/add_bookmark.jsp</to-view-id>
+      </navigation-case> 
+       <navigation-case>
+      <from-outcome>student_preference</from-outcome>
+      <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case>                                                               
+      <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>                                                             
+   </navigation-rule>     
+   
+<!--Rule for view_whats_next -->  
+ <navigation-rule>
+    <from-view-id>/melete/view_whats_next.jsp</from-view-id>
+    <navigation-case>
+		   <from-outcome>view_module</from-outcome>
+        <to-view-id>/melete/view_module.jsp</to-view-id>
+      </navigation-case>
+   <navigation-case>
+		   <from-outcome>view_section</from-outcome>
+        <to-view-id>/melete/view_section.jsp</to-view-id>
+      </navigation-case>   
+      <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>   
+      <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case> 
+     <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>        
+      <navigation-case>
+      <from-outcome>student_preference</from-outcome>
+      <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>                                                                                             
+   </navigation-rule>     
+   
+         
+<!--Rule for list_modules_student -->         
+<navigation-rule>
+    <from-view-id>/melete/list_modules_student.jsp</from-view-id>         
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>         
+      <navigation-case>
+      <from-outcome>student_preference</from-outcome>
+      <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case>  
+     <navigation-case>
+      <from-outcome>view_whats_next</from-outcome>
+      <to-view-id>/melete/view_whats_next.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+		   <from-outcome>view_module</from-outcome>
+        <to-view-id>/melete/view_module.jsp</to-view-id>
+      </navigation-case>     
+     <navigation-case>
+		   <from-outcome>view_section</from-outcome>
+        <to-view-id>/melete/view_section.jsp</to-view-id>
+      </navigation-case>                                                                  
+    
+     <navigation-case>
+		   <from-outcome>list_bookmarks</from-outcome>
+        <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+      </navigation-case>                                                            
+
+   </navigation-rule>             
+
+   <navigation-rule>
+		<from-view-id>/melete/importexportmodules.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>importexportmodules</from-outcome>
+			<to-view-id>/melete/importexportmodules.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>modules_author_manage</from-outcome>
+			<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 	
+			
+   </navigation-rule>            
+
+<navigation-rule>
+		<from-view-id>/melete/author_preference.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>pref_editor</from-outcome>
+			<to-view-id>/melete/pref_editor.jsp</to-view-id>
+		</navigation-case>
+		 <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+			<from-outcome>confirm_license</from-outcome>
+			<to-view-id>/melete/confirm_license.jsp</to-view-id>
+	</navigation-case>
+     <navigation-case>
+			<from-outcome>modules_author_manage</from-outcome>
+			<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>   
+       <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                      
+ </navigation-rule>      
+   
+ <navigation-rule>
+	<from-view-id>/melete/confirm_license.jsp</from-view-id>
+		 <navigation-case>
+      		<from-outcome>author_preference</from-outcome>
+      		<to-view-id>/melete/author_preference.jsp</to-view-id>
+     	</navigation-case> 
+        <navigation-case>
+			<from-outcome>modules_author_manage</from-outcome>
+			<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+ 	       <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+    	    <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>   
+       <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        	<to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                      
+ </navigation-rule> 
+   
+   <navigation-rule>
+		<from-view-id>/melete/pref_editor.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>pref_editor</from-outcome>
+			<to-view-id>/melete/pref_editor.jsp</to-view-id>
+		</navigation-case>
+		 <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+			<from-outcome>modules_author_manage</from-outcome>
+			<to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>    	
+ </navigation-rule>  
+ 
+<navigation-rule>
+    <from-view-id>/melete/move_section.jsp</from-view-id>   
+     <navigation-case>
+		   <from-outcome>move_section</from-outcome>
+        <to-view-id>/melete/move_section.jsp</to-view-id>
+      </navigation-case>  
+    <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case>        
+       <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                 
+   <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>  
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>                                                               
+   </navigation-rule>  
+ 
+ <navigation-rule>
+		<from-view-id>/melete/student_preference.jsp</from-view-id>
+		 <navigation-case>
+      <from-outcome>student_preference</from-outcome>
+      <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case>   
+       <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>                                      
+ </navigation-rule>     
+ 
+ <navigation-rule>
+		<from-view-id>/melete/add_bookmark.jsp</from-view-id> 
+     <navigation-case>
+      <from-outcome>confirm_bookmark</from-outcome>
+      <to-view-id>/melete/confirm_bookmark.jsp</to-view-id>
+     </navigation-case>                                    
+ </navigation-rule>   
+ 
+ <navigation-rule>
+		<from-view-id>/melete/list_bookmarks.jsp</from-view-id>
+		 <navigation-case>
+      <from-outcome>view_section</from-outcome>
+      <to-view-id>/melete/view_section.jsp</to-view-id>
+     </navigation-case>  
+      <navigation-case>
+      <from-outcome>view_module</from-outcome>
+      <to-view-id>/melete/view_module.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+      <from-outcome>view_whats_next</from-outcome>
+      <to-view-id>/melete/view_whats_next.jsp</to-view-id>
+     </navigation-case> 
+      <navigation-case>
+      <from-outcome>editmodulesections</from-outcome>
+      <to-view-id>/melete/editmodulesections.jsp</to-view-id>
+     </navigation-case>      
+      <navigation-case>
+      <from-outcome>delete_bookmark</from-outcome>
+      <to-view-id>/melete/delete_bookmark.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>   
+      <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case> 
+     <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>        
+      <navigation-case>
+      <from-outcome>student_preference</from-outcome>
+      <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case> 
+     <navigation-case>
+      <from-outcome>list_bookmarks</from-outcome>
+      <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+     </navigation-case>                                
+ </navigation-rule>   
+ 
+ <navigation-rule>
+		<from-view-id>/melete/delete_bookmark.jsp</from-view-id>
+		 <navigation-case>
+      <from-outcome>list_bookmarks</from-outcome>
+      <to-view-id>/melete/list_bookmarks.jsp</to-view-id>
+     </navigation-case>      
+     <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>          
+    <navigation-case>
+		   <from-outcome>list_modules_student</from-outcome>
+        <to-view-id>/melete/list_modules_student.jsp</to-view-id>
+      </navigation-case>   
+      <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case> 
+     <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>        
+      <navigation-case>
+      <from-outcome>student_preference</from-outcome>
+      <to-view-id>/melete/student_preference.jsp</to-view-id>
+     </navigation-case>                                  
+ </navigation-rule>  
+ 
+ <navigation-rule>
+		<from-view-id>/melete/add_special_access.jsp</from-view-id> 
+     <navigation-case>
+      <from-outcome>list_special_access</from-outcome>
+      <to-view-id>/melete/list_special_access.jsp</to-view-id>
+     </navigation-case>     
+     <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>           
+      <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case> 
+     <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>                                      
+ </navigation-rule>   
+ 
+ <navigation-rule>
+		<from-view-id>/melete/list_special_access.jsp</from-view-id>  
+     <navigation-case>
+      <from-outcome>add_special_access</from-outcome>
+      <to-view-id>/melete/add_special_access.jsp</to-view-id>
+     </navigation-case>  		 
+      <navigation-case>
+      <from-outcome>delete_special_access</from-outcome>
+      <to-view-id>/melete/delete_special_access.jsp</to-view-id>
+     </navigation-case>   
+     <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>           
+      <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case> 
+     <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>                             
+ </navigation-rule>   
+ 
+ <navigation-rule>
+		<from-view-id>/melete/delete_special_access.jsp</from-view-id>
+		 <navigation-case>
+      <from-outcome>list_special_access</from-outcome>
+      <to-view-id>/melete/list_special_access.jsp</to-view-id>
+     </navigation-case>   
+     <navigation-case>
+		   <from-outcome>list_modules_inst</from-outcome>
+        <to-view-id>/melete/list_modules_inst.jsp</to-view-id>
+      </navigation-case>           
+      <navigation-case>
+		   <from-outcome>list_auth_modules</from-outcome>
+        <to-view-id>/melete/list_auth_modules.jsp</to-view-id>
+      </navigation-case> 
+     <navigation-case>
+		   <from-outcome>modules_author_manage</from-outcome>
+        <to-view-id>/melete/modules_author_manage.jsp</to-view-id>
+      </navigation-case>    
+       <navigation-case>
+      <from-outcome>author_preference</from-outcome>
+      <to-view-id>/melete/author_preference.jsp</to-view-id>
+     </navigation-case>                                          
+ </navigation-rule>  
+<!-- remove Components and render-kit by rashmi as samigo tag is no longer used-->
+ 
+</faces-config>

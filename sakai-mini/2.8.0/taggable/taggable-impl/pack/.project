@@ -1,0 +1,16 @@
+<projectDescription>
+  <name>sakai-taggable-pack</name>
+  <comment/>
+  <projects>
+    <project>sakai-taggable-hbm</project>
+    <project>sakai-taggable-impl</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

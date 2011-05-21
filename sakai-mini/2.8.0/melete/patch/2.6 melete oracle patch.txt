@@ -1,0 +1,298 @@
+Index: HibernateUtil.java
+===================================================================
+--- HibernateUtil.java	(revision 9835)
++++ HibernateUtil.java	(working copy)
+@@ -24,6 +24,8 @@
+ 
+ package org.etudes.component.app.melete;
+ import java.io.Serializable;
++import java.util.Iterator;
++import java.util.Map;
+ 
+ import org.hibernate.HibernateException;
+ import org.hibernate.Session;
+@@ -69,4 +71,47 @@
+ 		public void setSessionFactory(SessionFactory sessionFactory) {
+ 			this.sessionFactory = sessionFactory;
+ 		}
+-}		
+\ No newline at end of file
++
++		// These are needed for oracle... 
++		
++		public void ensureModuleHasNonNulls(Module mod)
++		{
++			Map sections = mod.getSections(); 
++			if (sections != null && sections.size() > 0)
++			{
++				Iterator iter = sections.keySet().iterator(); 
++				
++				while (iter.hasNext())
++				{
++					Object key; 
++					Section cur;  
++					
++					key = iter.next(); 
++					cur = (Section) sections.get(key); 
++					ensureSectionHasNonNull(cur);
++				}
++			}
++			if (null == mod.getCreatedByFname())
++			{
++				mod.setCreatedByFname("");
++			}
++			if (null == mod.getCreatedByFname())
++			{
++				mod.setCreatedByFname("");
++			}
++
++		}
++		
++		public void ensureSectionHasNonNull(Section sec)
++		{
++			if (null == sec.getCreatedByFname() )
++			{
++				sec.setCreatedByFname("");
++			}
++
++			if (null == sec.getCreatedByLname() )
++			{
++				sec.setCreatedByLname("");
++			}
++		}
++}	
+\ No newline at end of file
+Index: SectionDB.java
+===================================================================
+--- SectionDB.java	(revision 9835)
++++ SectionDB.java	(working copy)
+@@ -96,6 +96,13 @@
+ 			  section.setModificationDate(new java.util.Date());
+ 			  section.setModuleId(module.getModuleId().intValue());
+ 			  section.setDeleteFlag(false);
++				
++				/*
++			   * Since Oracle silently transforms "" to nulls, we need to check to see if 
++			   * these non null properties are in fact null. 
++			   */
++
++			  hibernateUtil.ensureSectionHasNonNull(section);
+ 			  	// save object
+ 			  if (!session.isOpen()) {
+ 				  session = hibernateUtil.currentSession();
+@@ -164,6 +171,9 @@
+ 			  // set default values for not-null fields
+ 			  section.setCreationDate(new java.util.Date());
+ 			  section.setModificationDate(new java.util.Date());
++
++			  hibernateUtil.ensureSectionHasNonNull(section);
++
+ 	 	  	  // save object
+ 	 	  	  if (!session.isOpen()) session = hibernateUtil.currentSession();
+ 			  session.evict(section);
+@@ -207,7 +217,9 @@
+ 	         Transaction tx = null;
+ 			try
+ 			{
+-			  // set default values for not-null fields
++			  hibernateUtil.ensureSectionHasNonNull(section);
++				
++				// set default values for not-null fields
+ 				SectionResource secResource = (SectionResource)section.getSectionResource();
+ 				if(secResource == null)
+ 					secResource = new SectionResource();
+@@ -279,6 +291,8 @@
+ 		       try
+ 		       	{
+ 		    	   tx = session.beginTransaction();
++						 
++						 hibernateUtil.ensureSectionHasNonNull(sec);
+ 
+ 		    	   secRes = (SectionResource) sec.getSectionResource();
+ 
+@@ -751,6 +765,8 @@
+ 	         Transaction tx = null;
+ 			try
+ 			{
++				hibernateUtil.ensureSectionHasNonNull(section);
++				
+ 				SectionResource secResource = (SectionResource)section.getSectionResource();
+ 				if (secResource == null) secResource = new  SectionResource();
+ 				// set secResource fields
+@@ -805,6 +821,8 @@
+ 	         Transaction tx = null;
+ 			try
+ 			{
++				hibernateUtil.ensureSectionHasNonNull(section);
++				
+ 				SectionResource secResource = (SectionResource)section.getSectionResource();
+ 				if (secResource == null) secResource = new  SectionResource();
+ 				// set secResource fields
+@@ -931,6 +949,8 @@
+ 	         Transaction tx = null;
+ 			try
+ 			{
++				hibernateUtil.ensureSectionHasNonNull(section);
++				
+ 				// delete SectionResource
+ 				tx = session.beginTransaction();
+ 				section.setSectionResource(null);
+@@ -973,6 +993,8 @@
+ 	         Transaction tx = null;
+ 			try
+ 			{
++				hibernateUtil.ensureSectionHasNonNull(section);
++				
+ 				// set secResource fields
+ 				secResource.setSection(section);
+ 				secResource.setSectionId(section.getSectionId());
+@@ -1146,7 +1168,7 @@
+ 						+ "AND secResource.resource.resourceId=:resourceId";
+ 
+ 				tx = session.beginTransaction();
+-
++				
+ 				int delResources = session.createQuery(queryString).setString("courseId", courseId).setString("resourceId", delResourceId)
+ 						.executeUpdate();
+ 
+Index: ModuleServiceImpl.java
+===================================================================
+--- ModuleServiceImpl.java	(revision 9835)
++++ ModuleServiceImpl.java	(working copy)
+@@ -606,6 +606,7 @@
+ 	 * processLicenseInformation) WITH THE ORACLE VERSION. THE ORACLE VERSION IS LOCATED
+ 	 * AT /patch/migrate_oracle.txt
+ 	 */
++	 /* 20080408 mjw - brought in oracle methods for UCD */
+ 	public int migrateMeleteDocs(String meleteDocsDir) throws Exception
+ 	{
+ 		Connection dbConnection = null;
+@@ -677,17 +678,18 @@
+ 			List colNames = null;
+ 			if (rs != null){
+ 			  colNames = new ArrayList();
+-			  colNames.add(new String("melete_module_bkup.module_id"));
+-			  colNames.add(new String("melete_module_bkup.license_code"));
+-			  colNames.add(new String("melete_module_bkup.cc_license_url"));
+-			  colNames.add(new String("melete_module_bkup.req_attr"));
+-			  colNames.add(new String("melete_module_bkup.allow_cmrcl"));
+-			  colNames.add(new String("melete_module_bkup.allow_mod"));
+-			  colNames.add(new String("melete_module_bkup.created_by_fname"));
+-			  colNames.add(new String("melete_module_bkup.created_by_lname"));
+-			  colNames.add(new String("melete_module_bkup.creation_date"));
+-			  colNames.add(new String("melete_course_module.course_id"));
++				colNames.add(new String("module_id"));
++				colNames.add(new String("license_code"));
++				colNames.add(new String("cc_license_url"));
++				colNames.add(new String("req_attr"));
++				colNames.add(new String("allow_cmrcl"));
++				colNames.add(new String("allow_mod"));
++				colNames.add(new String("created_by_fname"));
++				colNames.add(new String("created_by_lname"));
++				colNames.add(new String("creation_date"));
++				colNames.add(new String("course_id"));
+ 
++
+ 			  modList = toList(rs, colNames);
+ 			}
+ 
+@@ -700,9 +702,13 @@
+ 	    	{
+ 	    		logger.info("NUMBER OF MODULES IN THIS DATABASE IS "+modList.size());
+ 	    		for (ListIterator i = modList.listIterator(); i.hasNext(); ) {
+-	    			Map modMap = (LinkedHashMap)i.next();
+-	    		    modId = ((Integer)modMap.get("melete_module_bkup.module_id")).intValue();
+-	    		    courseId = (String)modMap.get("melete_course_module.course_id");
++	    			//Map modMap = (LinkedHashMap)i.next();
++	    		    //modId = ((Integer)modMap.get("melete_module_bkup.module_id")).intValue();
++	    		    //courseId = (String)modMap.get("melete_course_module.course_id");
++							
++							Map modMap = (LinkedHashMap)i.next();
++							modId = ((java.math.BigDecimal)modMap.get("module_id")).intValue();
++							courseId = (String)modMap.get("course_id");
+ 
+                     SubSectionUtilImpl ssuImpl = new SubSectionUtilImpl();
+           	        stmt = dbConnection.createStatement();
+@@ -916,24 +922,33 @@
+ 	{
+ 		String[] result = new String[2];
+ 		GregorianCalendar cal = new GregorianCalendar();
+-		int licenseCodes = ((Integer)modMap.get("melete_module_bkup.license_code")).intValue();
+-		String copyrightOwner = (String)modMap.get("melete_module_bkup.created_by_fname")+" "+(String)modMap.get("melete_module_bkup.created_by_lname");
+-		cal.setTime((Date)modMap.get("melete_module_bkup.creation_date"));
++		int licenseCodes = ((java.math.BigDecimal)modMap.get("license_code")).intValue();
++		String copyrightOwner = (String)modMap.get("created_by_fname")+" "+(String)modMap.get("created_by_lname");
++		cal.setTime((Date)modMap.get("creation_date"));
+ 		String copyrightYear = String.valueOf(cal.get(Calendar.YEAR));
+ 		 if(licenseCodes == CC_CODE)
+ 		 	{
+-		 		meleteSectionResource.setCcLicenseUrl((String)modMap.get("melete_module_bkup.cc_license_url"));
++		 		meleteSectionResource.setCcLicenseUrl((String)modMap.get("cc_license_url"));
+ 		 		meleteSectionResource.setLicenseCode(licenseCodes);
+ 		 		meleteSectionResource.setReqAttr(true);
+-		 		meleteSectionResource.setAllowCmrcl(((Boolean)modMap.get("melete_module_bkup.allow_cmrcl")).booleanValue());
+-		 		meleteSectionResource.setAllowMod(((Integer)modMap.get("melete_module_bkup.allow_mod")).intValue());
++		 		
++				if(modMap.get("allow_cmrcl").toString().equals("1")) {
++					meleteSectionResource.setAllowCmrcl(true);
++				} else {
++					meleteSectionResource.setAllowCmrcl(false);
++				}
++
++		 		//meleteSectionResource.setAllowCmrcl(((Boolean)modMap.get("allow_cmrcl")).booleanValue());
++		 		//meleteSectionResource.setAllowMod(((Integer)modMap.get("allow_mod")).intValue());
++				meleteSectionResource.setAllowMod(((java.math.BigDecimal)modMap.get("allow_mod")).intValue());
++
+ 		 		meleteSectionResource.setCopyrightOwner(copyrightOwner);
+ 		 		meleteSectionResource.setCopyrightYear(copyrightYear);
+ 		 	}
+ 		 else if(licenseCodes == PD_CODE)
+ 		 {
+ 
+-	 	  	meleteSectionResource.setCcLicenseUrl((String)modMap.get("melete_module_bkup.cc_license_url"));
++	 	  	meleteSectionResource.setCcLicenseUrl((String)modMap.get("cc_license_url"));
+ 	 	  	meleteSectionResource.setLicenseCode(licenseCodes);
+ 	 	  	meleteSectionResource.setReqAttr(false);
+ 	 	  	meleteSectionResource.setAllowCmrcl(false);
+Index: ModuleDB.java
+===================================================================
+--- ModuleDB.java	(revision 9835)
++++ ModuleDB.java	(working copy)
+@@ -261,7 +261,13 @@
+ 	 */
+ 	public void addModule(Module module, ModuleShdates moduleshowdates, String userId, String courseId) throws Exception
+ 	{
++		/*
++   	 * Since Oracle silently transforms "" to nulls, we need to check to see if 
++		 * these non null properties are in fact null. 
++		 */
+ 
++		hibernateUtil.ensureModuleHasNonNulls(module);
++
+ 	try{
+ 	     Session session = hibernateUtil.currentSession();
+            Transaction tx = null;
+@@ -885,12 +891,23 @@
+ 
+ 	 public void updateModule(Module mod) throws Exception
+ 	 {
++	 
++	  hibernateUtil.ensureModuleHasNonNulls(mod);
+ 	 	Transaction tx = null;
+ 	 	try
+ 		{
+ 
+ 	      Session session = hibernateUtil.currentSession();
+ 
++		  if (null == mod.getCreatedByFname())
++		  {
++			  mod.setCreatedByFname("");
++		  }
++		  
++		  if (null == mod.getCreatedByLname())
++		  {
++			  mod.setCreatedByLname("");
++		  }
+ 	      tx = session.beginTransaction();
+ 
+ 	      //Update module properties

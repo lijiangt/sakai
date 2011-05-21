@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+ ***********************************************************************************
+ * $URL$
+ * $Id$  
+ ***********************************************************************************
+ *
+ * Copyright (c) 2008 Etudes, Inc.
+ *
+ * Portions completed before September 1, 2008 Copyright (c) 2004, 2005, 2006, 2007, 2008 Foothill College, ETUDES Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ *
+ **********************************************************************************
+-->
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="org.etudes.component.app.melete.Section" table="melete_section" >
+ <id name="sectionId" column="SECTION_ID" type="int" unsaved-value="null">
+      <generator class="hilo"/>
+    </id>
+     <!--many to one module id many to one or foreign key-->
+	 <version name="version" column="VERSION" />   
+     <property name="moduleId" column="MODULE_ID"  type="int"  not-null="true"/>
+    <property name="title" column="TITLE" type="string"  length="255" not-null="true"/>
+	<property name="createdByFname" column="CREATED_BY_FNAME" type="string"  length="50" not-null="true"/>
+	<property name="createdByLname" column="CREATED_BY_LNAME" type="string"   length="50" not-null="true"/>
+	<property name="modifiedByFname" column="MODIFIED_BY_FNAME" type="string"  length="50"/>
+	<property name="modifiedByLname" column="MODIFIED_BY_LNAME" type="string"   length="50" />
+	<property name="instr" column="INSTR" type="string" length="250" />		
+	<property name="contentType" column="CONTENT_TYPE" type="string"  length="10" not-null="true"/>			
+	<property name="audioContent" column="AUDIO_CONTENT" type="boolean"/>		
+	<property name="videoContent" column="VIDEO_CONTENT" type="boolean"/>		
+	<property name="textualContent" column="TEXTUAL_CONTENT" type="boolean"/>
+	<property name="openWindow" column="OPEN_WINDOW" type="boolean" />	
+	<property name="deleteFlag" column="DELETE_FLAG" type="boolean" />				
+	<property name="creationDate"  column="CREATION_DATE"  type="timestamp" not-null="true"/>			
+	<property name="modificationDate"  column="MODIFICATION_DATE"  type="timestamp"  not-null="true"/>
+	<many-to-one name="module"  class="org.etudes.component.app.melete.Module" insert="false" update="false" column="MODULE_ID"  lazy="false"/>
+	<one-to-one name="sectionResource" class="org.etudes.component.app.melete.SectionResource"/>	
+	</class>
+</hibernate-mapping>

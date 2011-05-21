@@ -1,0 +1,20 @@
+<projectDescription>
+  <name>sakai-presence-tool</name>
+  <comment/>
+  <projects>
+    <project>sakai-courier-api</project>
+    <project>sakai-courier-util</project>
+    <project>sakai-presence-api</project>
+    <project>sakai-presence-util</project>
+    <project>sakai-velocity-tool</project>
+    <project>sakai-velocity-tool-api</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

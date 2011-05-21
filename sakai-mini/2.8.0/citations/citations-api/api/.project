@@ -1,0 +1,13 @@
+<projectDescription>
+  <name>sakai-citations-api</name>
+  <comment>This project creates the general APIs used by the Sakai Citations Helper</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
