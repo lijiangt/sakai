@@ -983,7 +983,6 @@ width:auto !important
 }
 
 
-
 /*PORTAL THINGS*/
 
 /*below for "presence in chat" functionality*/
@@ -991,15 +990,16 @@ width:auto !important
 	background:#fff
 }
 .presenceList{
-	font-size: .8em;
-	list-style: none;
+	font-size: .9em;
+	list-style: none outside none;
 	margin: 0;
-	padding-left: .1em;
+	padding-left: 0;
 }
 
 .presenceList li {
-	padding: 0 0 0 .7em;
+	padding-left: 10px;
 	margin-bottom: .2em;
+	text-align: left;
 }
 
 /*see presense list when one member is in chat room*/
@@ -1013,7 +1013,7 @@ width:auto !important
 }
 .login td.logo{
 	width: 11em;
-	background:#fff url(images/logo_inst.gif) 1em 1em no-repeat
+	background:#fff url(images/logo_inst2.gif) 1em 1em no-repeat
 }
 
 /* Make a list based css menu */
@@ -1145,4 +1145,10 @@ ul.makeMenu li.menuClose a:hover {
                 margin-top: 4em;
                 border: 3px solid #eee;
                 padding: 2em;
+}
+
+
+
+div.checkbox td label{
+	margin-left: 15px;
 }
