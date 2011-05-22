@@ -153,6 +153,14 @@
                 <enabled>true</enabled>
             </releases>
         </pluginRepository>
+
+        <pluginRepository>
+            <id>Jboss Plugin Repo</id>
+            <url>http://repository.jboss.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
     </pluginRepositories>
     
     <repositories>
@@ -216,6 +224,15 @@
             <name>Maven Repository Switchboard</name>
             <layout>default</layout>
             <url>http://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>default</id>
+            <name>Jboss Maven Repo</name>
+            <layout>default</layout>
+            <url>http://repository.jboss.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
