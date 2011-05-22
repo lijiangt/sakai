@@ -47,7 +47,9 @@
         <module>sitestats-impl</module>
         <module>sitestats-impl-hib</module>
         <module>sitestats-pack</module>
+<!--
         <module>sitestats-tool</module>
+-->
         <module>sitestats-help</module>
         <module>sitestats-assembly</module>
     </modules>
