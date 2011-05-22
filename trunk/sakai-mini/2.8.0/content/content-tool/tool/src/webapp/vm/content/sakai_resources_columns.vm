@@ -24,7 +24,8 @@
 		$tlang.getString("list.site")
 		| <a href="#toolLink("ResourcesAction" "doShow_webdav")" title="$tlang.getString('dav.webdav')">$tlang.getString("dav.webdav")</a> 
 		#if($showPermissions)
-		| <a href="#toolLinkParam("ResourcesAction" "doPermissions" "collectionId=$validator.escapeUrl(${site.id})")" title="$tlang.getString('list.sPerm')">$tlang.getString("list.sPerm")</a>
+    ##  //lijt added: not display permissions on bar
+	##	| <a href="#toolLinkParam("ResourcesAction" "doPermissions" "collectionId=$validator.escapeUrl(${site.id})")" title="$tlang.getString('list.sPerm')">$tlang.getString("list.sPerm")</a> 
 		#end
 		| <a href="#toolLink("ResourcesAction" "doHierarchy")" title="$tlang.getString('list.hierarchy')">$tlang.getString("list.hierarchy")</a> 
 	</div>

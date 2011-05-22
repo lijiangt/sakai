@@ -144,6 +144,7 @@
                     <classifier>tomcat-overlay</classifier>
                     <type>zip</type>
                 </dependency>
+<!--
                 <dependency>
                     <groupId>org.sakaiproject.search</groupId>
                     <artifactId>search-assembly</artifactId>
@@ -151,6 +152,7 @@
                     <classifier>tomcat-overlay</classifier>
                     <type>zip</type>
                 </dependency>
+-->
                 <dependency>
                     <groupId>org.sakaiproject.shortenedurl</groupId>
                     <artifactId>shortenedurl-assembly</artifactId>

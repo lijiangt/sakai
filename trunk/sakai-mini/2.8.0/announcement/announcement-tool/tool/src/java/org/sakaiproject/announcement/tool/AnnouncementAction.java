@@ -4057,7 +4057,8 @@ public class AnnouncementAction extends PagedResourceActionII
 			// add permissions, if allowed
 			if (menu_permissions)
 			{
-				bar.add(new MenuEntry(rb.getString("java.permissions"), PERMISSIONS_BUTTON_HANDLER));
+				//lijt added: not display permissions on bar
+//				bar.add(new MenuEntry(rb.getString("java.permissions"), PERMISSIONS_BUTTON_HANDLER));
 			}
 		}
 		
