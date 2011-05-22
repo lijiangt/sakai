@@ -7528,7 +7528,8 @@ extends VelocityPortletStateAction
 		// add permissions, if allowed
 		if (SiteService.allowUpdateSite(ToolManager.getCurrentPlacement().getContext()))
 		{
-			bar.add( new MenuEntry(rb.getString("java.permissions"), "doPermissions") );
+			//lijt added: not display permissions on bar
+//			bar.add( new MenuEntry(rb.getString("java.permissions"), "doPermissions") );
 		}
 		
 		// Set menu state attribute
