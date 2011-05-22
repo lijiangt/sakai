@@ -105,7 +105,7 @@ site types are a local setting - adjust */
 /*wrapper for footer blocks*/
 #footer{
 	color: #000;
-	font-size: x-small;
+	font-size: 12px;
 	margin: 0px;
 	padding: 0;
 	width: auto;
@@ -756,9 +756,11 @@ page estate
 
 /*wrapper for title of iframe ("Users present")*/
 #presenceTitle{
-	font-size: .7em;
-	text-align: right;
 	margin-right: .5em;
+    font-size: 1em;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+    text-align: center;
 }
 
 /*of presence iframe*/
