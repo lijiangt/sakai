@@ -6,11 +6,13 @@
 					action="#{ChatTool.processActionAddRoom}" immediate="true">
 					<h:outputText value="#{msgs.add_room}" />
 				</h:commandLink>
+				<%--
 				<h:commandLink rendered="#{ChatTool.maintainer}"
                 action="#{ChatTool.processActionPermissions}">
                 <h:outputText
                     value="#{msgs.permis}" />
             </h:commandLink>
+             --%>
 			</sakai:tool_bar>
 			
 			<sakai:view_title value="#{msgs.room_list_title}"/>  	

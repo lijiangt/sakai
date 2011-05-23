@@ -20,11 +20,13 @@
             <h:commandLink action="#{ChatTool.processActionListRooms}" rendered="#{ChatTool.siteChannelCount > 1}">
                <h:outputText value="#{msgs.change_room}" />
             </h:commandLink>
+            <%-- 
             <h:commandLink rendered="#{ChatTool.maintainer}"
                 action="#{ChatTool.processActionPermissions}">
                 <h:outputText
                     value="#{msgs.permis}" />
             </h:commandLink>
+            --%>
          </sakai:tool_bar>
             	
          <sakai:view_title value="#{ChatTool.viewingChatRoomText}"/>
