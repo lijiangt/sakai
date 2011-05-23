@@ -138,6 +138,7 @@
 
                 <module>sam</module>
                 <module>sitestats</module>
+                <module>search</module>
 
                 <module>melete</module>
                 <module>jforum</module>
