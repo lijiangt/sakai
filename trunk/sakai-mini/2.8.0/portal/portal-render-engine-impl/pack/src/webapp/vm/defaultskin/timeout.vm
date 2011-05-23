@@ -1,4 +1,4 @@
-<div id="timeout_alert_body" title="Timeout Alert" class="portletMainWrap">
+<div id="timeout_alert_body" title="&#36229;&#26102;&#35686;&#21578;" class="portletMainWrap">
 <br/>
 <p>
 ${rloader.timeout_dialog_warning_message}
