@@ -47,7 +47,6 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.index.TermFreqVector;
 import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.Filter;
@@ -57,7 +56,6 @@ import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Sort;
 import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.store.Directory;
-import org.apache.lucene.util.Version;
 import org.sakaiproject.component.cover.ServerConfigurationService;
 import org.sakaiproject.event.api.EventTrackingService;
 import org.sakaiproject.event.api.NotificationEdit;
@@ -79,6 +77,7 @@ import org.sakaiproject.search.util.DidYouMeanParser;
 import org.sakaiproject.tool.api.SessionManager;
 import org.sakaiproject.user.api.User;
 import org.sakaiproject.user.api.UserDirectoryService;
+import org.wltea.analyzer.lucene.IKQueryParser;
 
 /**
  * The search service
@@ -329,9 +328,9 @@ public abstract class BaseSearchServiceImpl implements SearchService
 		{
 			BooleanQuery query = new BooleanQuery();
 
-			QueryParser qp = new QueryParser(Version.LUCENE_29,SearchService.FIELD_CONTENTS, getAnalyzer());
-			Query textQuery = qp.parse(searchTerms);
-			                       
+//			QueryParser qp = new QueryParser(Version.LUCENE_29,SearchService.FIELD_CONTENTS, getAnalyzer());
+//			Query textQuery = qp.parse(searchTerms);
+			Query textQuery = IKQueryParser.parse(SearchService.FIELD_CONTENTS,searchTerms);                    
 		    // Support cross context searches
 			if (contexts != null && contexts.size() > 0)
 			{
@@ -441,10 +440,10 @@ public abstract class BaseSearchServiceImpl implements SearchService
 			}
 
 		}
-		catch (ParseException e)
-		{
-			throw new InvalidSearchQueryException("Failed to parse Query ", e); //$NON-NLS-1$
-		}
+//		catch (ParseException e)
+//		{
+//			throw new InvalidSearchQueryException("Failed to parse Query ", e); //$NON-NLS-1$
+//		}
 		catch (IOException e)
 		{
 			throw new RuntimeException("Failed to run Search ", e); //$NON-NLS-1$
