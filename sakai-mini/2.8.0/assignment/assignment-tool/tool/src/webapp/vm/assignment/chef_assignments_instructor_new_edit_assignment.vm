@@ -116,9 +116,9 @@ $(document).ready(function() {
 			</li>
 		#end
 		#if ($allowUpdateSite)
-			<li  role="menuitem">
-				<span><a href="#" title="$tlang.getString('permis')" onclick="javascript:document.newAssignmentForm.onsubmit();document.getElementById('option').value='permissions';document.newAssignmentForm.submit();return false;">$tlang.getString('permis')</a></span>
-			</li>	
+##			<li  role="menuitem">
+##				<span><a href="#" title="$tlang.getString('permis')" onclick="javascript:document.newAssignmentForm.onsubmit();document.getElementById('option').value='permissions';document.newAssignmentForm.submit();return false;">$tlang.getString('permis')</a></span>
+##			</li>	
 		#end
 	</ul>
 	<h3>
