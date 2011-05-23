@@ -205,11 +205,12 @@
     class="org.sakaiproject.search.index.impl.SearchAnalyzerFactory" 
     init-method="init"
     >
-    <property name="defaultAnalyzerFactory"><ref bean="snowballSearchAnalyzerImpl" /></property>
+    <property name="defaultAnalyzerFactory"><ref bean="ikSearchAnalyzerImpl" /></property>
     <property name="analyzerFactoryName"><value>filesystem</value></property>    
     <property name="currentAnalyzers">
       <map>
         <entry key="snowball"><ref bean="snowballSearchAnalyzerImpl"/></entry>
+        <entry key="ik"><ref bean="ikSearchAnalyzerImpl"/></entry>
       </map>
     </property>
   </bean>
@@ -217,9 +218,12 @@
   <bean id="snowballSearchAnalyzerImpl" 
     class="org.sakaiproject.search.index.impl.SnowballAnalyzerFactory" 
     >
-    
   </bean>
   
+    <bean id="ikSearchAnalyzerImpl" 
+    class="org.sakaiproject.search.index.impl.IkAnalyzerFactory" 
+    >
+  </bean> 
   
   <!--
   ==============================RESULT FILTERS===============================
