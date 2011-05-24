@@ -54,11 +54,11 @@
 			</label>
 			<input type="password" name="pw0" id="pw0"/>
 		</p>
-		<p class="shorttext">
+		<p class="shorttext" style="display:none;">
 			<label for="dtype">
 				$tlang.getString("usecre.typ")
 			</label>
-			<input disabled type="text" name="dtype" id="dtype" value="$type"/>
+				<input disabled type="text" name="dtype" id="dtype" value="$type"/>
 			<input type="hidden" name="type" id="type" value="$type"/>
 		</p>
 		$!recaptchaScript
