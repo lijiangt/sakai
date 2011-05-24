@@ -681,7 +681,7 @@ SearchModel.searchByLikeWord = SELECT wm.post_id FROM jforum_search_wordmatch wm
     jforum_posts jp,jforum_forums jf,jforum_sakai_course_categories jscc \
 	WHERE jscc.course_id = ? AND jscc.categories_id = jf.categories_id AND \
 	jf.forum_id = jp.forum_id AND (jf.start_date is NULL OR jf.start_date <= curdate()) and jp.post_id = wm.post_id AND \
-	WHERE wm.word_id = w.word_id \
+	wm.word_id = w.word_id \
 	AND LOWER(w.word) LIKE LOWER(?)
 	
 SearchModel.insertTopicsIds = INSERT INTO jforum_search_results ( topic_id, session, search_time ) SELECT DISTINCT t.topic_id, ?, NOW() FROM jforum_topics t, jforum_posts p \
