@@ -30,7 +30,13 @@
 					#else
 						<div class="checkbox indnt1">
 							<input type="radio" name="siteType" id="siteType$siteTypeCount" value="$type" />
-							<label for="siteType$siteTypeCount"  style="text-transform: capitalize">$type</label>
+							<label for="siteType$siteTypeCount"  style="text-transform: capitalize">
+#if ($type == "project")
+&#39033;&#30446;&#31449;&#28857;
+    #else
+$type
+    #end
+</label>
 						</div>
 					#end
 				#end
