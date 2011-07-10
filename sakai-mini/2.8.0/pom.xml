@@ -139,7 +139,8 @@
                 <module>sam</module>
                 <module>sitestats</module>
                 <module>search</module>
-
+                <module>metaobj</module>
+                <module>osp</module>
                 <module>melete</module>
                 <module>jforum</module>
             </modules>

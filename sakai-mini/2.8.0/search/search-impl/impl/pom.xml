@@ -55,7 +55,17 @@
             </properties>
         </profile>
     </profiles>
-
+    <repositories>
+        <repository>
+            <id>bupticet-local</id>
+            <name>Bupticet Maven Local Repo</name>
+            <layout>default</layout>
+            <url>http://vpn.bupticet.com/maven2/maven2-local/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
   <build>
     <resources>
       <resource>
