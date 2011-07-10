@@ -3,9 +3,30 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.Properties;
+import java.util.Vector;
 
 public class MergeProp {
+	static class SortedProperties extends Properties {
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 3307005561712862933L;
+
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		public synchronized Enumeration keys() {
+	        Enumeration keysEnum = super.keys();
+	        Vector keyList = new Vector();
+	        while(keysEnum.hasMoreElements()){
+	            keyList.add(keysEnum.nextElement());
+	        }
+	        Collections.sort(keyList);
+	        return keyList.elements();
+	    }
+	}
+	
 	private static void merge(String path1, String path2, boolean backup,
 			boolean refFirst, boolean comment) {
 		if (backup) {
@@ -78,8 +99,8 @@ public class MergeProp {
 
 	private static Properties getMergedProp(String path1, String path2,
 			boolean refFirst, boolean comment) {
-		Properties p1 = new Properties();
-		Properties p2 = new Properties();
+		Properties p1 = new SortedProperties();
+		Properties p2 = new SortedProperties();
 		FileInputStream fis1 = null, fis2 = null;
 		try {
 			fis1 = new FileInputStream(path1);
