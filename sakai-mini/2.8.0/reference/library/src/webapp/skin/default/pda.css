@@ -807,7 +807,9 @@ background-image: url(../../image/silk/modules-menu.png);
 .icon-sakai-jforum-tool{
 background-image: url(../../image/silk/jforum-menu.png);
 }
-
+.icon-sakai-synoptic-jforum-tool{
+background-image: url(../../image/silk/jforum-menu.png);
+}
 li.icon-sakai-synoptic-announcement-item .icon-sakai-synoptic-announcement{
 	background-image: url(../../image/silk/flag_blue.png);
 }
