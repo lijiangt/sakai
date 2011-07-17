@@ -17,8 +17,6 @@
 					<h:outputText value="#{msgs.profile_public_information}"/>
 				</h4>
 				<sakai:panel_edit>
-					<h:outputLabel for="firstName" style ="shorttext" value="#{msgs.profile_first_name}"/>
-					<h:outputText id="firstName" value="#{profileBean.participant.profile.firstName}"/> 
 					<h:outputLabel for="lastName"  value="#{msgs.profile_last_name}"/>
 					<h:outputText id="lastName" value="#{profileBean.participant.profile.lastName}"/>
 					<h:outputLabel for="nick" value="#{msgs.profile_nick_name}"/>				

@@ -36,7 +36,7 @@
 					#end
 				#end
 			</p>	
-			<p class="shorttext">
+			<p class="shorttext" style="display:none;">
 				<label for="first-name">
 					$tlang.getString("usecre.firnam")
 				</label>	

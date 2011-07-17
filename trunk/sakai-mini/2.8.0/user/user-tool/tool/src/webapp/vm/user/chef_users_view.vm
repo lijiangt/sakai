@@ -28,7 +28,7 @@
 							$validator.escapeHtml($user.Eid)
 						</td>
 					</tr>
-					<tr>
+					<tr style="display:none;">
 						<th>
 							$tlang.getString("usecre.firnam")
 						</th>
