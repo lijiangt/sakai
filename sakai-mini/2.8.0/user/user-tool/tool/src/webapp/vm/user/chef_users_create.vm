@@ -22,8 +22,8 @@
 			</label>
 			#if(!$user)<input type="text" name="eid" id="eid" #if($valueEid)value="$validator.escapeHtml($valueEid)"#end/>#else$validator.escapeHtml($user.Eid)#end
 		</p>
-		<p class="shorttext">
-			<label for="first-name" style="display:none;">
+		<p class="shorttext" style="display:none;>
+			<label for="first-name"">
 				$tlang.getString("usecre.firnam")
 			</label>
 			<input type="text" name="first-name" id="first-name" #if($user)value="$validator.escapeHtml($user.FirstName)"#elseif($valueFirstName)value="$validator.escapeHtml($valueFirstName)"#end/>
