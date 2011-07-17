@@ -141,6 +141,7 @@
                 <module>search</module>
                 <module>metaobj</module>
                 <module>osp</module>
+                <module>reset-pass</module>
                 <module>melete</module>
                 <module>jforum</module>
             </modules>
