@@ -168,14 +168,14 @@ function showCal(id)
 				<#if specialAccess?exists>
 					<#list users as user>
 						<#if specialAccess.userIds?seq_contains(user.id)>
-							<option value="${user.id}" selected>${user.lastName}, ${user.firstName}</option>
+							<option value="${user.id}" selected>${user.lastName}${user.firstName}</option>
 						<#else>
-							<option value="${user.id}">${user.lastName}, ${user.firstName}</option>
+							<option value="${user.id}">${user.lastName}${user.firstName}</option>
 						</#if>
 					</#list>
 				<#else>
 					<#list users as user>
-						<option value="${user.id}">${user.lastName}, ${user.firstName}</option>
+						<option value="${user.id}">${user.lastName}${user.firstName}</option>
 					</#list>
 				</#if>
 			</select>	
