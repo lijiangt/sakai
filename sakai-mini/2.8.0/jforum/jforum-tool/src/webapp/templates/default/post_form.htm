@@ -314,7 +314,7 @@ function toggleGradeOptions(show)
 						<td class="row2" width="78%">
 							<#if pmRecipient?exists>
 								<select name="toUsername" size="1">
-									<option value="${toUserId}">${pmRecipient.lastName}, ${pmRecipient.firstName}</option>
+									<option value="${toUserId}">${pmRecipient.lastName}${pmRecipient.firstName}</option>
 								</select>
 									
 								<#assign toUsername = toUsername/>
@@ -323,7 +323,7 @@ function toggleGradeOptions(show)
 							<#elseif preview>
 								<#if toUsers?exists>
 									<select name="toUsername" size="5" multiple>
-										<#--option value="${pm.fromUser.id}">${pm.fromUser.lastName}, ${pm.fromUser.firstName}</option-->
+										<#--option value="${pm.fromUser.id}">${pm.fromUser.lastName}${pm.fromUser.firstName}</option-->
 										<#list users as user>
 											<#assign found = false/>
 											<#list toUsers as toUser>
@@ -333,9 +333,9 @@ function toggleGradeOptions(show)
 												</#if>
 											</#list>
 											<#if found>
-												<option value="${user.id}" selected>${user.lastName}, ${user.firstName}</option>
+												<option value="${user.id}" selected>${user.lastName}${user.firstName}</option>
 											<#else>
-												<option value="${user.id}">${user.lastName}, ${user.firstName}</option>
+												<option value="${user.id}">${user.lastName}${user.firstName}</option>
 											</#if>
 										</#list>
 									</select>
@@ -345,7 +345,7 @@ function toggleGradeOptions(show)
 								<#else>
 									<#-- for PM quote reply -->
 									<select name="toUsername" size="1">
-										<option value="${pm.fromUser.id}">${pm.fromUser.lastName}, ${pm.fromUser.firstName}</option>
+										<option value="${pm.fromUser.id}">${pm.fromUser.lastName}${pm.fromUser.firstName}</option>
 									</select>
 									<#assign toUsername = pm.fromUser.firstName+" "+pm.fromUser.lastName/>
 									<#assign toUserId = pm.fromUser.id/>
@@ -355,7 +355,7 @@ function toggleGradeOptions(show)
 								
 							<#elseif quote?default("") == "true" || pmReply?default(false)>
 								<select name="toUsername" size="1">
-									<option value="${pm.fromUser.id}">${pm.fromUser.lastName}, ${pm.fromUser.firstName}</option>
+									<option value="${pm.fromUser.id}">${pm.fromUser.lastName}${pm.fromUser.firstName}</option>
 								</select>
 								<#assign toUsername = pm.fromUser.firstName+" "+pm.fromUser.lastName/>
 								<#assign toUserId = pm.fromUser.id/>
@@ -364,7 +364,7 @@ function toggleGradeOptions(show)
 							<#else>
 								<select name="toUsername" size="5" multiple>
 									<#list users as user>
-										<option value="${user.id}">${user.lastName}, ${user.firstName}</option>
+										<option value="${user.id}">${user.lastName}${user.firstName}</option>
 									</#list>
 								</select>
 									
