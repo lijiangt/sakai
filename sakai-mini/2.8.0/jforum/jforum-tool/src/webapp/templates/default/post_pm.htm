@@ -229,7 +229,7 @@ function validatePostForm(f)
 						<td class="row2" width="78%">
 							<#if pmRecipient?exists>
 								<select name="toUsername" size="1">
-									<option value="${toUserId}">${pmRecipient.lastName}, ${pmRecipient.firstName}</option>
+									<option value="${toUserId}">${pmRecipient.lastName}${pmRecipient.firstName}</option>
 								</select>
 									
 								<#assign toUsername = toUsername/>
