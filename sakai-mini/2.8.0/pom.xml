@@ -144,6 +144,10 @@
                 <module>reset-pass</module>
                 <module>melete</module>
                 <module>jforum</module>
+				<module>jsf</module>
+				<module>profile</module>
+				<module>profile2</module>
+				<module>scheduler</module>
             </modules>
         </profile>
         <profile>
