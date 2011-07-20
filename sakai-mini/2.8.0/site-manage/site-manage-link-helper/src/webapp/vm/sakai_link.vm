@@ -3,7 +3,7 @@
     <div class="alertMessage">$tlang.getString("gen.alert") $validator.escapeHtml($alertMessage)</div><div style="display:block;clear:both" ></div>
 #end
 #if ($parentId)
-<p>Current Parent Site: $parentTitle ($parentId) </p>
+<p>&#24403;&#21069;&#29238;&#31449;&#28857;: $parentTitle ($parentId) </p>
         <form action="#toolForm("")" method="post" name="customizeForm" >
                 <p class="act">
                         <input type="submit" accesskey ="s" class="active" name="$doRemove" value="$tlang.getString('gen.remove')" />
