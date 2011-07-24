@@ -348,7 +348,7 @@ function resizeFrame(){
 				#if($timeType =="am") <option selected="selected">am</option> #else <option>am</option> #end
 				#if($timeType =="pm") <option selected="selected">pm</option> #else <option>pm</option> #end
 			</select>
-         $timezone
+##         $timezone
 		</p>	
 		<p class="shorttext">
 			<label for="duHour">
@@ -462,7 +462,7 @@ function resizeFrame(){
 			  <option selected="selected" value="am">am</option>
 			  <option value="pm">pm</option>
 			</select>
-         $timezone
+##         $timezone
 		</p>
 		<div class="longtext">
 			<label for="xbody" class="block">
