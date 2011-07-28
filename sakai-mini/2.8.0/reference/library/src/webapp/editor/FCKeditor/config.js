@@ -95,7 +95,24 @@ FCKConfig.TemplateReplaceAll = true ;
 FCKConfig.TemplateReplaceCheckbox = true ;
 
 FCKConfig.ToolbarLocation = 'In' ;
+FCKConfig.MediaPlayer = '/library/editor/FCKeditor/editor/mediaplayer.swf';
+if(typeof parent.FCKeditorMediaEnable != 'undefined' && parent.FCKeditorMediaEnable){
+	//alert(parent.FCKeditorMediaEnable);
+	FCKConfig.Plugins.Add('media','zh-cn,en') ;
 
+	FCKConfig.ToolbarSets["Default"] = [
+        ['Source','DocProps','Templates'],
+        ['Cut','Copy','Paste','PasteText','PasteWord','SelectAll','RemoveFormat','SpellCheck'],
+        ['Undo','Redo','-','Find','Replace'],
+        ['Bold','Italic','Underline','StrikeThrough','Subscript','Superscript'],
+        ['OrderedList','UnorderedList','Outdent','Indent'],
+        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull','TextColor','BGColor'],
+        ['Link','Unlink','Anchor'],
+        ['Image','Movie','Flash','media','Table','Rule','Smiley','SpecialChar'],['Style'],
+        ['FontFormat','FontName','FontSize'],
+        ['About']
+] ;
+}else{
 FCKConfig.ToolbarSets["Default"] = [
         ['Source','DocProps','Templates'],
         ['Cut','Copy','Paste','PasteText','PasteWord','SelectAll','RemoveFormat','SpellCheck'],
@@ -108,7 +125,8 @@ FCKConfig.ToolbarSets["Default"] = [
         ['FontFormat','FontName','FontSize'],
         ['About']
 ] ;
-
+}
+FCKConfig.MediaBrowser = true;
 FCKConfig.ToolbarSets["large"] = [
         ['Source','DocProps','Templates'],
         ['Cut','Copy','Paste','PasteText','PasteWord','SelectAll','RemoveFormat','SpellCheck'],
