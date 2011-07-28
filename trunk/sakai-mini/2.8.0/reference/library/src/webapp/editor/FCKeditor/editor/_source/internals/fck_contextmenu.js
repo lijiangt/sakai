@@ -173,7 +173,16 @@ function FCK_ContextMenu_GetListener( listenerName )
 					menu.AddItem( 'Flash', FCKLang.FlashProperties, 38 ) ;
 				}
 			}} ;
-
+		case 'Media' :
+			return {
+			AddItems : function( menu, tag, tagName )
+			{
+				if ( tagName == 'IMG' && tag.getAttribute( '_fckmedia' ) )
+				{
+					menu.AddSeparator() ;
+					menu.AddItem( 'Media', FCKLang.MediaProperties, 38 ) ;
+				}
+			}} ;
 		case 'Form' :
 			return {
 			AddItems : function( menu, tag, tagName )

@@ -187,7 +187,7 @@ FCK.GetRealElement = function( fakeElement )
 {
 	var e = FCKTempBin.Elements[ fakeElement.getAttribute('_fckrealelement') ] ;
 
-	if ( fakeElement.getAttribute('_fckflash') )
+	if ( fakeElement.getAttribute('_fckflash') ||fakeElement.getAttribute('_fckmedia'))
 	{
 		if ( fakeElement.style.width.length > 0 )
 				e.width = FCKTools.ConvertStyleSizeToHtml( fakeElement.style.width ) ;
@@ -249,8 +249,13 @@ FCKEmbedAndObjectProcessor.AddCustomHandler( function( el, fakeImg )
 	{
 		if ( ! ( el.nodeName.IEquals( 'embed' ) && ( el.type == 'application/x-shockwave-flash' || /\.swf($|#|\?)/i.test( el.src ) ) ) )
 			return ;
-		fakeImg.className = 'FCK__Flash' ;
-		fakeImg.setAttribute( '_fckflash', 'true', 0 );
+		if (e1.getAttribute('fckeditor_type')!="media"){
+			fakeImg.className = 'FCK__Flash' ;
+			fakeImg.setAttribute( '_fckflash', 'true', 0 );
+		}elese{
+			fakeImg.className = 'FCK__Media' ;
+			fakeImg.setAttribute( '_fckmedia', 'true', 0 );
+		}
 	} ) ;
 
 // Buggy <span class="Apple-style-span"> tags added by Safari.
