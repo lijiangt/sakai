@@ -463,7 +463,7 @@ public class FCKConnectorServlet extends HttpServlet {
                          
                          if ( ("File".equals(type) && (ext != null) ) || 
                               ("Flash".equals(type) && ext.equalsIgnoreCase("application/x-shockwave-flash") ) ||
-                              ("Media".equals(type) && 
+                              ("Multimedia".equals(type) && 
           							//		ext.equalsIgnoreCase("video/x-flv")
           							(ext.equalsIgnoreCase("video/x-flv")||
           									ext.equalsIgnoreCase("application/x-osp")||
