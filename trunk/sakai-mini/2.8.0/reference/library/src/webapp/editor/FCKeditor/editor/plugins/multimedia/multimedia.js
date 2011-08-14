@@ -4,7 +4,7 @@ var FCKLang    = oEditor.FCKLang ;
 var FCKConfig  = oEditor.FCKConfig ;
 var oMedia     = null;
 var isNew	   = true;
-var flashPlayer = "/library/editor/FCKeditor/editor/plugins/multimedia/player.swf";
+var flashPlayer = "/library/media/mediaplayer.swf";
 
 /** Initial setup */
 window.onload = function() { 
@@ -20,12 +20,27 @@ window.onload = function() {
 var Media = function (o){
 	this.id = '';
 	this.url = '';
-	this.autostart = '0';
+	this.autostart = true;
 	this.allowFullscreen = true;
-	this.width = '320';
-	this.height = '240';
+	this.width = '800';
+	this.height = '420';
 	if(o) this.setObjectElement(o);
 };
+
+Media.prototype.getUrl = function(){
+	if(!this.url){
+		return this.url;
+	}
+	var urlPrefix = top.location.protocol+'//'+top.location.host;
+	if(top.location.port){
+		urlPrefix +=':'+top.location.port;
+	}
+	if(this.url.substr(0,urlPrefix.length)==urlPrefix){
+		return this.url.substr(urlPrefix.length);
+	}else{
+		return this.url;
+	}
+}
 Media.prototype.getInnerHTML = function (objectId){
 	var rnd = Math.floor(Math.random()*1000001);
 	var s = "";
@@ -33,10 +48,11 @@ Media.prototype.getInnerHTML = function (objectId){
 	s += '        type="application/x-shockwave-flash" ';
 	s += '        data="'+ flashPlayer +'" ';
 	s += '        width="'+this.width+'" height="'+this.height+'" >';
-	s += '  <param name="allowFullScreen" value="'+this.allowFullscreen?'true':'false'+'" />';
+	s += '  <param name="allowFullScreen" value="'+(this.allowFullscreen?'true':'false')+'" />';
 	s += '  <PARAM name="movie" value="'+ flashPlayer +'" /><param name="bgcolor" value="#FFFFFF" />';
-	s += '  <PARAM name="FlashVars" value="fileUrl='+encodeURI(this.url)+'&amp;filePath='+encodeURI(this.url)+'&amp;autostart='+this.autostart?'true':'false'+'" />';
+	s += '  <PARAM name="FlashVars" value="fileUrl='+encodeURI(this.getUrl())+'&amp;filePath='+encodeURI(this.getUrl())+'&amp;autostart='+(this.autostart?'true':'false')+'" />';
 	s += '</OBJECT>';
+	return s;
 }
 Media.prototype.setAttribute = function(attr, val) {
 	if (val=="true") {
@@ -84,6 +100,9 @@ function loadMediaSelection() {
 							oMovie.setAttribute(name, value);
 						}
 					}
+				} else if (name == 'movie' && !value.endsWith(flashPlayer)) {
+					ShowE('tdBrowse', FCKConfig.LinkBrowser);
+					return;
 				} else {
 					// Other movie types
 					oMovie.setAttribute(name, value);
@@ -97,8 +116,8 @@ function loadMediaSelection() {
 	GetE('txtUrl').value = oMovie.url;
 	GetE('txtWidth').value = oMovie.width;
 	GetE('txtHeight').value = oMovie.height;
-	GetE('chkAutoplay').checked	= oMovie.autostart == '1';
-	
+	GetE('chkAutoplay').checked	= oMovie.autostart;
+	GetE('chkAllowFullscreen').checked	= oMovie.autostart;
 	// Show/Hide according to settings
 	ShowE('tdBrowse', FCKConfig.LinkBrowser);
 	return oMovie;
@@ -125,7 +144,7 @@ function BrowseServer() {
 
 /** Start processing */
 function Ok() {
-	if(GetE('txtUrl').value.length == 0) {
+	if(GetE('txtUrl').value.length == 0||!GetE('txtUrl').value.toLowerCase().endsWith('.xml')) {
 		GetE('txtUrl').focus();
 		window.parent.SetSelectedTab('Info');
 		alert(FCKLang.MultimediaNoUrl) ;
@@ -148,6 +167,10 @@ function Ok() {
 	return true;
 }
 
+function SetUrl(url) {
+	GetE('txtUrl').value = url;
+}
+
 
 /** Update Movie object from Form */
 function updateMediaObject(e){
@@ -157,3 +180,9 @@ function updateMediaObject(e){
 	e.autostart = (GetE('chkAutoplay').checked) ? true : false;
 	e.allowFullscreen = (GetE('chkAllowFullscreen').checked) ? true : false;
 }
+
+String.prototype.endsWith = function(str) 
+{return (this.match(str+"$")==str)}
+
+String.prototype.contains = function(str) 
+{return (this.match(str)==str)}

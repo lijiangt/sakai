@@ -64,7 +64,11 @@ function loadMovieSelection() {
 					value = (value == 'true' || value == '1') ? 1 : 0;
 					oMovie.setAttribute('autoplay', value);
 				} else if (name == 'src'
-						|| (name == 'movie' && !name.endsWith(flashPlayer))) {
+						|| (name == 'movie' && !value.endsWith(flashPlayer))) {
+					if(name == 'movie' && value.endsWith('/library/media/mediaplayer.swf')){
+						ShowE('tdBrowse', FCKConfig.LinkBrowser);
+						return;
+					}
 					oMovie.setAttribute('url', decodeURI(value));
 				} else {
 					// Other movie types
@@ -158,7 +162,7 @@ Movie.prototype.getInnerHTML = function (objectId){
 			s += '        data="'+ flashPlayer +'" ';
 			s += '        width="'+this.width+'" height="'+this.height+'" >';
 		    s += '  <PARAM name="movie" value="'+ flashPlayer +'" />';
-		    s += '  <PARAM name="FlashVars" value="flv='+encodeURI(this.url)+'&amp;showplayer=always&amp;width='+this.width+'&amp;height='+this.height+'&amp;showiconplay=true&amp;autoplay='+this.autoplay+'" />';
+		    s += '  <PARAM name="FlashVars" value="flv='+encodeURI(this.getUrl())+'&amp;showplayer=always&amp;width='+this.width+'&amp;height='+this.height+'&amp;showiconplay=true&amp;autoplay='+this.autoplay+'" />';
 		    s += '</OBJECT>';
 		    
 		}else{
@@ -170,9 +174,9 @@ Movie.prototype.getInnerHTML = function (objectId){
 			// Flash object (SWF)
 			s += '<OBJECT id="movie' + rnd + '" ';
 			s += '        type="application/x-shockwave-flash" ';
-			s += '        data="'+ encodeURI(this.url) +'" ';
+			s += '        data="'+ encodeURI(this.getUrl()) +'" ';
 			s += '        width="'+this.width+'" height="'+this.height+'" >';
-		    s += '  <PARAM name="movie" value="'+ encodeURI(this.url) +'" />';
+		    s += '  <PARAM name="movie" value="'+ encodeURI(this.getUrl()) +'" />';
 		    s += '  <PARAM name="FlashVars" value="autoplay='+this.autoplay+'" />';
 		    s += '</OBJECT>';			
 		}
@@ -187,11 +191,11 @@ Movie.prototype.getInnerHTML = function (objectId){
 			s += '        classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" ';
 			s += '        codebase="http://www.apple.com/qtactivex/qtplugin.cab" '
 			s += '        width="'+this.width+'" height="'+this.height+'" >';
-		    s += '  <PARAM name="src" value="'+ encodeURI(this.url) +'" />';
+		    s += '  <PARAM name="src" value="'+ encodeURI(this.getUrl()) +'" />';
 			s += '  <PARAM name="autoplay" value="'+this.autoplay+'" />';
 			s += '  <PARAM name="controller" value="true" />';
 			s += '  <OBJECT type="'+this.contentType+'" ';
-			s += '          data="'+ encodeURI(this.url) +'" ';
+			s += '          data="'+ encodeURI(this.getUrl()) +'" ';
 			s += '          width="'+this.width+'" height="'+this.height+'" ';
 			s += '          style="*display:none">'; // for IE6 only
 			s += '    <PARAM name="autoplay" value="'+this.autoplay+'" />';
@@ -203,9 +207,9 @@ Movie.prototype.getInnerHTML = function (objectId){
 			// WINDOWS MEDIA & OTHERS
 			s += '<OBJECT id="movie' + rnd + '" ';
 			s += '        type="'+this.contentType+'" ';
-			s += '        data="'+ encodeURI(this.url) +'" ';
+			s += '        data="'+ encodeURI(this.getUrl()) +'" ';
 			s += '        width="'+this.width+'" height="'+this.height+'" >';
-		    s += '  <PARAM name="src" value="'+ encodeURI(this.url) +'" />';
+		    s += '  <PARAM name="src" value="'+ encodeURI(this.getUrl()) +'" />';
 			s += '  <PARAM name="autostart" value="'+this.autoplay+'" />';
 			s += '  <PARAM name="controller" value="true" />';
 		    s += '</OBJECT>';
@@ -276,3 +280,17 @@ function SetUrl(url) {
 	GetE('txtUrl').value = url;
 }
 
+Movie.prototype.getUrl = function(){
+	if(!this.url){
+		return this.url;
+	}
+	var urlPrefix = top.location.protocol+'//'+top.location.host;
+	if(top.location.port){
+		urlPrefix +=':'+top.location.port;
+	}
+	if(this.url.substr(0,urlPrefix.length)==urlPrefix){
+		return this.url.substr(urlPrefix.length);
+	}else{
+		return this.url;
+	}
+}
