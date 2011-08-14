@@ -1,14 +1,14 @@
-// Toolbar button
-FCKLang['MoviePlayerBtn']         = 'µçÓ°';
-FCKLang['MoviePlayerTooltip']     = '²åÈë/±à¼­µçÓ°';
+ï»¿// Toolbar button
+FCKLang['MoviePlayerBtn']         = 'ç”µå½±';
+FCKLang['MoviePlayerTooltip']     = 'æ’å…¥/ç¼–è¾‘ç”µå½±';
 
 // Dialog
-FCKLang['MoviePlayerDlgTitle']    = 'µçÓ°ÊôĞÔ';
+FCKLang['MoviePlayerDlgTitle']    = 'ç”µå½±å±æ€§';
 FCKLang['MoviePlayerURL']         = 'URL:';
-FCKLang['MoviePlayerURLDesc']     = 'Ñ¡ÔñÒ»¸ö .flv, .wma, .avi »òÕß .mov ÎÄ¼ş';
-FCKLang['MoviePlayerWidth']       = '¿í¶È:';
-FCKLang['MoviePlayerHeight']      = '¸ß¶È:';
-FCKLang['MoviePlayerAutoplay']    = '×Ô¶¯²¥·Å:';
+FCKLang['MoviePlayerURLDesc']     = 'é€‰æ‹©ä¸€ä¸ª .flv, .wma, .avi æˆ–è€… .mov æ–‡ä»¶';
+FCKLang['MoviePlayerWidth']       = 'å®½åº¦:';
+FCKLang['MoviePlayerHeight']      = 'é«˜åº¦:';
+FCKLang['MoviePlayerAutoplay']    = 'è‡ªåŠ¨æ’­æ”¾:';
 
 // Dialog errors
-FCKLang['MoviePlayerNoUrl']       = 'ÇëÖ¸¶¨Ò»¸öµçÓ°µØÖ·¡£'
+FCKLang['MoviePlayerNoUrl']       = 'è¯·æŒ‡å®šä¸€ä¸ªç”µå½±åœ°å€ã€‚'

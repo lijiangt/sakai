@@ -1,4 +1,4 @@
-/*
+﻿/*
  * *********************************************************************************
  *  $URL: https://source.sakaiproject.org/svn/content/trunk/content-api/api/src/java/org/sakaiproject/content/api/ContentCollection.java $
  *  $Id: ContentCollection.java 8537 2006-05-01 02:13:28Z jimeng@umich.edu $
@@ -21,4 +21,4 @@
  * *********************************************************************************
  *
  */
-FCKLang.SelectAttchments = 'ѡ�񸽼�';
+FCKLang.SelectAttchments = '选择附件';

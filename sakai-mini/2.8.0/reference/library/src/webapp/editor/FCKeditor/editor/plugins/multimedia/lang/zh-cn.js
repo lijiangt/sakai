@@ -1,4 +1,4 @@
-// Toolbar button
+﻿// Toolbar button
 FCKLang['MultimediaBtn']         = '多媒体';
 FCKLang['MultimediaTooltip']     = '插入/编辑多媒体';
 
