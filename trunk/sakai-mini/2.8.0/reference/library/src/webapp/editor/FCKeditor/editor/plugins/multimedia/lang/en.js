@@ -12,4 +12,4 @@ FCKLang['MultimediaAutoplay']    = 'Auto Play:';
 FCKLang['MultimediaAllowFullscreen']    = 'Allow Fullscreen:';
 
 // Dialog errors
-FCKLang['MultimediaNoUrl']       = 'Please specify a multimedia URL.'
+FCKLang['MultimediaNoUrl']       = 'Please specify a multimedia file(*.xml) URL.'

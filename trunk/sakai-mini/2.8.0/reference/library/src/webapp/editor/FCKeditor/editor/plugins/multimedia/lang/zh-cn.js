@@ -12,4 +12,4 @@ FCKLang['MultimediaAutoplay']    = '自动播放:';
 FCKLang['MultimediaAllowFullscreen']    = '允许全屏:';
 
 // Dialog errors
-FCKLang['MultimediaNoUrl']       = '请指定一个媒体描述文件地址。'
+FCKLang['MultimediaNoUrl']       = '请指定一个多媒体描述文件(*.xml)地址。'
