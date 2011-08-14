@@ -47,8 +47,9 @@ FCKConfig.PreloadImages = [ FCKConfig.SkinPath + 'images/toolbar.start.gif', FCK
 
 FCKConfig.PluginsPath = FCKConfig.BasePath + 'plugins/' ;
 
-FCKConfig.Plugins.Add( 'attachments' ) ;
-FCKConfig.Plugins.Add( 'movieplayer', 'en,pt' ) ;
+FCKConfig.Plugins.Add( 'attachments' ,'en,zh-cn') ;
+FCKConfig.Plugins.Add( 'movieplayer', 'en,pt,zh-cn' ) ;
+FCKConfig.Plugins.Add( 'multimedia', 'en,zh-cn' ) ;
 
 // FCKConfig.Plugins.Add( 'autogrow' ) ;
 // FCKConfig.Plugins.Add( 'dragresizetable' );

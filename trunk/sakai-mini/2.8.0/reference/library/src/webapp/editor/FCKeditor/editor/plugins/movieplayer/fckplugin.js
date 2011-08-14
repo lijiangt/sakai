@@ -10,7 +10,7 @@ FCKCommands.RegisterCommand(
 		'Movie',
 		FCKLang['MoviePlayerDlgTitle'],
 		FCKConfig.PluginsPath + 'movieplayer/movieplayer.html',
-		450, 260
+		450, 300
 	)
 );
  
