@@ -26,7 +26,7 @@
 -->
 <Templates imagesBasePath="fck_template/images/">
 	<Template title="图片和标题" image="template1.gif">
-		<Description>One main image with a title and text that surround the image.</Description>
+		<Description>带有标题的图片，一些文本环绕图片。</Description>
 		<Html>
 			<![CDATA[
 				<img style="MARGIN-RIGHT: 10px" height="100" alt="" width="100" align="left"/>
@@ -36,7 +36,7 @@
 		</Html>
 	</Template>
 	<Template title="双列模板" image="template2.gif">
-		<Description>A template that defines two colums, each one with a title, and some text.</Description>
+		<Description>双列模板，每列都有一个标题和一些文本。</Description>
 		<Html>
 			<![CDATA[
 				<table cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -62,7 +62,7 @@
 		</Html>
 	</Template>
 	<Template title="文本和表格" image="template3.gif">
-		<Description>A title with some text and a table.</Description>
+		<Description>一个标题带有一些文本，另外还有一个表格。</Description>
 		<Html>
 			<![CDATA[
 				<table align="left" width="80%" border="0" cellspacing="0" cellpadding="0"><tr><td>
