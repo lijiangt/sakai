@@ -213,8 +213,8 @@ FCKConfig.EnableMoreFontColors = true ;
 FCKConfig.FontColors = '000000,993300,333300,003300,003366,000080,333399,333333,800000,FF6600,808000,808080,008080,0000FF,666699,808080,FF0000,FF9900,99CC00,339966,33CCCC,3366FF,800080,999999,FF00FF,FFCC00,FFFF00,00FF00,00FFFF,00CCFF,993366,C0C0C0,FF99CC,FFCC99,FFFF99,CCFFCC,CCFFFF,99CCFF,CC99FF,FFFFFF' ;
 
 FCKConfig.FontFormats	= 'p;h1;h2;h3;h4;h5;h6;pre;address;div' ;
-FCKConfig.FontNames		= 'Arial;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana' ;
-FCKConfig.FontSizes		= 'smaller;larger;xx-small;x-small;small;medium;large;x-large;xx-large' ;
+FCKConfig.FontNames		= '\u5b8b\u4f53;\u9ed1\u4f53;\u4eff\u5b8b;\u6977\u4f53;\u96b6\u4e66;\u5e7c\u5706;Arial;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana' ;
+FCKConfig.FontSizes		= '8px/8;9px/9;10px/10;11px/11;12px/12;13px/13;14px/14;16px/16;18px/18;24px/24;28px/28;36px/36;48px/48;72px/72' ;
 
 FCKConfig.StylesXmlPath		= FCKConfig.EditorPath + 'fckstyles.xml' ;
 FCKConfig.TemplatesXmlPath	= FCKConfig.EditorPath + 'fcktemplates.xml' ;
@@ -258,7 +258,7 @@ FCKConfig.RemoveFormatTags = 'b,big,code,del,dfn,em,font,i,ins,kbd,q,samp,small,
 
 FCKConfig.CustomStyles = 
 {
-	'Red Title'	: { Element : 'h3', Styles : { 'color' : 'Red' } }
+	'\u7ea2\u8272\u6807\u9898'	: { Element : 'h3', Styles : { 'color' : 'Red' } }
 };
 
 // Do not add, rename or remove styles here. Only apply definition changes.
