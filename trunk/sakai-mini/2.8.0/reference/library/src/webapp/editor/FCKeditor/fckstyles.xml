@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--
  * FCKeditor - The text editor for Internet - http://www.fckeditor.net
  * Copyright (C) 2003-2009 Frederico Caldeira Knabben
@@ -61,49 +61,52 @@
 	<Style name="Superscript" element="sup" />
 	-->
 
-	<Style name="Marker: Yellow" element="span">
+	<Style name="标记: 黄色" element="span">
 		<Style name="background-color" value="Yellow" />
 	</Style>
-	<Style name="Marker: Green" element="span">
+	<Style name="标记: 绿色" element="span">
 		<Style name="background-color" value="Lime" />
 	</Style>
 
-	<Style name="Big" element="big" />
-	<Style name="Small" element="small" />
-	<Style name="Typewriter" element="tt" />
+	<Style name="大" element="big" />
+	<Style name="小" element="small" />
+	<Style name="打字机" element="tt" />
 
-	<Style name="Computer Code" element="code" />
-	<Style name="Keyboard Phrase" element="kbd" />
-	<Style name="Sample Text" element="samp" />
-	<Style name="Variable" element="var" />
+	<Style name="计算机代码" element="code" />
 
-	<Style name="Deleted Text" element="del" />
-	<Style name="Inserted Text" element="ins" />
+	<Style name="键盘文本" element="kbd" />
 
-	<Style name="Cited Work" element="cite" />
-	<Style name="Inline Quotation" element="q" />
+	<Style name="示例文本" element="samp" />
+	<Style name="变量" element="var" />
 
-	<Style name="Language: RTL" element="span">
+	<Style name="删除文本" element="del" />
+	<Style name="插入文本" element="ins" />
+
+	<Style name="引用" element="cite" />
+	<Style name="短引用" element="q" />
+
+	<Style name="语言: 从右到左" element="span">
 		<Attribute name="dir" value="rtl" />
 	</Style>
-	<Style name="Language: LTR" element="span">
+	<Style name="语言: 从左到右" element="span">
 		<Attribute name="dir" value="ltr" />
 	</Style>
-	<Style name="Language: RTL Strong" element="bdo">
+<!--
+	<Style name="语言: 从右到左 粗体" element="bdo">
 		<Attribute name="dir" value="rtl" />
 	</Style>
-	<Style name="Language: LTR Strong" element="bdo">
+	<Style name="语言: 从左到右 粗体" element="bdo">
 		<Attribute name="dir" value="ltr" />
 	</Style>
-
+-->
 	<!-- Object Styles -->
 
-	<Style name="Image on Left" element="img">
+	<Style name="图片在左" element="img">
 		<Attribute name="style" value="padding: 5px; margin-right: 5px" />
 		<Attribute name="border" value="2" />
 		<Attribute name="align" value="left" />
 	</Style>
-	<Style name="Image on Right" element="img">
+	<Style name="图片在右" element="img">
 		<Attribute name="style" value="padding: 5px; margin-left: 5px" />
 		<Attribute name="border" value="2" />
 		<Attribute name="align" value="right" />
