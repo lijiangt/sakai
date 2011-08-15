@@ -117,6 +117,7 @@
                 <module>help</module>
 -->
                 <module>login</module>
+                <module>mailarchive</module>
                 <module>memory</module>
                 <module>message</module>
                 <module>portal</module>
