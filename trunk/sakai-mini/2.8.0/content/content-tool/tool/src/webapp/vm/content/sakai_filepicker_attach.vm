@@ -299,7 +299,7 @@
 						<tr class="exclude">
 							<td colspan="7">
 								<div class="rightNav">
-									<span class="instruction" style="margin-bottom:.3em;">Viewing $topMsgPos - $btmMsgPos of $allMsgNumber items</span>
+									<span class="instruction" style="margin-bottom:.3em;">&#26597;&#30475; $allMsgNumber &#39033;&#20013;&#30340; $topMsgPos - $btmMsgPos &#39033;</span>
 									#if ("$pagesize" != "0")
 										#if ($goPPButton == "true")
 											<input type="button" name="List_first" value="|&lt;" title="First" onclick="javascript: document.getElementById('attachForm').action='#toolLink("FilePickerAction" "doList_first")'; submitform('attachForm');" />
