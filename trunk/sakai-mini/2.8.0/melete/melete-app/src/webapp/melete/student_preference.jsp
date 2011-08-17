@@ -45,8 +45,8 @@
 			    	<tr>
 					 <td>
 							<h:selectOneRadio value="#{studentPreferences.userView}" layout="pageDirection">
-										<f:selectItem itemLabel="Expanded" itemValue="true" />
-										<f:selectItem itemLabel="Collapsed" itemValue="false"/>
+										<f:selectItem itemLabel="#{msgs.author_preference_Expanded}" itemValue="true" />
+										<f:selectItem itemLabel="#{msgs.author_preference_Collapsed}" itemValue="false"/>
 								</h:selectOneRadio>	
 					</td>	
 					</tr>		
