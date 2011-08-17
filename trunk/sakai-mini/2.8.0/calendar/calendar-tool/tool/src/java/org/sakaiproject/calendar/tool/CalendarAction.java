@@ -7454,7 +7454,7 @@ extends VelocityPortletStateAction
 														UserDirectoryService.getCurrentUser().getDisplayName(),
 														dailyStartTime);
 			
-			bar_print.add(new MenuEntry(rb.getString("java.print"), "").setUrl(accessPointUrl));
+//			bar_print.add(new MenuEntry(rb.getString("java.print"), "").setUrl(accessPointUrl));
 		}
 	}
 	/**
