@@ -7,8 +7,9 @@
 			title="Site Info"
 			description="For showing worksite information and site participants.">
 
-		<!-- types are seperated by , don't forget to put corresponding type_categories.xml into the reg folder-->
-		<configuration name="siteTypes" value="course,project,portfolio" />
+		<!-- types are seperated by , don't forget to put corresponding type_categories.xml into the reg folder
+		<configuration name="siteTypes" value="course,project,portfolio" /> -->
+		<configuration name="siteTypes" value="project" />
 		<!-- default site type -->
 		<configuration name="defaultSiteType" value="project" />
 		<!-- types of sites that can either be public or private -->

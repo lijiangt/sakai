@@ -195,7 +195,7 @@ public class SiteEmailNotificationSyllabus extends SiteEmailNotification
 		// rv.add("Content-Type: text/html");
 
 		// set the subject
-		String subject =rb.getFormattedMessage("event.syllabus.delete", new Object[]{getSubject(event)});
+		String subject =getSubject(event);
 		rv.add(subject);
 
 		// from
