@@ -891,7 +891,7 @@ order to display them in the same cell they need to be wrapped in a h:panelGroup
 }
 
 .jsfFormTable td .required input {
-	margin-left: -.6em;
+/* 	margin-left: -.6em; */
 }
 
 /*since jsf multiple radio are rendered in a table, substract the padding of the parent td with a negative margin */
