@@ -1316,7 +1316,7 @@ public void setFeedbackComponentOption(String feedbackComponentOption) {
 
 	public void setDisplayFormat(String displayDateFormat) {
 		this.displayDateFormat = displayDateFormat;
-		this.displayFormat = new SimpleDateFormat(displayDateFormat);
+		this.displayFormat = new SimpleDateFormat(displayDateFormat,java.util.Locale.US);
 	}
 
 	public boolean getIsValidStartDate() {
