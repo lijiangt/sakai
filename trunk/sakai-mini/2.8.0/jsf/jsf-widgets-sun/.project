@@ -1,0 +1,14 @@
+<projectDescription>
+  <name>jsf-widgets-sun</name>
+  <comment>This is the Maven project for the implementation-specific details
+	for using Sakai&apos;s JSF widgets on Sun runtime implementation. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
