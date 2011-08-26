@@ -1078,7 +1078,7 @@ public abstract class BaseSearchServiceImpl implements SearchService
 	public String getDigestStoragePath() {
 		String customPath = ServerConfigurationService.getString("search.digestPath");
 		String storePath = null;
-		if (customPath == null) {
+		if (customPath == null||"".equals(customPath)) {
 			storePath = ServerConfigurationService.getString("bodyPath@org.sakaiproject.content.api.ContentHostingService");
 			if (storePath == null) {
 				return null;
