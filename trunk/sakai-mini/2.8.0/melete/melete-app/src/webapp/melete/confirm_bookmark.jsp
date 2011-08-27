@@ -30,9 +30,15 @@ final BookmarkPage bookmarkPage = (BookmarkPage)facesContext.getApplication().ge
 bookmarkPage.resetValues();
 %>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>书签保存成功</title>
+</head>
+ 
 <body>
+
 <script language="javascript">
-alert("Bookmark saved");
+alert("书签已经成功保存！");
 var elementToGet = "ManageBookmarksForm"+ ":" + "refreshButton";  
 var form = window.opener.document.forms['ManageBookmarksForm'];  
 if (form != null)
