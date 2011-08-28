@@ -1,4 +1,4 @@
-﻿<%@ page import="org.etudes.tool.melete.BookmarkPage,javax.faces.application.FacesMessage, java.util.ResourceBundle"%>
+﻿<%@ page import="org.etudes.tool.melete.BookmarkPage,javax.faces.application.FacesMessage, java.util.ResourceBundle" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!--
  ***********************************************************************************
