@@ -1,0 +1,17 @@
+backup tables:
+mysqldump --database sakai --tables search_journal search_node_status search_segments search_transaction searchbuilderitem searchwriterlock -u root>search.sql
+
+1) delete the contents of the local and shared index directories
+2) Clear out the search tables in the db:
+
+truncate table search_journal;
+truncate table search_node_status;
+truncate table search_segments;
+truncate table search_transaction;
+truncate table searchbuilderitem;
+truncate table searchwriterlock;
+
+
+ref:
+http://collab.sakaiproject.org/pipermail/production/2011-May/001350.html
+http://web.archiveorange.com/archive/v/5qjlanlbNXpIUlNxP8z4
