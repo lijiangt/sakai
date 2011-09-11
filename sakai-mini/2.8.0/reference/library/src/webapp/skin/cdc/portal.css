@@ -184,8 +184,8 @@ site types are a local setting - adjust */
 /*wrapper for mast head elements - children are 3 blocks - #mastLogo,#mastBanner,#mastLogin*/
 #mastHead{
     background:url("images/logo.png") no-repeat 0px center;
-    padding-left:550px;
-    height:80px;
+    padding-left:620px;
+    height:85px;
     z-index:0;
     clear: both;
 }
@@ -359,7 +359,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
     float:right;
 }
 #roleSwitch label, #roleSwitch  a#roleSwitchAnchor{
-    color:#fff;
+    color:#000000;
     font-weight:bold;
 }
 #roleSwitch a#roleSwitchAnchor{
@@ -396,7 +396,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
     float: left;
     background: transparent url(images/tab-left.gif) no-repeat scroll left top;
     margin: 0;
-    padding: 0 0 1px 9px;
+    padding: 0 0 2px 9px;
     border-bottom: 1px solid #013F68;
 }
 
@@ -425,6 +425,8 @@ so for example <div class="tabHolder workspace"> so that different site types ca
     background: transparent url(images/tab-left-selected.gif) no-repeat scroll left top;
     border-bottom:none;
     padding-left:9px;
+    height: 26px;
+    overflow: hidden;
 
 }
 #siteLinkList li.selectedTab a span{
@@ -613,7 +615,8 @@ also hide if are going to be using icon links (as background of <a> nad <li>
     color:#000;
     opacity: 0.70;
     -moz-opacity: 0.70;
-    text-decoration:none
+    text-decoration:none;
+    background-color: #E0F3D7;
 }
 
 #toolMenu li a:link,#toolMenu li a,
@@ -689,7 +692,8 @@ page estate
 }
 .sakaiMinimizePageNavigation #toolMenu li a, .sakaiMinimizePageNavigation #subSites li a{
     display:block;
-    height:16px;
+    height:22px;
+    line-height: 22px;
     padding-right:0 !important;
     width:16px;
 }
@@ -825,7 +829,7 @@ page estate
 }
 
 #col2of2{
-    width: 50%;
+    width: 49%;
     float: right;
 }
 
