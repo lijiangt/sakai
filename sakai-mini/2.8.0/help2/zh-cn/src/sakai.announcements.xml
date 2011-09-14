@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.announcements">
+	<title>通知</title>
+	<sect1>
+		<title>查看通知</title>
+		<para>
+		通知是用来该所有站点参与者发布最新消息的工具。通知可以附有多种附件，比如文档等.
+		</para>
+		<procedure>
+			<step><para>如果你不在通知页面，可以在导航条上选择“通知”</para></step>
+			<step>
+				<para>要查看项目具体内容，点击项目的标题。</para>
+				<figure>
+				<title>查看通知</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/1.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+		</procedure>
+	</sect1>
+	<sect1>
+		<title>改变浏览方式</title>
+		<procedure>
+			<step>
+				<para>你可以选择全部浏览，或者分别浏览每个小组的通知</para>
+				<figure>
+				<title>选择浏览方式</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/2.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+
+			<step>
+				<para>设定每次显示的通知条数</para>
+				<figure>
+				<title>页面设定</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/3.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+		</procedure>
+	</sect1>
+	<sect1>
+		<title>添加通知</title>
+		<procedure>
+			<step><para>如果你不在通知页面，可以在导航条上选择“通知”</para></step>
+			<step>
+				<para>选择“添加”按钮</para>
+				<figure>
+				<title>添加通知</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/4.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+			<step>
+				<para>添加通知的标题，正文</para>
+				<figure>
+				<title>添加通知标题正文</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/5.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+			<step>
+				<para>添加通知的属性</para>
+				<figure>
+				<title>添加属性</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/6.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+		</procedure>
+	</sect1>
+	<sect1>
+		<title>删除通知</title>
+		<procedure>
+			<step>
+				<para>选择要删除的通知</para>
+				<figure>
+				<title>选择</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/7.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+
+			<step>
+				<para>点击“更新”，完成删除通知</para>
+				<figure>
+				<title>页面设定</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/announcements/8.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+		</procedure>
+	</sect1>
+</chapter>
