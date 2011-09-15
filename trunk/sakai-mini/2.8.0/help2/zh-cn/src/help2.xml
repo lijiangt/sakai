@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-	
+	<!ENTITY sakai.schedule SYSTEM "sakai.schedule.xml">
+	<!ENTITY sakai.chat SYSTEM "sakai.chat.xml">
 	<!ENTITY sakai.announcements SYSTEM "sakai.announcements.xml">
 	<!ENTITY sakai.search SYSTEM "sakai.search.xml">
-	
+	<!ENTITY osp.glossary SYSTEM "osp.glossary.xml">
 ]>
 
 <!--
@@ -30,7 +31,7 @@
 	<!ENTITY sakai.schedule SYSTEM "sakai.schedule.xml">
 	<!ENTITY sakai.syllabus SYSTEM "sakai.syllabus.xml">
 	<!ENTITY sakai.melete SYSTEM "sakai.melete.xml">
-	<!ENTITY sakai.chat SYSTEM "sakai.chat.xml">
+	
 	<!ENTITY sakai.jforum.tool SYSTEM "sakai.jforum.tool.xml">
 	<!ENTITY sakai.samigo SYSTEM "sakai.samigo.xml">
 	<!ENTITY sakai.assignment SYSTEM "sakai.assignment.xml">
@@ -79,17 +80,20 @@
 	&sakai.schedule;
 	&sakai.syllabus;
 	&sakai.melete;
-	&sakai.chat;
+	
 	&sakai.jforum.tool;
 	&sakai.samigo;
 	&sakai.assignment;
 	&sakai.resources;
 	&sakai.dropbox;
-	&osp.glossary;
+
 	&sakai.site.roster;
 	&sakai.gradebook.tool;
 	&sakai.rwiki;
 -->
+	&sakai.schedule;
+	&sakai.chat;
+	&osp.glossary;
 	&sakai.announcements;
 	&sakai.search;
 <!--

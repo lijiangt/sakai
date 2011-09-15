@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.schedule">
+	<title>日程工具</title>
+	<para>
+	教师或者站点管理者可以使用日程工具以日程的形式来张贴具体的信息。许多教师用日程来通知学生他们在课前需要完成的阅读任务，以及提交作业和测验的最后日期。项目组则使用日程来通知项目的截止日期。
+	</para>
+	<sect1>
+		<title>查看日程</title>
+		<procedure>
+			<step>
+				<para>如果你不在日程页面，可以在功能导航条点击“日程”。</para>
+			</step>
+			<step>
+				<para>要查看项目具体内容，点击项目的标题。</para>
+				<figure>
+				<title>查看日程</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/schedule/1.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+			<step>
+				<para>要返回日程，点击“退回到日程表”按钮（不要点击浏览器的返回按钮）。</para>
+				<figure><title>返回日程</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/schedule/2.png"/>
+				</imageobject>
+				</mediaobject>
+				</figure>
+			</step>
+		</procedure>
+	</sect1>
+	
+	<sect1>
+		<title>改变视图</title>
+		<para>在日程中，你可以按天、按周、按月以及按年进程查看。要改变视图，选择“视图”下拉列表中的“按天显示的日程”、“按周显示的日程”、“按月显示的日程”、“按年显示的日程”。要以清单的方式查看你的所有日程活动，在列表中选择“事件清单”。</para>
+		        <figure><title>按月显示的视图</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/schedule/3.png"/>
+				</imageobject>
+				</mediaobject>
+				</figure>
+				<figure><title>按年显示的视图</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/schedule/4.png"/>
+				</imageobject>
+				</mediaobject>
+				</figure>
+		<para>当视图是按天或是按周显示时，日程会显示10小时内的活动。要查看较早或是较晚的活动，点击日程上方的“更早”或是下方的“更晚”。</para>
+				<figure><title>改变时间范围</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/schedule/5.png"/>
+				</imageobject>
+				</mediaobject>
+				</figure>
+		<para>当在“事件清单”中查看你的活动时，你可以定制日期范围，选择“所有活动”、“今日活动”、“本周活动”、“本月活动”、“本年活动”、“定制日期范围”。在定制日期范围时，可以在“起始”和“终止”项目中选择起止日期来进行日程活动的过滤。</para>
+				<figure><title>时间清单</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/schedule/6.png"/>
+				</imageobject>
+				</mediaobject>
+				</figure>
+	</sect1>
+
+</chapter>

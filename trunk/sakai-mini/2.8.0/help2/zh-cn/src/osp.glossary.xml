@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter id="osp.glossary">
+	<title>术语表</title>
+	<sect1>
+		<title>查看术语</title>
+	<para>点击导航条中的“术语表”，就可以进入术语页面，在这个页面中，你可以看到所有教师添加的术语及其解释，如果术语条目较多，你可以使用页面跳转按钮来完成页面的跳转。</para>
+			<figure>
+			<title>术语页面</title>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="images/glossary/1.png"/>
+			</imageobject>
+			</mediaobject>
+			</figure>
+	<para>若点击术语列表中的某一个条目，浏览器会弹出一个新的窗口，这个窗口中显示的是此术语的详细解释。</para>
+			<figure>
+			<title>术语详细内容</title>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="images/glossary/2.png"/>
+			</imageobject>
+			</mediaobject>
+			</figure>
+	</sect1>
+	<sect1>
+		<title>添加术语</title>
+		<para>点击“术语表”中的“添加”按钮，页面变换为如下图所示</para>
+		<figure>
+			<title>添加术语</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/glossary/3.png" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para>点击增加术语按钮即可增添新的术语</para>
+	</sect1>
+	<sect1>
+		<title>导入术语</title>
+		<para>点击“导入”按钮，弹出如下视图，选择好文件后点击导入按钮即可</para>
+			<figure>
+				<title>批量导入术语</title>
+				<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/glossary/4.png" />
+				</imageobject>
+			</mediaobject>
+			</figure>
+		
+	</sect1>
+	<sect1>
+		<title>导出术语</title>
+		<para>点击"导出"按钮，可以从系统中导出现有的术语</para>
+	</sect1>
+</chapter>
