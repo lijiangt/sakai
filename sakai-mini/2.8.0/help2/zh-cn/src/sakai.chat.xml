@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.chat">
+	<title>答疑室</title>
+<para>这个工具允许教师和学生在这里进行自由的交流和沟通，教师可以建立多个答疑室，学生则可以按照自己的兴趣选择相应的答疑室。</para>
+	<sect1>
+	<title>答疑页面</title>
+	<para>在答疑页面，可以看到当前在本答疑室的参与者，参与者可以直接在下面的文本输入框输入自己的信息。</para>
+		<figure>
+		<title>答疑页面</title>
+		<mediaobject>
+		<imageobject>
+		<imagedata fileref="images/chat/1.png"/>
+		</imageobject>
+		</mediaobject>
+		</figure>
+	<para>参与者可以通过点击“更改答疑室”来选择自己希望参与的答疑室</para>
+		<figure>
+		<title>更改答疑室</title>
+		<mediaobject>
+		<imageobject>
+		<imagedata fileref="images/chat/2.png"/>
+		</imageobject>
+		</mediaobject>
+		</figure>
+	<para>在浏览其他人的答疑内容时，可以通过选择“浏览”下拉列表中的不同项，来显示或者隐藏信息的发送日期以及时间。</para>
+		<figure>
+		<title>信息浏览</title>
+		<mediaobject>
+		<imageobject>
+		<imagedata fileref="images/chat/3.png"/>
+		</imageobject>
+		</mediaobject>
+		</figure>
+	</sect1>
+<sect1>
+		<title>创建新答疑室</title>
+		<procedure>
+			<step><para>如果你不在答疑室页面，可以在导航条上选择“答疑室“</para></step>
+			<step>
+				<para>选择“选项”按钮</para>
+				<figure>
+				<title>选择“选项”按钮</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/chat/4.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+			<step>
+				<para>选择“添加答疑室”按钮</para>
+				<figure>
+				<title>选择“添加答疑室”按钮</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/chat/5.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+			<step>
+				<para>按下图完成新答疑室的添加</para>
+				<figure>
+				<title>设置答疑室属性</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/chat/6.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+		
+			</step>
+			
+		</procedure>
+	</sect1>
+	<!--
+	<sect1>
+		<title>设置房间许可权</title>
+		<procedure>
+			<step>
+				<para>点击”许可权按钮“</para>
+				<figure>
+				<title>点击”许可权按钮“</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/chat/7.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+
+			<step>
+				<para>分别设置不同角色的权限，并保存使其生效</para>
+				<figure>
+				<title>设置并保存</title>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="images/chat/8.png" />
+				</imageobject>
+				</mediaobject>
+				</figure>			
+			</step>
+		</procedure>
+	</sect1>
+	-->
+</chapter>
