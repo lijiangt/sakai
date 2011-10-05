@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.syllabus">
+	<title>课程大纲</title>
+
+<sect1><title>创建/编辑/删除教学大纲的内容</title>
+<para>
+<sect2><title>创建</title>
+<para>若想添加一项教学大纲的内容，请按照以下步骤操作：
+<procedure><step><para>点击菜单栏中的“教学大纲”工具；</para></step>
+<step><para>点击“创建/编辑”链接，然后再点击“添加”；</para></step>
+<step><para>输入大纲内容的标题，然后在编辑框中填写内容。也可利用复制/粘贴的方式将HTML文件或WORD文档直接插入编辑框中；</para></step>
+<step><para>选择当前内容发布的同时，是否自动向本站点的学生发送E-mail通知；</para></step>
+<step><para>完成内容编辑后，点击“发布”按钮可直接发布至课程站点；点击“预览”按钮可预先查看；点击“存为草稿”按钮可将之暂时保存为草稿；点击“取消”则放弃当前操作；</para></step>
+<step><para>点击“添加附件”，“添加附件”页面中可以添加文件到大纲中。</para></step>
+<step><para>点击“发布”按钮。</para></step>
+</procedure>
+</para></sect2>
+
+<sect2><title>编辑</title>
+<para>
+<procedure><step><para>点击“创建/编辑”链接，在“课程大纲条目”页面中，选择大纲名称进行编辑。</para></step>
+<step><para>完成编辑后，点击“发布”。</para></step>
+</procedure>
+</para></sect2>
+
+<sect2><title>删除</title>
+<para>
+<procedure><step><para>点击“创建/编辑”链接，在“课程大纲条目”页面中，选中所要删除大纲名称后面的移除复选框。</para></step>
+<step><para>点击“更新”，在“删除选定条目”的页面中，确认删除后，点击“删除”。</para></step>
+</procedure>
+</para></sect2>
+
+</para></sect1>
+
+<sect1><title>设置大纲重定向URL</title>
+<para>
+<procedure><step><para>点击“创建/编辑”链接，然后再点击“设置大纲重定向URL”；</para></step>
+<step><para>输入课程大纲的URL（例：http://***.com），点击“保存”。</para></step>
+<step><para>删除请点击“设置大纲重定向URL”，删除课程大纲的URL，点击“保存”即可。</para></step>
+</procedure>
+
+</para></sect1>
+
+</chapter>

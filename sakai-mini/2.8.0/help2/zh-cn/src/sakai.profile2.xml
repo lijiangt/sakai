@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.profile2">
+	<title>个人资料</title>
+<para>
+个人资料是系统中的社交网络工具。
+
+使用个人资料，您可以：
+<itemizedlist>
+<listitem><para>创建您的个人资料</para></listitem>
+<listitem><para>向您的个人资料添加图片</para></listitem>
+<listitem><para>向您的个人资料添加图片</para></listitem>
+<listitem><para>更新您的状态（甚至向Twitter同步)</para></listitem>
+<listitem><para>搜索其他用户</para></listitem>
+<listitem><para>查看别人的个人资料</para></listitem>
+<listitem><para>管理您的好友</para></listitem>
+<listitem><para>管理您的照片 以及察看其他用户的照片</para></listitem>
+<listitem><para>发送 消息 给好友</para></listitem>
+</itemizedlist>
+此外，您可以对以下选项进行定制：
+<itemizedlist>
+<listitem><para>隐私设置让您选择哪些人可以查看关于您的信息</para></listitem>
+</itemizedlist>
+偏好设置让您选择您的Twitter关联设置（若您拥有Twitter账户）或您希望从哪些好友处接收电子邮件等许多设置选项。
+
+
+</para>	
+</chapter>

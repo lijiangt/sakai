@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.site.roster">
+	<title>花名册</title>
+<para>查看站点内所有参与者的信息与照片。</para>
+<sect1>
+<title>概要</title>
+<para>
+<procedure><step><para>点击“概要”，可在此页面中查找参与者及信息。</para></step>
+<step><para>在“概要”页面中以“姓名”、“用户ID”、“email地址”、“角色”显示参与者信息。</para></step>
+</procedure>
+</para>
+</sect1>
+<sect1>
+<title>图片</title>
+<para>
+<procedure><step><para>点击“图片”，可在此页面中查找参与者照片信息。</para></step>
+<step><para>在“图片”页面中以参与者照片显示参与者信息。</para></step>
+</procedure>
+</para>
+</sect1>
+</chapter>
