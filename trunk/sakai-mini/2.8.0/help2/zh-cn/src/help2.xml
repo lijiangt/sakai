@@ -5,47 +5,34 @@
 	<!ENTITY sakai.announcements SYSTEM "sakai.announcements.xml">
 	<!ENTITY sakai.search SYSTEM "sakai.search.xml">
 	<!ENTITY osp.glossary SYSTEM "osp.glossary.xml">
-]>
-
-<!--
-	<!ENTITY sakai.iframe.service SYSTEM "sakai.iframe.service.xml">
-	
-	<!ENTITY sakai.createuser SYSTEM "sakai.createuser.xml">
-	<!ENTITY sakai.sitebrowser SYSTEM "sakai.sitebrowser.xml">
-
-	<!ENTITY sakai.users SYSTEM "sakai.users.xml">
-	<!ENTITY sakai.aliases SYSTEM "sakai.aliases.xml">
-	<!ENTITY sakai.sites SYSTEM "sakai.sites.xml">
-	
-	<!ENTITY sakai.iframe.myworkspace SYSTEM "sakai.iframe.myworkspace.xml">	
+	<!ENTITY sakai.dropbox SYSTEM "sakai.dropbox.xml">
+	<!ENTITY sakai.resources SYSTEM "sakai.resources.xml">
 	<!ENTITY sakai.profile2 SYSTEM "sakai.profile2.xml">
+	<!ENTITY sakai.sites SYSTEM "sakai.sites.xml">
+	<!ENTITY sakai.syllabus SYSTEM "sakai.syllabus.xml">
+	<!ENTITY sakai.assignment SYSTEM "sakai.assignment.xml">
+	<!ENTITY sakai.samigo SYSTEM "sakai.samigo.xml">
+	<!ENTITY sakai.gradebook.tool SYSTEM "sakai.gradebook.tool.xml">
+	<!ENTITY sakai.iframe.service SYSTEM "sakai.iframe.service.xml">
+	<!ENTITY sakai.createuser SYSTEM "sakai.createuser.xml">
+	<!ENTITY sakai.sitebrowser SYSTEM "sakai.sitebrowser.xml">	<!ENTITY sakai.users SYSTEM "sakai.users.xml">
+	<!ENTITY sakai.aliases SYSTEM "sakai.aliases.xml">
+	<!ENTITY sakai.iframe.myworkspace SYSTEM "sakai.iframe.myworkspace.xml">	
 	<!ENTITY sakai.membership SYSTEM "sakai.membership.xml">
 	<!ENTITY sakai.sitesetup SYSTEM "sakai.sitesetup.xml">
 	<!ENTITY sakai.preferences SYSTEM "sakai.preferences.xml">
 	<!ENTITY sakai.singleuser SYSTEM "sakai.singleuser.xml">
-	
 	<!ENTITY sakai.iframe.site SYSTEM "sakai.iframe.site.xml">
 	<!ENTITY sakai.summary.calendar SYSTEM "sakai.summary.calendar.xml">
 	<!ENTITY sakai.synoptic.jforum.tool SYSTEM "sakai.synoptic.jforum.tool.xml">
-
 	<!ENTITY sakai.schedule SYSTEM "sakai.schedule.xml">
-	<!ENTITY sakai.syllabus SYSTEM "sakai.syllabus.xml">
 	<!ENTITY sakai.melete SYSTEM "sakai.melete.xml">
-	
 	<!ENTITY sakai.jforum.tool SYSTEM "sakai.jforum.tool.xml">
-	<!ENTITY sakai.samigo SYSTEM "sakai.samigo.xml">
-	<!ENTITY sakai.assignment SYSTEM "sakai.assignment.xml">
-	<!ENTITY sakai.resources SYSTEM "sakai.resources.xml">
-	<!ENTITY sakai.dropbox SYSTEM "sakai.dropbox.xml">
 	<!ENTITY osp.glossary SYSTEM "osp.glossary.xml">
 	<!ENTITY sakai.site.roster SYSTEM "sakai.site.roster.xml">
-	<!ENTITY sakai.gradebook.tool SYSTEM "sakai.gradebook.tool.xml">
-	<!ENTITY sakai.rwiki SYSTEM "sakai.rwiki.xml">
-
-	<!ENTITY sakai.sitestats SYSTEM "sakai.sitestats.xml">
+	<!ENTITY sakai.rwiki SYSTEM "sakai.rwiki.xml">	<!ENTITY sakai.sitestats SYSTEM "sakai.sitestats.xml">
 	<!ENTITY sakai.siteinfo SYSTEM "sakai.siteinfo.xml">
--->
-
+]>
 <book lang="zh_CN">
 	<bookinfo>
 		<title>“迈向无烟中国”培训平台帮助</title>
@@ -57,17 +44,14 @@
 	</bookinfo>
 <!--
 	&sakai.iframe.service;
-	
 	&sakai.createuser;
 	&sakai.sitebrowser;
-
 	&sakai.users;
 	&sakai.aliases;
-	&sakai.sites;
 	
 	
 	&sakai.iframe.myworkspace;	
-	&sakai.profile2;
+
 	&sakai.membership;
 	&sakai.sitesetup;
 	&sakai.preferences;
@@ -78,28 +62,35 @@
 	&sakai.synoptic.jforum.tool;
 	&sakai.announcements;
 	&sakai.schedule;
-	&sakai.syllabus;
-	&sakai.melete;
-	
-	&sakai.jforum.tool;
-	&sakai.samigo;
-	&sakai.assignment;
-	&sakai.resources;
-	&sakai.dropbox;
+	&sakai.sitestats;	
 
-	&sakai.site.roster;
-	&sakai.gradebook.tool;
-	&sakai.rwiki;
+	
+	
+
 -->
+	&sakai.syllabus;
 	&sakai.schedule;
-	&sakai.chat;
-	&osp.glossary;
 	&sakai.announcements;
-	&sakai.search;
-<!--
-	&sakai.sitestats;
+	&sakai.resources;
+	<!--
+	&sakai.assignment;
+	&sakai.samigo;
+	&sakai.gradebook.tool;
+	-->
+	&sakai.dropbox;
+	&sakai.chat;
+	&sakai.rwiki;
+	&sakai.site.roster;
+	<!--
 	&sakai.siteinfo;
--->
+	&sakai.melete;
+	&sakai.jforum.tool;
+	-->
+	&osp.glossary;
+	&sakai.search;
+	&sakai.profile2;
+	&sakai.sites;	
+
 </book>
 
 
