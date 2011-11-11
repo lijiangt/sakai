@@ -394,7 +394,7 @@ public class ProfileLogicImpl implements ProfileLogic {
 		Person p = new Person();
 		String userUuid = user.getId();
 		p.setUuid(userUuid);
-		p.setDisplayName(user.getDisplayName());
+		p.setDisplayName(user.getDisplayName().trim());
 		p.setType(user.getType());
 		p.setPreferences(preferencesLogic.getPreferencesRecordForUser(userUuid));
 		p.setPrivacy(privacyLogic.getPrivacyRecordForUser(userUuid));
