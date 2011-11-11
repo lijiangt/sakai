@@ -1022,6 +1022,13 @@ public class DeliveryActionListener
       itemGradingAttachmentList.addAll(data.getItemGradingAttachmentList());
       //itemBean.setItemGradingAttachmentList(data.getItemGradingAttachmentList());
     }
+
+  //add for multiple choices
+//  if(itemBean.getItemData().getTypeId()==2)
+  if(itemBean.getPoints()!=itemBean.getMaxPoints()){
+	  itemBean.setPoints(0);
+  }
+    
     itemBean.setItemGradingAttachmentList(itemGradingAttachmentList);
 
     // set question feedback.

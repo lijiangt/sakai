@@ -839,7 +839,7 @@ public class GradingService
       // save#2: now, we need to get the full set so we can calculate the total score accumulate for the
       // whole assessment.
       Set fullItemGradingSet = getItemGradingSet(data.getAssessmentGradingId().toString());
-      float totalAutoScore = getTotalAutoScore(fullItemGradingSet);
+      float totalAutoScore = getTotalAutoScore(fullItemGradingSet,publishedItemHash,publishedItemTextHash);
       data.setTotalAutoScore( Float.valueOf(totalAutoScore));
       //log.debug("**#1 total AutoScore"+totalAutoScore);
       if (Float.compare((totalAutoScore + data.getTotalOverrideScore().floatValue()),new Float("0").floatValue())<0){
@@ -880,15 +880,55 @@ public class GradingService
     }
   }
 
-  private float getTotalAutoScore(Set itemGradingSet){
+	private boolean isMcmCorrect(Set itemGradingSet,
+			ItemGradingIfc itemGrading, HashMap publishedItemTextHash) {
+		Long itemId = itemGrading.getPublishedItemId();
+		ItemTextIfc itemText = (ItemTextIfc) publishedItemTextHash
+				.get(itemGrading.getPublishedItemTextId());
+		ArrayList answerArray = itemText.getAnswerArray();
+		Iterator iter = itemGradingSet.iterator();
+		int itemGradingNum = 0;
+		log.warn(itemId);
+		while (iter.hasNext()) {
+			ItemGradingIfc itemGradingIfc = (ItemGradingIfc) iter.next();
+			if ((itemGradingIfc.getPublishedItemId().intValue() == itemId
+					.intValue()) && (itemGradingIfc.getAutoScore() > (float) 0))
+				itemGradingNum++;
+		}
+		int correctAnswers = 0;
+		if (answerArray != null) {
+			for (int i = 0; i < answerArray.size(); i++) {
+				AnswerIfc a = (AnswerIfc) answerArray.get(i);
+				if (a.getIsCorrect().booleanValue())
+					correctAnswers++;
+			}
+		}
+		log.warn(itemGradingNum);
+		log.warn(correctAnswers);
+		if (correctAnswers == itemGradingNum)
+			return true;
+		else
+			return false;
+	}
+
+  private float getTotalAutoScore(Set itemGradingSet,HashMap  publishedItemHash,HashMap publishedItemTextHash){
       //log.debug("*** no. of itemGrading="+itemGradingSet.size());
     float totalAutoScore =0;
     Iterator iter = itemGradingSet.iterator();
     while (iter.hasNext()){
       ItemGradingIfc i = (ItemGradingIfc)iter.next();
       //log.debug(i.getItemGradingId()+"->"+i.getAutoScore());
-      if (i.getAutoScore()!=null)
-	totalAutoScore += i.getAutoScore().floatValue();
+			if (i.getAutoScore() != null) {
+				Long itemId = i.getPublishedItemId();
+				ItemDataIfc item = (ItemDataIfc) publishedItemHash.get(itemId);
+				Long itemType = item.getTypeId();
+				if (itemType != 2) {
+					totalAutoScore += i.getAutoScore().floatValue();
+				} else if (isMcmCorrect(itemGradingSet, i,
+						publishedItemTextHash)) {
+					totalAutoScore += i.getAutoScore().floatValue();
+				}
+			}
     }
     return totalAutoScore;
   }
