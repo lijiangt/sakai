@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="profile2-tool">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/resources"/>
+        <dependent-module archiveName="profile2-util-1.4.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/profile2-util/profile2-util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="profile2-bundle-1.4.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/profile2-bundle/profile2-bundle">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="profile2-tool"/>
+        <property name="java-output-path" value="/profile2-tool/target/classes"/>
+    </wb-module>
+</project-modules>
