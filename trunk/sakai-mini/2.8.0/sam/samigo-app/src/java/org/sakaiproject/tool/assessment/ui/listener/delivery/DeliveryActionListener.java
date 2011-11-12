@@ -1024,9 +1024,10 @@ public class DeliveryActionListener
     }
 
   //add for multiple choices
-//  if(itemBean.getItemData().getTypeId()==2)
-  if(itemBean.getPoints()!=itemBean.getMaxPoints()){
-	  itemBean.setPoints(0);
+  if(itemBean.getItemData().getTypeId()==2){
+	  if(itemBean.getPoints()!=itemBean.getMaxPoints()){
+		  itemBean.setPoints(0);
+	  }
   }
     
     itemBean.setItemGradingAttachmentList(itemGradingAttachmentList);
