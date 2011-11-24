@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.createuser">
+	<title>用户注册</title>
+<para>
+<para>在远程教育平台首页点击左侧的“用户注册”，如下图所示：</para>
+<figure><title>用户注册入口</title>
+<graphic fileref="images/createuser/image003.jpg"/>
+</figure>
+
+<para>进入用户注册页面之后，输入各项信息：</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>帐号即用户名，登录时需输入，建议使用本人姓名拼音全拼，例如：zhangsan。</para>
+<important><title>注意：</title><para>注册完成之后帐号不能修改</para></important>
+</listitem>
+<listitem>
+<para>姓名，强烈建议输入个人真实姓名</para>
+</listitem>
+
+<listitem>
+<para>Email即电子信箱，建议输入</para>
+</listitem>
+<listitem>
+<para>创建新密码，即用于登录远程教育平台的密码，建议不要使用111111、000000等过于简单的密码</para>
+</listitem>
+<listitem>
+<para>确认新密码，再输入一次密码，要求两次输入的密码一致</para>
+</listitem>
+</orderedlist>
+
+<figure><title>用户注册页面</title>
+<graphic fileref="images/createuser/image004.jpg"/>
+</figure>
+<para>
+信息输入完成之后点击下方的“创建帐号”。</para>
+
+<para>如果出现如下图所示的“警告 该帐号已经被使用”信息，表示该帐号已经被他人使用，请更换帐号，建议在帐号后面加入数字，例如zhangsan2</para>
+
+<figure><title>帐号已被使用</title>
+<graphic fileref="images/createuser/image005.jpg"/>
+</figure>
+
+<para>
+如果用户注册成功，将自动登录平台，如下图所示：
+</para>
+<figure><title>登录之后的界面</title>
+<graphic fileref="images/createuser/image006.jpg"/>
+</figure>
+
+
+
+
+</para>	
+</chapter>

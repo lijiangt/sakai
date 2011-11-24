@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.singleuser">
+	<title>账户信息</title>
+<para>登录远程教育平台后，点击左下方的“账户信息”(在“我的工作空间”站点中)</para>	
+<figure><title>个人信息维护入口</title>
+<graphic fileref="images/singleuser/image009.jpg"/>
+</figure>
+
+<para>即可查看个人信息，如图所示：</para>	
+<figure><title>查看个人信息</title>
+<graphic fileref="images/singleuser/image010.jpg"/>
+</figure>
+
+<para>点击“下方的“修改”按钮即可进入修改页面</para>	
+<figure><title>修改个人信息页面</title>
+<graphic fileref="images/singleuser/image011.jpg"/>
+</figure>
+
+
+<para>帐号不能修改，在该页面可修改姓名、Email和密码，如果需要修改密码，请在“创建新密码”和“确认新密码”中输入新的密码，如果无需修改密码，就无需在这两个框中输入。</para>
+
+<para>输入完成之后点击“保存”完成修改。</para>	
+
+</chapter>

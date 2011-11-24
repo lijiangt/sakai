@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.membership">
+	<title>所属站点</title>
+<para>登录平台后，点击左侧的“所属站点”(在“我的工作空间”站点中)。</para>
+<para>注：在该平台中课程以站点的形式展现，所以经常会用到“站点”这个名词。</para>
+<figure><title>所属站点入口</title>
+<graphic fileref="images/membership/image012.jpg"/>
+</figure>
+
+<para>当前显示的是“我的当前站点”，点击“可加入的网站”</para>
+<figure><title>所属站点</title>
+<graphic fileref="images/membership/image013.jpg"/>
+</figure>
+
+<figure><title>可加入的网站/站点</title>
+<graphic fileref="images/membership/image014.jpg"/>
+</figure>
+
+<para>然后在要加入的站点后面点击“加入”，然后页面会提示“您现在是网站的参与者 平台使用培训”，表示已经成功参加该课程</para>
+<figure><title>成功参加该课程</title>
+<graphic fileref="images/membership/image015.jpg"/>
+</figure>
+
+<para>按F5刷新页面，页面上方显示“平台使用培训”，表示您已经参加该课程。</para>
+<figure><title>刷新后显示新加入的课程</title>
+<graphic fileref="images/membership/image016.jpg"/>
+</figure>
+<para>若要退出课程学习，可在“我的当前站点”中操作。</para>
+</chapter>

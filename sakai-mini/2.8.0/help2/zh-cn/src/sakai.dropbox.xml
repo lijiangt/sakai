@@ -191,7 +191,7 @@
 若要浏览投递箱中的文件，点击名称左边的黑色三角形，可展开或折叠投递箱内文件。
 <figure><title>黑色三角形</title><mediaobject>
 <imageobject>
-<imagedata fileref="http://wuyanzhongguo.cn/library/image/sakai/expand-collapse.gif"/>
+<imagedata fileref="/library/image/sakai/expand-collapse.gif"/>
 </imageobject>
 </mediaobject>
 </figure>
@@ -204,7 +204,7 @@
 <step><para>选中要移动的项目所在的文件夹左边的复选框，点击“标题”上方的“拷贝”。</para></step>
 <step><para>您会看到该投递箱中的文件夹中的粘贴图标，点击要粘贴文件夹，将看到该投递箱所有的文件，在“动作”中点击“粘贴拷贝文件”。您会看到文件拷贝到该投递箱文件夹中。<figure><title>粘贴图标</title><mediaobject>
 <imageobject>
-<imagedata fileref="http://wuyanzhongguo.cn/library/image/silk/page_paste.gif"/>
+<imagedata fileref="/library/image/silk/page_paste.gif"/>
 </imageobject>
 </mediaobject>
 </figure>
