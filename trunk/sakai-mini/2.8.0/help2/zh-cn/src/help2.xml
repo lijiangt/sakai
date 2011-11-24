@@ -15,7 +15,8 @@
 	<!ENTITY sakai.gradebook.tool SYSTEM "sakai.gradebook.tool.xml">
 	<!ENTITY sakai.iframe.service SYSTEM "sakai.iframe.service.xml">
 	<!ENTITY sakai.createuser SYSTEM "sakai.createuser.xml">
-	<!ENTITY sakai.sitebrowser SYSTEM "sakai.sitebrowser.xml">	<!ENTITY sakai.users SYSTEM "sakai.users.xml">
+	<!ENTITY sakai.sitebrowser SYSTEM "sakai.sitebrowser.xml">	
+	<!ENTITY sakai.users SYSTEM "sakai.users.xml">
 	<!ENTITY sakai.aliases SYSTEM "sakai.aliases.xml">
 	<!ENTITY sakai.iframe.myworkspace SYSTEM "sakai.iframe.myworkspace.xml">	
 	<!ENTITY sakai.membership SYSTEM "sakai.membership.xml">
@@ -30,7 +31,8 @@
 	<!ENTITY sakai.jforum.tool SYSTEM "sakai.jforum.tool.xml">
 	<!ENTITY osp.glossary SYSTEM "osp.glossary.xml">
 	<!ENTITY sakai.site.roster SYSTEM "sakai.site.roster.xml">
-	<!ENTITY sakai.rwiki SYSTEM "sakai.rwiki.xml">	<!ENTITY sakai.sitestats SYSTEM "sakai.sitestats.xml">
+	<!ENTITY sakai.rwiki SYSTEM "sakai.rwiki.xml">	
+	<!ENTITY sakai.sitestats SYSTEM "sakai.sitestats.xml">
 	<!ENTITY sakai.siteinfo SYSTEM "sakai.siteinfo.xml">
 ]>
 <book lang="zh_CN">
@@ -44,7 +46,7 @@
 	</bookinfo>
 <!--
 	&sakai.iframe.service;
-	&sakai.createuser;
+	
 	&sakai.sitebrowser;
 	&sakai.users;
 	&sakai.aliases;
@@ -52,12 +54,12 @@
 	
 	&sakai.iframe.myworkspace;	
 
-	&sakai.membership;
+
 	&sakai.sitesetup;
 	&sakai.preferences;
-	&sakai.singleuser;
+
 	
-	&sakai.iframe.site;
+	
 	&sakai.summary.calendar;
 	&sakai.synoptic.jforum.tool;
 	&sakai.announcements;
@@ -68,12 +70,17 @@
 	
 
 -->
+	&sakai.iframe.site;
+	&sakai.membership;
+	&sakai.singleuser;
+	&sakai.createuser;
 	&sakai.syllabus;
 	&sakai.schedule;
 	&sakai.announcements;
 	&sakai.resources;
-	<!--
 	&sakai.assignment;
+	<!--
+	
 	&sakai.samigo;
 	&sakai.gradebook.tool;
 	-->

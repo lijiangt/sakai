@@ -1,9 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter id="sakai.assignment">
 	<title>作业</title>
+
+<sect1><title>新建/添加、编辑或删除作业</title>
 <para>
+<sect2><title>新建/添加新作业</title>
+<para>若要新建或添加作业，请按照下列步骤进行：<procedure>
+<step><para>在菜单栏中，点击“作业”，然后点击页面顶部的“新建”。 </para></step>
+<step><para>在打开的页面中，填入相应信息（带* 的项目为必填项）： </para></step>
+<itemizedlist>
+<listitem><para>作业标题：输入作业的简短标题，如：调查。 </para></listitem>
+<listitem><para>开始日期：从开始日期后，学生可以开始作业。学生在作业开始日期之前不可阅览此作业。若要向学生发送开始日期的通知，请参考下面的第四步。 </para></listitem>
+<listitem><para>截止日期：作业的截止日期。若要将作业的截止日期添加到该课程站点的日程表中，请参考下面的第四步。 </para></listitem>
+<listitem><para>最迟提交日期：该日期后不再接收作业提交。您可以将该时间设置为晚于截止日期的时间，这样在截止日期后仍然可以提交（这样可以允许复查） </para></listitem>
+<listitem><para>学生提交作业形式：您可以选择只允许学生在线提交（在文本框中直接输入内容），或只允许以附件形式提交，或者允许两种方式，或者非电子作业（不允许在线提交），或者只上传一个文件。 并选择是否“允许重新提交”的复选框。</para></listitem>
+<listitem><para>评分范围：您可以选择不评分，字母等级评分，或者分数，或者及格/不及格，或者评分标记（打勾）。
+<note><title>注意：</title><para>若选择分数评分，请输入最高分值(满分值)</para></note>
+
+</para></listitem>
+</itemizedlist>
+<step><para>在“作业指导”中输入关于该作业的说明。</para></step>
+<note><title>注意：</title><para>这一项为可选项，但是如果此项空白，在点击“发布”时会在页面顶部弹出警告。再次点击“发布”即可。</para></note>
+
+<step><para>在作业指导下面，有三个选项：</para></step>
+<itemizedlist>
+<listitem><para>在日程表中显示作业截止日期 ： 若要向站点的日程表中添加截止日期，请选中该项。 </para></listitem>
+<listitem><para>在通知中添加作业开始日期信息：若要在递送作业时自动在站点首页发布作业开始日期的通知，请选中此项。 </para></listitem>
+<listitem><para>在作业中添加独立完成作业的承诺 ：若要在学生提交作业时显示承诺，请选中此项。学生必须回答此项才能提交作业。承诺内容为： </para></listitem></itemizedlist>
+<para>    “本人保证在完成作业过程中，既没有帮助他人完成此作业，也没有抄袭他人的作业。（您必须回答这一问题才能提交作业。） ” </para>
 
 
 
-</para>	
+<para>附件：若要在作业中添加附加资源，按照下面的步骤进行： </para>
+
+</procedure></para></sect2>
+
+<sect2><title>评分</title>
+<para>内容<procedure>
+</procedure></para></sect2>
+
+<sect2><title>Email评分通知选项：</title>
+<para>内容<procedure>
+</procedure></para></sect2>
+
+<sect2><title>附件</title><para><procedure>
+<step><para>点击添加附件, 添加/删除附件。 </para></step>
+<step><para>您可以添加任意数目的附件，附件可以为本地文件、网站地址和资源： </para></step>
+<itemizedlist mark="opencircle">
+<listitem override="bullet"><para>若要添加本地文件点击“上传本地文件” ，然后输入文件路径或点击“浏览” 。找到文件后，选中并点击“打开”,可在“要添加的项目”中看到添加的URL地址内容，然后点击“继续”，返回作业编辑页面即完成添加。 </para></listitem>
+<note><title>注意：</title><para>粘贴文件时，必须包括该文件的扩展名（如，.gif，.doc， .html，或.jpg)。否则在显示或下载该文件时会发生错误。</para></note>
+<listitem override="bullet"><para>若要粘贴URL地址，在“或者一个URL链接 (链接到站点)”后面的输入框中键入URL地址。点击“添加”，可在“要添加的项目”中看到添加的URL地址内容，然后点击“继续”，返回作业编辑页面即完成添加。 </para></listitem>
+<listitem override="bullet"><para>若要从资源中添加附件，查找“资源”中的相关的文件， 点击“动作”中的“粘贴附件”，可在“要添加的项目”中看到添加的URL地址内容，然后点击“继续”，返回作业编辑页面即完成添加。</para></listitem>
+<listitem override="bullet"><para>在“要添加的项目”中可以看到所有的添加附件，如不需要可以点击“移除”取消附件。</para></listitem>
+</itemizedlist>
+</procedure></para></sect2>
+
+<sect2><title>附加信息</title>
+<para>内容<procedure>
+</procedure></para></sect2>
+
+<sect2><title>发布、预览和保存草稿</title>
+<step><para>若要在发布前预览作业的效果，请点击“预览”。若要查看学生视图，点击学生视图旁边的黑色三角。</para></step>
+<step><para>若要保存该作业，暂时不发面，请点击“保存草稿”。在发布前您可以修改该作业。只有老师（或其他有该权限的人）可以查看草稿</para></step>
+<step><para>一切准备就绪后，点击“发布”发布该作业。可见“作业清单”页面。 </para></step>
+</sect2>
+
+<sect2><title>编辑作业</title>
+<para>在作业开始后，您仍然可以编辑作业。按照下面的步骤进行：<procedure>
+<step><para>在菜单栏中点击“作业”。 </para></step>
+<step><para>在需要编辑的作业下面，点击“编辑”。 </para></step>
+<step><para>编辑修改作业</para></step>
+<step><para>编辑完成后，您可以“发布”或“预览”该作业。如果您选择预览，您可以进一步选择“发布”和“保存草稿”。 </para></step>
+
+<note><title>注意：</title><para>    如果作业已经对学生开放，您只能预览和发布该作业。
+</para></note>
+
+<para>当学生查看修改过的作业时，系统会提示他们作业已经被修改。</para>
+
+</procedure></para></sect2>
+
+<sect2><title>删除作业</title>
+<para>若要删除作业，请按照下面的步骤进行：<procedure>
+<step><para>在菜单栏中点击“作业”。您将看到作业列表。 </para></step>
+<step><para>选中相应作业后面删除下面的复选框。</para></step>
+<step><para>点击“更新”，即可删除作业。</para></step>
+<step><para>下面您会看到提示，询问您是否确定要删除该作业。点击“删除”将永久删除该作业，或点击“取消”取消删除操作。 </para></step>
+</procedure></para></sect2>
+
+</para></sect1>	
+
+
+
+
+
+
+
+
+
+	
 </chapter>
