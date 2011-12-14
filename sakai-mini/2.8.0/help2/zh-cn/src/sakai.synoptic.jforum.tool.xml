@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chapter id="sakai.synoptic.jforum.tool">
+
+<title>论坛新贴和新消息</title>
+<para>显示距上次登录之后的未读站内消息和论坛新贴。
+</para><para>如果有新消息发布则在此提示，示例显示为：“新消息: (1) ”（数字为新消息个数），点击消息数字即可查看。
+</para><para>如果有新贴发表则在此提示，示例显示为：“您上次登录之后有新贴发表。”，点击“新贴”即可查看。
+</para><para>如果没有消息及新帖则显示：“没有新消息。”或“没有新贴子。”
+
+</para>
+</chapter>

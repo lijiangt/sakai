@@ -1,101 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter id="sakai.assignment">
 	<title>作业</title>
+	
+<sect1>
+<title>总览</title>
+<sect2>
+<title>功能</title>	
+<para>在课程中，老师可以通过作业工具在线创建、发布、接收和打分。作业是保密的，学生之间不能看见彼此的作业。</para>
+<para>作业工具提供了多种评分方式，包括字母评分、分数、对号、及格与不及格方式和不打分。</para>
+<para>作业可以返还重新提交，返还时可以打分也可以不打分。老师可以一次将一个作业的全部提交下载到本地机器上。老师发布分数后，学生可以查看老师的评语及分数。</para>
 
-<sect1><title>新建/添加、编辑或删除作业</title>
-<para>
-<sect2><title>新建/添加新作业</title>
-<para>若要新建或添加作业，请按照下列步骤进行：<procedure>
-<step><para>在菜单栏中，点击“作业”，然后点击页面顶部的“新建”。 </para></step>
-<step><para>在打开的页面中，填入相应信息（带* 的项目为必填项）： </para></step>
-<itemizedlist>
-<listitem><para>作业标题：输入作业的简短标题，如：调查。 </para></listitem>
-<listitem><para>开始日期：从开始日期后，学生可以开始作业。学生在作业开始日期之前不可阅览此作业。若要向学生发送开始日期的通知，请参考下面的第四步。 </para></listitem>
-<listitem><para>截止日期：作业的截止日期。若要将作业的截止日期添加到该课程站点的日程表中，请参考下面的第四步。 </para></listitem>
-<listitem><para>最迟提交日期：该日期后不再接收作业提交。您可以将该时间设置为晚于截止日期的时间，这样在截止日期后仍然可以提交（这样可以允许复查） </para></listitem>
-<listitem><para>学生提交作业形式：您可以选择只允许学生在线提交（在文本框中直接输入内容），或只允许以附件形式提交，或者允许两种方式，或者非电子作业（不允许在线提交），或者只上传一个文件。 并选择是否“允许重新提交”的复选框。</para></listitem>
-<listitem><para>评分范围：您可以选择不评分，字母等级评分，或者分数，或者及格/不及格，或者评分标记（打勾）。
-<note><title>注意：</title><para>若选择分数评分，请输入最高分值(满分值)</para></note>
-
-</para></listitem>
-</itemizedlist>
-<step><para>在“作业指导”中输入关于该作业的说明。</para></step>
-<note><title>注意：</title><para>这一项为可选项，但是如果此项空白，在点击“发布”时会在页面顶部弹出警告。再次点击“发布”即可。</para></note>
-
-<step><para>在作业指导下面，有三个选项：</para></step>
-<itemizedlist>
-<listitem><para>在日程表中显示作业截止日期 ： 若要向站点的日程表中添加截止日期，请选中该项。 </para></listitem>
-<listitem><para>在通知中添加作业开始日期信息：若要在递送作业时自动在站点首页发布作业开始日期的通知，请选中此项。 </para></listitem>
-<listitem><para>在作业中添加独立完成作业的承诺 ：若要在学生提交作业时显示承诺，请选中此项。学生必须回答此项才能提交作业。承诺内容为： </para></listitem></itemizedlist>
-<para>    “本人保证在完成作业过程中，既没有帮助他人完成此作业，也没有抄袭他人的作业。（您必须回答这一问题才能提交作业。） ” </para>
-
-
-
-<para>附件：若要在作业中添加附加资源，按照下面的步骤进行： </para>
-
-</procedure></para></sect2>
-
-<sect2><title>评分</title>
-<para>内容<procedure>
-</procedure></para></sect2>
-
-<sect2><title>Email评分通知选项：</title>
-<para>内容<procedure>
-</procedure></para></sect2>
-
-<sect2><title>附件</title><para><procedure>
-<step><para>点击添加附件, 添加/删除附件。 </para></step>
-<step><para>您可以添加任意数目的附件，附件可以为本地文件、网站地址和资源： </para></step>
-<itemizedlist mark="opencircle">
-<listitem override="bullet"><para>若要添加本地文件点击“上传本地文件” ，然后输入文件路径或点击“浏览” 。找到文件后，选中并点击“打开”,可在“要添加的项目”中看到添加的URL地址内容，然后点击“继续”，返回作业编辑页面即完成添加。 </para></listitem>
-<note><title>注意：</title><para>粘贴文件时，必须包括该文件的扩展名（如，.gif，.doc， .html，或.jpg)。否则在显示或下载该文件时会发生错误。</para></note>
-<listitem override="bullet"><para>若要粘贴URL地址，在“或者一个URL链接 (链接到站点)”后面的输入框中键入URL地址。点击“添加”，可在“要添加的项目”中看到添加的URL地址内容，然后点击“继续”，返回作业编辑页面即完成添加。 </para></listitem>
-<listitem override="bullet"><para>若要从资源中添加附件，查找“资源”中的相关的文件， 点击“动作”中的“粘贴附件”，可在“要添加的项目”中看到添加的URL地址内容，然后点击“继续”，返回作业编辑页面即完成添加。</para></listitem>
-<listitem override="bullet"><para>在“要添加的项目”中可以看到所有的添加附件，如不需要可以点击“移除”取消附件。</para></listitem>
-</itemizedlist>
-</procedure></para></sect2>
-
-<sect2><title>附加信息</title>
-<para>内容<procedure>
-</procedure></para></sect2>
-
-<sect2><title>发布、预览和保存草稿</title>
-<step><para>若要在发布前预览作业的效果，请点击“预览”。若要查看学生视图，点击学生视图旁边的黑色三角。</para></step>
-<step><para>若要保存该作业，暂时不发面，请点击“保存草稿”。在发布前您可以修改该作业。只有老师（或其他有该权限的人）可以查看草稿</para></step>
-<step><para>一切准备就绪后，点击“发布”发布该作业。可见“作业清单”页面。 </para></step>
 </sect2>
 
-<sect2><title>编辑作业</title>
-<para>在作业开始后，您仍然可以编辑作业。按照下面的步骤进行：<procedure>
-<step><para>在菜单栏中点击“作业”。 </para></step>
-<step><para>在需要编辑的作业下面，点击“编辑”。 </para></step>
-<step><para>编辑修改作业</para></step>
-<step><para>编辑完成后，您可以“发布”或“预览”该作业。如果您选择预览，您可以进一步选择“发布”和“保存草稿”。 </para></step>
 
-<note><title>注意：</title><para>    如果作业已经对学生开放，您只能预览和发布该作业。
-</para></note>
+<sect2>
+<title>基本概念</title>	
+<para>学生视图：这一工具可以使老师或站点管理员查看该作业的学生视图或普通成员视图。关于学生视图的更多信息，请参阅“成员所看到的作业”。</para>
+<para>诚实誓言：这一选项要求学生在提交作业前必须点击复选框确认他们在完成作业时既没有向别人提供帮助也没有接收别人的帮助。</para>
 
-<para>当学生查看修改过的作业时，系统会提示他们作业已经被修改。</para>
+</sect2>
 
-</procedure></para></sect2>
+<note><title>注意事项</title>
+<para>老师可以返还学生的作业并允许再次提交。这一特征可以用于评审终期设计或论文，或允许学生修改和再次提交。 </para></note>
 
-<sect2><title>删除作业</title>
-<para>若要删除作业，请按照下面的步骤进行：<procedure>
-<step><para>在菜单栏中点击“作业”。您将看到作业列表。 </para></step>
-<step><para>选中相应作业后面删除下面的复选框。</para></step>
-<step><para>点击“更新”，即可删除作业。</para></step>
-<step><para>下面您会看到提示，询问您是否确定要删除该作业。点击“删除”将永久删除该作业，或点击“取消”取消删除操作。 </para></step>
-</procedure></para></sect2>
-
-</para></sect1>	
-
-
-
-
-
-
-
-
+</sect1>
 
 	
+<sect1>
+	<title>新建/添加、编辑或删除作业</title>
+	<sect2><title>新建/添加新作业</title>
+	<para>若要新建或添加作业，请按照下列步骤进行：
+		<orderedlist numeration="arabic">
+		<listitem><para>在菜单栏中，点击“作业”，然后点击页面顶部的“新建”。</para></listitem>
+			<listitem><para>在打开的页面中，填入相应信息（带*的项目为必填项）：<itemizedlist>
+			<listitem><para>作业标题：输入作业的简短标题，如：调查。 </para></listitem>
+			<listitem><para>开始日期：从开始日期后，学生可以开始作业。学生在作业开始日期之前不可阅览此作业。若要向学生发送开始日期的通知，请参考下面的第四步。</para></listitem>
+			<listitem><para>截止日期：作业的截止日期。若要将作业的截止日期添加到该课程站点的日程表中，请参考下面的第四步。</para></listitem>
+			<listitem><para>最迟提交日期：该日期后不再接收作业提交。您可以将该时间设置为晚于截止日期的时间，这样在截止日期后仍然可以提交（这样可以允许复查）</para></listitem>
+			<listitem><para>学生提交作业形式：您可以选择只允许学生在线提交（在文本框中直接输入内容），或只允许以附件形式提交，或者允许两种方式，或者非电子作业（不允许在线提交），或者只上传一个文件。并选择是否“允许重新提交”的复选框。</para></listitem>
+			<listitem><para>评分范围：您可以选择不评分，字母等级评分，或者分数，或者及格/不及格，或者评分标记（打勾）。<caution><title>注意</title><para>若选择分数评分，请输入最高分值(满分值)</para></caution></para></listitem>
+			</itemizedlist>
+			</para></listitem>
+
+		<listitem><para>在“作业指导”中输入关于该作业的内容及说明。<caution><title>注意</title><para>这一项为可选项，但是如果此项空白，在点击“发布”时会在页面顶部弹出警告。再次点击“发布”即可。</para></caution>在作业指导下面，有三个选项：
+		<itemizedlist>
+<listitem><para>在日程表中显示作业截止日期：若要向站点的日程表中添加截止日期，请选中该项。</para></listitem>
+<listitem><para>在通知中添加作业开始日期信息：若要在递送作业时自动在站点首页发布作业开始日期的通知，请选中此项。</para></listitem>
+<listitem><para>在作业中添加独立完成作业的承诺：若要在学生提交作业时显示承诺，请选中此项。学生必须回答此项才能提交作业。承诺内容为： “本人保证在完成作业过程中，既没有帮助他人完成此作业，也没有抄袭他人的作业。（您必须回答这一问题才能提交作业。） ” </para></listitem>
+</itemizedlist></para></listitem>
+		<listitem><para>在“评分”项目中选择，“不要将作业加入到成绩册中”、“将作业成绩添加到成绩册中”或“连接到成绩册中已有作业”。</para></listitem>
+		<listitem><para>在“Email评分通知选项：”中选择，“不要向学生发送评分的Email通知”或“向学生发送评分的邮件通知”。</para></listitem>
+		<listitem><para>在“附件”中添加相关附件信息。</para>
+		<para>若要在作业中添加“附件”及资源，按照下面的步骤进行：
+			<orderedlist numeration="lowerroman">
+			<listitem><para>点击“添加附件”，在“添加附件到作业”页面中选择添加附件方式。您可以添加任意数目的附件，附件可以为本地文件、网站地址和资源。
+			<caution><title>注意</title><para>注意：您可以从自己的计算机中添加附件或从站点资源中选择一项。一旦您做出选择，请选择“继续”，或选择“取消”来返回而不进行任何更改，此时，您将返回到原来的作业，并且需要保存。</para></caution>
+				<itemizedlist>
+				<listitem><para>上传本地文件：在“上传本地文件” 后面输入文件路径或点击“浏览” 查找文件。找到文件后，选中并点击“打开”,附件即添加完成并显示于“要添加的项目”信息中。如果还要继续上传，重复以上操作。如果上传有误，在文件名后点击“移除”删除该附件。
+				<caution><title>注意</title><para>注意：粘贴文件时，必须包括该文件的扩展名（如，.gif，.doc，.html，或.jpg)。否则在显示或下载该文件时会发生错误。</para></caution>
+				</para></listitem>
+				<listitem><para>或者一个URL链接(链接到站点)：粘贴网站地址时，请在“或者一个URL链接(链接到站点)”后面的输入框中键入URL地址。点击“添加”，URL地址内容即添加完成并显示于“要添加的项目”信息中。如果还要继续添加，重复以上操作。如果添加有误，在文件名后点击“移除”删除该地址信息。</para></listitem>
+				<listitem><para>选择资源：从资源中添加附件，查找“资源”中的相关的文件，点击“动作”后面的“粘贴附件”，资源附件即添加完成并显示于“要添加的项目”信息中。</para></listitem>
+				</itemizedlist>
+			</para></listitem>
+			<listitem><para>附件添加完成后，点击“继续”，返回作业编辑页面即完成添加。</para></listitem>
+			<listitem><para>删除附件，在作业编辑页面中点击“添加/删除附件”，进入“添加附件到作业”的页面，在“要添加的项目”附件列表中点击对应附件后面的“移除”删除附件。删除完成后点击“继续”返回作业编辑页面；如果要取消删除请点击“取消”，返回作业编辑页面。</para></listitem>
+			</orderedlist> 			
+		</para></listitem>
+		<listitem><para>附加信息
+			<itemizedlist>
+			<listitem><para>标准答案：为作业提供一个标准答案或解决方案。可在“设置标准答案向学生显示的时间”中选择“在学生开始做作业之前显示”，“学生提交作业之后显示”或“学生提交的作业被评分和返还之后显示”或“在“最迟提交日期”以后显示”向学生公布答案。 新建完成保存后，可进行编辑和删除。</para></listitem>
+			<listitem><para>私人笔记：您可以使用笔记记录作业的问题以及自己的想法等。可以指定显示对象，只有指定的人才可以看到。可在“设置分享对象”中选择“只对自己可见”，“其他教师只可以查看”或“其他教师即可以查看，也可以编辑”。新建完成保存后，可进行编辑和删除。</para></listitem>
+			<listitem><para>多用途项目：可以在特定时间段内向指定的人显示信息。可设置作业标题，在特定时间段内向指定的人显示信息，添加附件，显示时间，显示对象选择。新建完成保存后，可进行编辑和删除。</para></listitem>
+			</itemizedlist>
+		</para></listitem>
+</orderedlist>
+ 	
+	</para>
+</sect2>
+
+<sect2>	
+<title>发布、预览</title><para>若要在发布前预览作业的效果，请点击“预览”。您可以进一步选择“发布”和“编辑”。</para><para>若要查看学生视图，点击“学生视图”旁边的黑色三角。
+</para><para>在发布前您可以修改该作业。只有老师（或其他有该权限的人）可以查看草稿一切准备就绪后，点击“发布”发布该作业。可见“作业清单”页面。
+		</para>
+</sect2>
+
+
+<sect2>
+<title>编辑作业
+		</title><para>在作业开始后，您仍然可以编辑作业。按照下面的步骤进行：
+<orderedlist numeration="arabic">
+<listitem><para>在菜单栏中点击“作业”。</para></listitem>
+<listitem><para>在需要编辑的作业下面，点击“编辑”，编辑修改作业。</para></listitem>
+<listitem><para>编辑完成后，您可以“发布”或“预览”该作业。如果您选择预览，您可以进一步选择“发布”和“编辑”。 </para></listitem>
+</orderedlist> 
+  
+		<caution><title>注意</title><para>如果作业已经对学生开放，您只能预览和发布该作业。当学生查看修改过的作业时，系统会提示他们作业已经被修改。</para></caution>
+		</para>
+</sect2>
+
+
+<sect2>
+<title>删除作业
+		</title><para>若要删除作业，请按照下面的步骤进行：
+<orderedlist numeration="arabic">
+<listitem><para>在菜单栏中点击“作业”。您将看到作业列表。</para></listitem>
+<listitem><para>选中相应作业“是否删除”下面的复选框。</para></listitem>
+<listitem><para>点击“更新”，即可删除作业。</para></listitem>
+<listitem><para>下面您会看到提示，询问您是否确定要删除该作业。点击“删除”将永久删除该作业，或点击“取消”取消删除操作。</para>
+</listitem></orderedlist></para>
+</sect2>
+</sect1>
+
+
+
+<sect1>
+<title>评阅作业和复查学生的状态</title>
+<sect2>
+<title>评阅作业</title>
+<caution><title>注意</title><para>使用中这一功能可能不可用。</para></caution>
+请按照下面的步骤评阅作业：
+<orderedlist numeration="arabic">
+<listitem><para>在菜单栏中点击“作业”。您会看到作业清单。 </para></listitem>
+<listitem><para>点击要评阅的作业标题下面的“评分”。您会看到作业内容和学生的提交。 </para></listitem>
+<listitem><para>点击一个学生的姓名，开始查看该学生的作业并进行评阅。
+<caution><title>注意</title><para>您可以在学生的提交文本中添加评语，将评语添加在双括弧中（如，  {{在此处添加评语}} ）你的评语将显示为红色。在学生提交文本下面的输入框中，您可以添加其他评语（没有特别的格式要求）。</para></caution>
+ </para></listitem>
+<listitem><para>若要粘贴附件，将附件一起返还给学生，点击“添加附件”。 </para></listitem>
+<listitem><para>在“得分：”旁边，给出学生的作业分数或做出相应的选择。 </para></listitem>
+<listitem><para>如果允许学生再次提交，请点击“允许重新提交”前面的复选框。 </para></listitem>
+<listitem><para>评分完成后，点击“返还”可以使分数立即生效；或者点击 “保存”返回到提交的作业列表并继续评分。您还可以点击“预览”查看学生将看到的效果，或者点击“取消”返回到作业列表。 
+<caution><title>注意</title>
+<para>返还作业时您可以打分也可以不打分。</para></caution>
+</para></listitem>
+<listitem><para>评分完成后，若想使保存的分数生效，在查看提交的作业列表时点击发布分数。 </para></listitem>
+</orderedlist>
+
+</sect2>
+
+<sect2>
+<title>复查学生的状态</title>
+您可以查看学生列表，查看每个学生的所有作业状态。您可以查看该学生是否已经提交作业，作业状态和分数。
+<orderedlist numeration="arabic">
+<listitem><para>在菜单栏中，点击“作业”。 </para></listitem>
+<listitem><para>在“作业清单”页面下方的“浏览”中选择“学生的作业清单”。 </para></listitem>
+<listitem><para>点击学生姓名旁边的黑色三角形查看该学生的作业提交状态
+。再次点击该三角可以隐藏该生的信息。 </para></listitem>
+</orderedlist>
+
+</sect2>
+
+
+</sect1>
+
+<sect1>
+<title>预览作业</title>
+<para>您可以查看您创建的作业的普通成员视图。</para>
+<para>若要在作业发布前后查看该作业的普通成员视图，请按照下面的步骤进行：</para>
+
+<orderedlist numeration="arabic">
+<title>发布前</title>
+<listitem><para>创建一个新作业或选择一个已有作业进行修改。</para></listitem>
+<listitem><para>点击“预览”。</para></listitem>
+<listitem><para>点击“学生视图”旁边的黑色三角。 </para></listitem>
+</orderedlist>
+
+<orderedlist numeration="arabic">
+<title>发布后</title>
+<listitem><para>在菜单栏中点击“作业”。 </para></listitem>
+<listitem><para>在作业页面的上方点击“学生视图”。您将看到学生和普通成员看到的作业列表。 </para></listitem>
+<listitem><para>如果您想以学生身份完成相关作业并提交，请点击相关作业下面的“以学生身份提交”。 </para></listitem>
+<listitem><para>若要离开学生视图模式，返回到作业列表，请点击“作业清单”。 </para></listitem>
+</orderedlist>
+
+</sect1>
+
+
+
+<sect1>
+<title>返还作业</title>
+<para>在菜单栏中点击“作业”，您会看到作业列表。在列表上的“总共上交 / 最近上交”一列中显示每个作业的学生提交总数（“总共上交”）和新提交数目（“最近上交”）。根据该值您可以判断是否需要对该作业进行操作。</para>
+<para>若要将作业返还给学生，请按照下面的步骤进行：</para>
+<caution><title>注意</title>
+<para>关于评阅作业的详细说明在“评分”的编辑页面中，其中还包括了如何返还作业。开始评阅作业后，您可以向学生返还作业，返还时可以进行打分，也可以不打分。您既可以在学生提交的文本中书写评语，也可以在另外的评语框中添加评语。如果允许学生重新提交，请选中允许重新提交。</para></caution>
+<orderedlist numeration="arabic">
+<listitem><para>点击相关作业下方的“评分”，进入编辑页面。</para></listitem>
+<listitem><para>点击要返还作业的学生用户名，进入编辑页面。</para></listitem>
+<listitem><para>在学生的“作业”中录入评语，或在教师评语中录入。</para></listitem>
+<listitem><para>点击“返还给学生”即将作业返还给学生。页面中将出现“教师评论信息和评分信息已被保存。”的提示信息。</para></listitem>
+<listitem><para>在学生作业的“提交”列表中，在“状态”一列，有问题的同学会显示为“已返还的”。</para></listitem>
+</orderedlist>
+
+</sect1>
+
+
+<sect1>
+<title>再次提交作业</title>
+<para>请按照下面的步骤提交被返还的作业：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在相应课程或项目站点的菜单栏中点击“作业”。</para></listitem>
+<listitem><para>点击要再次提交的作业的标题。 </para></listitem>
+<listitem><para>您可以看到初始的作业和您的原始提交。老师可能会在您的提交中添加评语，也可能添加额外的评语，额外的评语显示在页面按钮附近。在输入框“在下面输入您的再次提交”中，输入或粘贴您修改后的提交。
+
+<caution><title>注意</title>
+<para>返还的作业会在“状态”一栏中显示“返还”（返还的时间和日期）。</para></caution>
+
+ </para></listitem>
+<listitem><para>完成修改后，点击“再次提交”。或者点击“保存草稿”保存提交，等待日后继续工作。 </para></listitem>
+</orderedlist>
+
+</sect1>
+
+
+<sect1>
+<title>导出作业分数</title>
+<para>按照如下步骤将作业的分数导出为数据表</para>
+<orderedlist numeration="arabic">
+<listitem><para>在相应课程或项目站点的菜单栏中，点击“作业”。 </para></listitem>
+<listitem><para>点击“作业清单”后面的“评分报告”。 </para></listitem>
+<listitem><para>在页面接近顶部的位置，点击“下载表格”。 </para></listitem>
+<listitem><para>浏览器可能会提示您是要打开还是保存该文件。按照浏览器提示进行；如果选择保存文件，则需要选择保存地址（本地机器上的地址）。 </para></listitem>
+</orderedlist>
+<caution><title>注意</title>
+<para>下载的文件是Excel(如，.xls)格式。</para></caution>
+
+<para>数据表的第一列为所有有分数的学生的姓名。后面每一列为一个作业，每个学生的分数在每一列的相应单元格中。</para>
+
+</sect1>
+
+<sect1>
+<title>阅读作业</title>
+<para>若要查看作业，在相应的课程站点中，点击菜单栏中的“作业”。您将看到作业列表及作业的状态。点击标题查看相应的作业。</para>
+<para>如果您是老师，您可以查看学生的作业。在“浏览”下拉菜单中，选择“学生的作业清单”。您还可以查看作业的学生视图，点击窗口顶部的“学生视图”。</para>
+
+</sect1>
+
+
+<sect1>
+<title>复制作业</title>
+<para>若要复制作业，请按照下面的步骤进行在：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在菜单栏中，点击“作业”。您将看到作业清单。</para></listitem>
+<listitem><para>若要复制作业，点击作业标题下面的复制按钮。在作业清单的上方您会看到该作业的副本，标题上显示“复制”字样。 </para></listitem>
+</orderedlist>
+<caution><title>注意</title>
+<para>复制的作业为草稿。如果您想要发面该作业，点击作业标题，进入编辑页面后点击最下方的“发布”。</para></caution>
+
+</sect1>
+
+<sect1>
+<title>完成并提交作业</title>
+<para>老师或项目管理员会建立作业。请按照下面的步骤完成作业：</para>
+<orderedlist numeration="arabic">
+<listitem><para>打开相应的站点。 </para></listitem>
+<listitem><para>在菜单栏中点击“作业”。 </para></listitem>
+
+<listitem><para>点击作业标题，打开相应的作业。 
+<caution><title>注意</title>
+<para>作业的状态必须是“打开”，这样您才可以开始作业。 </para></caution>
+</para></listitem>
+
+<listitem><para>请按照您的老师或项目管理员的指导完成作业。可能您需要在文本框中输入内容，或者上传附件，或同时进行。 </para></listitem>
+<listitem><para>若要添加附件，在从计算机中选择一个文件后面的输入框中键入文件地址，或者点击“浏览...”选中文件，添加附件。或者点击“或者从工作空间或站点选择需要添加的文件”，在之后显示的窗口中可以有下列选择： 
+<itemizedlist>
+<listitem><para>上传本地文件，请点击“浏览...”。在输入框中键入文件地址，或者浏览并选中文件，点击“打开”。 </para></listitem>
+<listitem><para>若要粘贴网站地址，在“或者一个URL链接 (链接到站点) ”提供的输入框中键入网址。可以省略http://（如， www.baidu.com)。然后点击“添加”。</para></listitem>
+<listitem><para>选择资源：从资源中添加附件，查找“资源”中的相关的文件，点击“动作”后面的“粘贴附件”，资源附件即添加完成并显示于“要添加的项目”信息中。</para></listitem>
+</itemizedlist>
+
+</para></listitem>
+<listitem><para>如果要查看作业在教师视图中的显示效果，请点击“预览”。 </para></listitem>
+<listitem><para>如果要保存作业，稍后继续完成，点击屏幕底部的“保存草稿”，当您想要再次打开时，您可以在作业列表中看到保存的草稿，标题后标记为“草稿”。 </para></listitem>
+<listitem><para>完成后可以点击屏幕底部的“提交”按钮提交作业</para></listitem>
+</orderedlist>
+</sect1>
+
+
+<sect1>
+<title>发布作业</title>
+<para>若要发布经保存的草稿，请按照下面的步骤进行：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在相应的课程或项目站点中点击“作业”。</para></listitem>
+<listitem><para>在作业草稿的标题中会有“草稿”标记。点击标题可以打开该草稿。</para></listitem>
+<listitem><para>做所需的更新或修改。您可以添加附件或做下面的任何操作：
+
+<itemizedlist>
+<listitem><para>给日程计划添加截止日期：向站点日程表中添加该作业的截止日期 </para></listitem>
+<listitem><para>宣布开始日期：在站点通知中显示作业的开始日期 </para></listitem>
+<listitem><para>添加诚实誓言：在作业中添加诚实誓言</para></listitem>
+</itemizedlist>
+
+</para></listitem>
+<listitem><para>若要在发布前预览草稿，点击“预览”。若要保存修改但是不发布作业，点击“保存草稿”。若取消修改，请点击“取消”。 </para></listitem>
+<listitem><para>若要发布作业（即使作业生效）点击“发布”。</para></listitem>
+</orderedlist>
+</sect1>
+
+
+<sect1>
+<title>添加诚实誓言</title>
+<caution><title>注意</title>
+<para>关于创建作业的信息，请参考“新建/添加、编辑或删除作业”或“发布作业”。</para></caution>
+<para>诚实誓言要求学生确认既没有帮助他人完成此作业，也没有寻求他人的帮助以完成此作业。学生必须回答该问题才能提交作业。</para>
+<para>若要在作业中添加诚实誓言，在作业屏幕的底部，选中“添加诚实誓言”复选框。你可以在新作业或正在修改的作业中添加诚实誓言。</para>
+
+</sect1>
+
+
+<sect1>
+<title>查看作业分数</title>
+<para>查看作业分数，请按照下面步骤执行：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在菜单栏中，点击“作业”。在作业列表中您可以看到作业标题及相应的状态。 </para></listitem>
+<listitem><para>点击作业标题可以查看更多信息。您可以看到作业评阅日期及评语。老师可能在作业中添加了评语，评语将以下划线表示。老师的其他评语将显示在页面底部。</para></listitem>
+<listitem><para>点击完成返回到作业主页。</para></listitem>
+</orderedlist>
+<para>您可能需要进行进一步操作（如，老师可能提出了一些建议并且要求再次提交）。完成所需工作后，您可以预览您的修改，再次提交或保存草稿。 </para>
+
+</sect1>
+
 </chapter>

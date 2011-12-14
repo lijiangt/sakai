@@ -1,9 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <chapter id="sakai.siteinfo">
 	<title>站点信息</title>
-<para>
+<para>在此设置站点的相关信息，操作步骤如下：</para>	
+
+<orderedlist numeration="arabic">
+<listitem><para>点击课程标签栏中的课程名称，然后点击左侧菜单栏中的“站点信息”，进入站点信息页面
+<figure><title>站点信息页面</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/siteinfo/01.png'/>
+</imageobject></mediaobject>
+</figure>
+</para></listitem>
+
+<listitem><para>点击“编辑站点信息”，进入编辑页面
+<figure><title>站点编辑页面</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/siteinfo/02.png'/>
+</imageobject></mediaobject>
+</figure>
+</para></listitem>
+
+<listitem><para>在此页面中录入相关信息（说明，简短说明，联系人姓名，联系人邮箱等），然后点击“继续”
+<figure><title>信息录入页面</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/siteinfo/03.png'/>
+</imageobject></mediaobject>
+</figure>
+</para></listitem>
+
+<listitem><para>确认站点信息内容，如无问题，请点击“完成”，完成站点信息设置。
+<figure><title>完成站点信息</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/siteinfo/04.png'/>
+</imageobject></mediaobject>
+</figure>
+</para></listitem>
+</orderedlist>
 
 
 
-</para>	
+
+
+
+
+
+
+
+
 </chapter>

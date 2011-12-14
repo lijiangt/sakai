@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <chapter id="sakai.jforum.tool">
-	<title>论坛和站内信息
-</title>
-<para>
+	<title>论坛和站内信息</title>
+<para>可在此进行提问、课程讨论及休闲的互助沟通，发布或接收站内消息。</para>	
+<itemizedlist>
+<listitem><para>提问：关于课程的所有问题，你可以使用论坛工具来提问，同时你也可以回答别人的问题</para></listitem>
+<listitem><para>课程讨论：使用这个版块参加课堂讨论</para></listitem>
+<listitem><para>学生休息室：使用这个版块讨论课程之外的话题</para></listitem>
+</itemizedlist>
 
-
-
-</para>	
 </chapter>
