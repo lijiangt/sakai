@@ -40,63 +40,53 @@
 		<title>“迈向无烟中国”培训平台帮助</title>
 		<author>
 			<othername>
-				北京邮电大学网络教育技术研究所[lijt(at)bupticet.com]
+				中国医学科学院基础医学研究所/北京协和医学院基础学院]
 			</othername>
 		</author>
 	</bookinfo>
-<!--
-	&sakai.iframe.service;
-	
-	&sakai.sitebrowser;
-	&sakai.users;
-	&sakai.aliases;
-	
-	
-	&sakai.iframe.myworkspace;	
 
-
+	<!--
 	&sakai.sitesetup;
 	&sakai.preferences;
-
+	&sakai.samigo;
+	&sakai.gradebook.tool;	
 	
+	-->
 	
+	&sakai.iframe.myworkspace;	
 	&sakai.summary.calendar;
 	&sakai.synoptic.jforum.tool;
-	&sakai.announcements;
 	&sakai.schedule;
 	&sakai.sitestats;	
-
-	
-	
-
--->
+	&sakai.siteinfo;
+	&sakai.melete;
+	&sakai.jforum.tool;
 	&sakai.iframe.site;
 	&sakai.membership;
 	&sakai.singleuser;
 	&sakai.createuser;
 	&sakai.syllabus;
-	&sakai.schedule;
 	&sakai.announcements;
 	&sakai.resources;
-	&sakai.assignment;
-	<!--
-	
-	&sakai.samigo;
-	&sakai.gradebook.tool;
-	-->
 	&sakai.dropbox;
 	&sakai.chat;
 	&sakai.rwiki;
 	&sakai.site.roster;
-	<!--
-	&sakai.siteinfo;
-	&sakai.melete;
-	&sakai.jforum.tool;
-	-->
 	&osp.glossary;
 	&sakai.search;
 	&sakai.profile2;
-	&sakai.sites;	
+	&sakai.sites;		
+	
+	&sakai.siteinfo;
+	
+
+<!--
+	&sakai.iframe.service;
+	&sakai.sitebrowser;
+	&sakai.users;
+	&sakai.aliases;
+	
+-->	
 
 </book>
 

@@ -1,9 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <chapter id="sakai.melete">
 	<title>在线课程</title>
-<para>
+<sect1>
+<title>维护在线课程内容</title>
+<para>可在“在线课程”中维护课程内容。维护在线课程内容步骤如下：</para>	
+<orderedlist numeration="arabic">
+<listitem><para>点击课程标签栏中的新建课程名称，然后点击左侧菜单栏中的“在线课程”，进入此编辑页面
+<figure><title>在线课程编辑页面</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/01.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+<listitem><para>
+点击“添加模块”，进入编辑页面
+<figure><title>点击“添加模块”</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/02.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+<listitem><para>
+在此页面中录入相关信息（模块标题，描述/概要或目标，关键字，开始日期，结束日期等），录入完成后点击“添加”
+<figure><title>“添加模块”编辑内容</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/03.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+<listitem><para>
+此页面信息将会告知模块添加信息，可以点击“添加章节内容”继续添加模块中的章节内容或者点击“完成”完成添加。
+<figure><title>确认模块信息</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/04.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+<listitem><para>
+点击“添加章节内容”，录入及选择相关信息（章节标题，导语，形式，内容类型等），完成后点击“完成”或“保存”或“预览”或“添加新章节”，继续操作。
+<figure><title>添加章节内容</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/05.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+</orderedlist>
+</sect1>
+
+<sect1>
+<title>“内容类型”的操作指导</title>
+<para>在选择“使用编辑器编写”的情况下，对“内容类型”的文本添加、插入按照传媒大学多媒体格式制作的视频文件、插入普通视频的操作指导。</para>
+<itemizedlist>
+<listitem><para>文本内容
+
+<para>在编辑区域中录入文本内容。
+<figure><title>文本内容</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/06.png'/>
+</imageobject></mediaobject></figure>
+</para>
+
+</para></listitem>
+<listitem><para>插入按照传媒大学多媒体格式制作的视频文件的操作步骤如下：
+
+<orderedlist numeration="arabic">
+<listitem><para>点击编辑器中的“插入/编辑多媒体”标识图标
+<figure><title>“插入/编辑多媒体”标识图标</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/07.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>在弹出窗口中，点击“浏览服务器”，进入服务器
+<figure><title>多媒体属性</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/08.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>在服务器中选择已在资源工具中上传的文件（扩展名为xml的文件）
+<figure><title>服务器</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/09.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>选择完成后回到弹出窗口，确认无问题后，点击“确定”
+<figure><title>确认多媒体属性</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/10.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>完成多媒体文件的添加，出现如下页面。可点击“预览”查看或“完成”/“保存”完成操作。
+<figure><title>保存多媒体</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/11.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>多媒体文件添加完成后效果如下
+<figure><title>多媒体添加效果</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/12.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+</orderedlist>
+
+</para></listitem>
+<listitem><para>插入普通视频的操作步骤如下：
+
+<orderedlist numeration="arabic">
+<listitem><para>点击编辑器中的“插入/编辑电影”标识图标
+<figure><title>“插入/编辑电影”标识图标</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/13.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>点击图标，在弹出窗口中点击“浏览服务器”
+<figure><title>点击“浏览服务器”</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/14.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>在服务器中选择要上传的文件（扩展名为flv文件）
+<figure><title>服务器文件</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/15.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>选择完成后回到弹出窗口，确认无问题后，点击“确定”
+<figure><title>确认文件</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/16.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>完成视频文件的添加，出现如下页面。可点击“预览”查看或“完成”/“保存”完成操作。
+<figure><title>视频添加完成</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/17.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+
+<listitem><para>视频文件添加完成后效果如下
+<figure><title>视频效果</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/18.png'/>
+</imageobject></mediaobject></figure>
+</para></listitem>
+</orderedlist>
+
+</para></listitem>
+</itemizedlist>
+
+<para>保存之后返回此页面信息，可见该课程的模块及章节列表。如果还要继续添加，请回复以上操作。
+<figure><title>课程模块/章节列表</title>
+<mediaobject><imageobject><imagedata fileref='images/melete/19.png'/>
+</imageobject></mediaobject></figure>
+</para>
+
+
+</sect1>
+
+
+	
 
 
 
-</para>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </chapter>
