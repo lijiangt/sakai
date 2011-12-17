@@ -1,9 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter id="sakai.samigo">
 	<title>练习与测验</title>
+<para>此工具允许教师创建您的学生或其他团体通过一个Web界面交付的在线评估（即测试，测验，并调查）。它的目的主要是为了管理测验，但也可以创建评估，以收集调查资料或非正式课程的反馈。</para>
 <para>
+可以在评估包括多个问题，其中包括那些需要您的学生上传文件的类型。然后，您可以选择如何组织，提供和收集，评估。您可以选择随机问题，使他们在为每个学生的不同的顺序出现。可以组织成问题集的问题，使您可以重新使用的问题。您还可以导入以前创建的测试和调查。</para>
+<para>大多数分级是自动完成的，和等级，可自动转到一个在线的成绩册。</para>
+<para>通过评估的配置设置，您可以控制​​一个评估广泛的条件。例如，指定地点评估，你可以指示一个IP地址范围。你可以通过设置，确定评估时，将成为，设定时间限制，确定多少次，学生可以采取评估，并注明是否允许迟交。</para>
+
+<sect1><title>创建练习/测验</title>
+<sect2><title>创建测验</title><para>选择相关课程，并点击左侧菜单栏中的“练习和测验”，在此编辑页面中创建练习/测验，请按以下步骤进行操作：
+
+<figure><title>创建测验页面</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/samigo/01.png'/>
+</imageobject></mediaobject>
+</figure>
+
+</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“创建一个新的测验”后面的文本框中输入创建测验的名称。</para></listitem>
+<listitem><para>在“选择已有模板”中选择“测验”。</para></listitem>
+<listitem><para>点击“创建”，进入编辑页面。</para></listitem>
+
+<listitem><para>选择问题类型，在“插入新的问题”中选择，选择完成后进入编辑页面。
+<note><title>注意</title>
+<para>问题类型有“选择题”，“调查问卷”，“简答题/论述题”，“填空题”，“数值题”，“配对题”，“判断题”，“录音题”，“上传文件”，“从题库拷贝”。</para></note>
+<itemizedlist>
+<listitem><para>选择题：在“分值”，“选项答案”，“题干”，“附件”，“正确答案”，“随机排列选项”，“说明原理”，“指定部分”，“指定题库”，“正确/错误回答反馈”中选择或录入相关信息创建题目。
+<caution><title>注意</title>
+<para>选择题将根据您选择的得分规则计算分数。</para>
+<itemizedlist mark="opencircle">
+<listitem><para>单项选择：单选题，选择正确得全部分数，选择错误得0分。如果要惩罚学生的错误，可以在“回答错误扣除的分值”输入一个分数，例如一个题目是10分，在“回答错误扣除的分值”中输入了5，学生做对了将得10分，如果错了将得-5分。</para></listitem>
+<listitem><para>多个正确答案，单项选择：单选题，有多个正确答案，只要选择的是正确答案，将得到全部分数，否则得0分.例如答案是A、B或D，如果学生选择了A或者B或者D都将得到全部分数，如果选择C将得0分。</para></listitem>
+<listitem><para>多个正确答案，多项选择：多选题，全部选择正确得全部分数，只要有一个选项错误将得0分。</para></listitem>
+</itemizedlist></caution>
+
+</para></listitem>
+<listitem><para>调查问卷：在“分值”，“题干”，“附件”，“选项答案”，“指定部分”，“指定题库”，“反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>简答题/论述题：在“分值”，“题干”，“附件”，“指定部分”，“指定题库”，“答案”，“反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>填空题：在“分值”，“题干”，“附件”，“指定部分”，“指定题库”，“正确/错误回答反馈”中选择或录入相关信息创建题目。
+<itemizedlist mark="opencircle">
+<listitem><para>在需要补空的词外面需要放置花括号{}
+例如：Roses are {red} and violets are {blue}.
+</para></listitem>
+<listitem><para>如果有多种正确答案，可将正确答案全部罗列于{ }之中，中间用“|”分隔。
+例如: The sides are {heads|tails}.
+</para></listitem>
+<listitem><para>插入一个星号代表一个或多个通配符字母
+例如: It's raining {c*} and {d*s}. </para></listitem>
+</itemizedlist>
+
+</para></listitem>
+<listitem><para>数值题：在“分值”，“题干”，“附件”，“指定部分”，“指定题库”，“正确/错误回答反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>配对题：在“分值”，“题干”，“附件”，“添加/编辑配对和反馈”，“指定部分”，“指定题库”，“正确/错误回答反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>判断题：在“分值”，“题干”，“附件”，“选项答案”，“说明原理”，“指定部分”，“指定题库”，“正确/错误回答反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>录音题：在“分值”，“题干”，“附件”，“时间限制”，“尝试次数”，“反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>上传文件：在“分值”，“题干”，“附件”，“指定部分”，“指定题库”，“反馈”中选择或录入相关信息创建题目。</para></listitem>
+<listitem><para>从题库拷贝：选择题库，将从该题库导入问题到当前测验。 </para></listitem>
+</itemizedlist>
+
+</para></listitem>
+<listitem><para>在创建问题类型中的“分值”、“选项答案”、“题干”及答案区域录入题目信息。</para></listitem>
+<listitem><para>点击“保存”，完成测验题目创建。如要创建多个题目请重复以上操作。</para></listitem>
+</orderedlist>
+
+</sect2>
+
+<sect2><title>导入测验</title>
+<para>选择导入测验，请按以下步骤进行操作：
+
+<caution><title>注意</title>
+<para>文件必须是兼容IMS QTI的XML文件。</para></caution>
+
+</para>
+<orderedlist numeration="arabic">
+<listitem><para>点击“导入”，进入编辑页面。</para></listitem>
+<listitem><para>点击“浏览”，选择文件。</para></listitem>
+<listitem><para>点击“打开”。</para></listitem>
+<listitem><para>点击“导入”.</para></listitem>
+</orderedlist>
+
+</sect2>
+
+</sect1>
+
+
+<sect1><title>编辑练习/测验</title>
+<para>修改或编辑已创建完成的测验，请按以下步骤进行操作：
+
+<figure><title>待编辑测验页面</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/samigo/02.png'/>
+</imageobject></mediaobject>
+</figure>
+
+</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“练习与测验”编辑页面中，在“待编辑的测验”的区域中选择测验名称前面的“动作”。</para></listitem>
+<listitem><para>在“选择动作”中选择并点击“编辑”，进入编辑页面。</para></listitem>
+<listitem><para>在题目页面的右侧点击“编辑”，进入题目编辑页面。</para></listitem>
+<listitem><para>录入或选择相关信息后点击“保存”。</para></listitem>
+<listitem><para>完成编辑。如果还要对其他题目进行修改或编辑请重复以上操作。</para></listitem>
+</orderedlist>
+
+</sect1>
 
 
 
-</para>	
+<sect1><title>删除练习/测验</title>
+<para>删除测验，请按以下步骤进行操作：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“练习与测验”编辑页面中，在“待编辑的测验”的区域中选择测验名称前面的“动作”。</para></listitem>
+<listitem><para>在“选择动作”中选择并点击“删除”，进入编辑页面。</para></listitem>
+<listitem><para>删除确认，如果确认要删除请点击“删除”，如果不删除请点击“取消”。</para></listitem>
+</orderedlist>
+
+</sect1>
+
+
+<sect1><title>预览练习/测验</title>
+<para>测验题目创建完成后，预览测验请按以下步骤进行操作：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“练习与测验”编辑页面中，在“待编辑的测验”的区域中选择测验名称前面的“动作”。</para></listitem>
+<listitem><para>在“选择动作”中选择并点击“预览测验”，进入编辑页面。
+
+<caution><title>注意</title>
+<para>根据学生所看到的测验，提供测验开始前的介绍。<itemizedlist>
+<listitem><para>该测验设置的截止日期。</para></listitem>
+<listitem><para>该测验设置的提交时间限制。</para></listitem>
+<listitem><para>此评估是线性，这意味着你将一次看到一个问题，在点击“下一步”之后你将无法后退到前一个问题。</para></listitem>
+<listitem><para>这个测验可以提交次数，您的最高分将被记录。
+</para></listitem>
+<listitem><para>该测验是否会提供反馈。</para></listitem>
+</itemizedlist></para></caution>
+
+</para></listitem>
+<listitem><para>点击“开始测验”。</para></listitem>
+<listitem><para>逐一点击“下一个”，浏览测验题目，直至测验结束。</para></listitem>
+<listitem><para>点击“完成”，回到“练习与测验”首页中。</para></listitem>
+</orderedlist>
+
+</sect1>
+
+
+<sect1><title>设置练习/测验</title>
+<para>测验题目创建完成后，对整个测验规则进行设置，请按以下步骤进行操作：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“练习与测验”编辑页面中，在“待编辑的测验”的区域中选择测验名称前面的“动作”。</para></listitem>
+<listitem><para>在“选择动作”中选择并点击“设置”，进入编辑页面。
+
+<itemizedlist>
+<listitem><para>模板信息：介绍测验的标题、作者、测验类型。</para></listitem>
+<listitem><para>测验介绍：可修改测验标题、作者、为测验做简单介绍，并可添加附件。</para></listitem>
+<listitem><para>发布日期：开始日期，截止日期，撤回日期设置。
+
+<caution><title>注意</title>
+<itemizedlist mark="opencircle">
+<listitem><para>开始日期：在开始日期之前学生看不到这个测验。</para></listitem>
+<listitem><para>截止日期：除非允许迟交，否则过了截止日期之后就不能提交了(提交 > 迟交处理)。</para></listitem>
+<listitem><para>撤回日期：过了撤回日期之后或者点击了“立即撤回”，测验才对学生开放。但在撤回日期之前，那些提交了测验的学生仍然可以看到开启了反馈(反馈 > 反馈递送)的测验。学生将在已提交测验列表中看到这些测验。</para></listitem>
+</itemizedlist></caution>
+
+</para></listitem>
+<listitem><para>测验对象：选择测验对象，匿名用户或者测试课程。</para></listitem>
+<listitem><para>安全定义：记录备选ID和密码。</para></listitem>
+<listitem><para>测验组织：学生浏览方式、试题版式、编号选择。</para></listitem>
+<listitem><para>复查标记：每道试题下会出现“复查标记”选择框
+注意：当“测验组织”选择的是顺序访问时，该功能不可使用。</para></listitem>
+<listitem><para>提交：允许提交次数，迟交处理。</para></listitem>
+<listitem><para>提交信息：提交信息，最终页面URL设置。</para></listitem>
+<listitem><para>反馈：反馈编辑、反馈递送、发布学生测验得分、发布内容的选择。</para></listitem>
+<listitem><para>评分：学生身份标识，是否将成绩保存在成绩册。</para></listitem>
+<listitem><para>测验外观：测验背景色及图片设置。</para></listitem>
+<listitem><para>元数据：元数据关键字、目标、按语。</para></listitem>
+</itemizedlist>
+
+</para></listitem>
+<listitem><para>设置完成后请点击“保存设置”进行保存，或者点击“保存设置并发布”向学生发布测验。</para></listitem>
+</orderedlist>
+
+</sect1>
+
+<sect1><title>发布练习/测验</title>
+<para>发布测验请按以下步骤进行操作：
+
+<figure><title>已发布测验页面</title>
+<mediaobject><imageobject>
+<imagedata fileref='images/samigo/03.png'/>
+</imageobject></mediaobject>
+</figure>
+
+</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“练习与测验”编辑页面中，在“待编辑的测验”的区域中选择测验名称前面的“动作”。</para></listitem>
+<listitem><para>在“选择动作”中选择并点击“发布”，进入编辑页面。
+
+<caution><title>注意</title>
+<para>一经发布，测验不可删除，只能撤回不让学生访问。</para></caution>
+
+</para></listitem>
+<listitem><para>点击“修改设置”进行设置调整，选择是否向学生发送通知。</para></listitem>
+<listitem><para>点击“发布”。</para></listitem>
+<listitem><para>该测验将出现在“已发布测验”列表中，发布完成。</para></listitem>
+</orderedlist>
+
+</sect1>
+
+
+<sect1><title>学生提交练习/测验</title>
+<para>在学生的“练习与测验”操作页面中可见需要完成的测验及已提交的测验列表。</para>
+<para>提交测验，请按以下步骤进行操作：</para>
+<orderedlist numeration="arabic">
+<listitem><para>在“参加测验”区域中点击测验标题。</para></listitem>
+<listitem><para>测验介绍。
+
+<caution><title>注意</title>
+<itemizedlist>
+<listitem><para>该测验设置的截止日期。</para></listitem>
+<listitem><para>该测验设置的提交时间限制。</para></listitem>
+<listitem><para>此评估是线性，这意味着你将一次看到一个问题，在点击“下一步”之后你将无法后退到前一个问题。</para></listitem>
+<listitem><para>这个测验可以提交次数，您的最高分将被记录。</para></listitem>
+<listitem><para>该测验是否会提供反馈。</para></listitem>
+</itemizedlist></caution>
+
+</para></listitem>
+<listitem><para>点击“开始测验”。</para></listitem>
+<listitem><para>根据测验题目进行录入或者选择答案，点击“下一个”。逐一完成测验题目直至测验结束。</para></listitem>
+<listitem><para>点击“提交评分”。</para></listitem>
+<listitem><para>提交确认。如果确认提交请再次点击“提交评分”。如果暂不提交，请点击“取消”，稍后提交。</para></listitem>
+<listitem><para>测验提交信息介绍，点击“继续”。</para></listitem>
+<listitem><para>此测验将在“已提交测验”列表中体现，即完成提交。</para></listitem>
+</orderedlist>
+
+
+</sect1>
+
+
+
+
+
+
+
+
 </chapter>

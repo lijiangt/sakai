@@ -48,11 +48,10 @@
 	<!--
 	&sakai.sitesetup;
 	&sakai.preferences;
-	&sakai.samigo;
 	&sakai.gradebook.tool;	
-	
 	-->
 	
+
 	&sakai.iframe.myworkspace;	
 	&sakai.summary.calendar;
 	&sakai.synoptic.jforum.tool;
@@ -76,9 +75,9 @@
 	&sakai.search;
 	&sakai.profile2;
 	&sakai.sites;		
-	
 	&sakai.siteinfo;
 	
+	&sakai.samigo;
 
 <!--
 	&sakai.iframe.service;
