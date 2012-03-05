@@ -48,7 +48,7 @@
 	<!--
 	&sakai.sitesetup;
 	&sakai.preferences;
-	&sakai.gradebook.tool;	
+
 	-->
 	
 
@@ -76,7 +76,8 @@
 	&sakai.profile2;
 	&sakai.sites;		
 	&sakai.siteinfo;
-	
+	&sakai.gradebook.tool;	
+	&sakai.assignment;
 	&sakai.samigo;
 
 <!--
